@@ -6,4 +6,8 @@ Group Members: Gabriel Bello, Tyler Ho, Quang Anh Pham, Kevin Tan
 
 AI Disclosures
 [Gabriel Bello](./docs/M0_AI_Declaration_Gabriel_Bello_301430169.pdf)
-Project Description:
+[Quang Anh Pham]
+[Tyler Ho]
+[Kevin Tan]
+
+Project Description: Dish-It is a project created to help anyone who wants to cook more at home, by allowing them to explore meal recipes based on the ingredients that are available to their household currently.

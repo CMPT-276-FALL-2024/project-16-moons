@@ -5,5 +5,5 @@ Group Name: 16 Moons
 Group Members: Gabriel Bello, Tyler Ho, Quang Anh Pham, Kevin Tan
 
 AI Disclosures
-[Gabriel Bello](./docs/M0_AI_Declaration_Gabriel_Bello_301430169)
+[Gabriel Bello](./docs/M0_AI_Declaration_Gabriel_Bello_301430169.pdf)
 Project Description:

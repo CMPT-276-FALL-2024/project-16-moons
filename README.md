@@ -6,7 +6,7 @@ Group Members: Gabriel Bello, Tyler Ho, Quang Anh Pham, Kevin Tan
 
 AI Disclosures
 [Gabriel Bello](./docs/ai-disclosure/M0_AI_Declaration_Gabriel_Bello_301430169.pdf)
-[Quang Anh Pham]
+[Quang Anh Pham](./docs/ai-disclosure/M0_AI_Declaration_Quang_Anh_Pham_301576174.pdf)
 [Tyler Ho](./docs/ai-disclosure/M0_AI_Declaration_Tyler_Ho_301351482.pdf)
 [Kevin Tan]
 

@@ -99,35 +99,18 @@ body {
   display: block;
 }
 
-/*Contents*/
-.topic {
-  /* display: flex; */
+.divider {
   padding-top: 100px;
   text-align: center;
   padding-left: 200px;
   padding-right: 200px;
-  padding-bottom: 200px;
+  padding-bottom: 100px;
 }
 
-.about {
-  padding-top: 100px;
-  text-align: center;
-  padding-left: 200px;
-  padding-right: 200px;
-  padding-bottom: 200px;
+.bold {
+  font-weight: bold;
 }
 
-/* Contact Us Block */
-.contactus {
-  padding-top: 100px;
-  text-align: center;
-  padding-left: 200px;
-  padding-right: 200px;
-  padding-bottom: 200px;
-}
-
-/*Contact Us H1*/
-.contactus h1,
-p {
+.sectionTitle {
   padding-bottom: 25px;
 }

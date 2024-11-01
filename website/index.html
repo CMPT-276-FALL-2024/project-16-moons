@@ -7,8 +7,8 @@
       href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css" />
-    <script src="scripts.js" defer></script>
+    <link rel="stylesheet" href="/website/styles/homepage.css" />
+    <script src="/website/scripts/homepage.js" defer></script>
     <link rel="icon" href="/website/images/favicon.ico" type="image/x-icon" />
     <title>Dish-It | Cooking All In One!</title>
   </head>
@@ -17,13 +17,14 @@
       <a href="#" class="logo">Dish-It</a>
 
       <nav class="navbar">
-        <a href="#randomrecipe">RANDOM RECIPE</a>
-        <a href="#about">FOOD TRIVIA</a>
+        <a href="#">RANDOM RECIPE</a>
+        <a href="#">FOOD TRIVIA</a>
         <a href="#howitworks">HOW IT WORKS</a>
         <a href="#about">ABOUT</a>
         <a href="#contactus">CONTACT US</a>
       </nav>
     </header>
+    <!-- Searching Option Section -->
     <div class="divider">
       <div class="search-container">
         <img
@@ -41,17 +42,13 @@
           </div>
         </div>
       </div>
-      <h1 class="section-title">How It Works</h1>
-      <div class="horizontal-flex-container" id="howitworks">
-        <div class="how-to-video">
-          <video
-            src="/website/video/pizza.mp4"
-            autoplay
-            muted
-            loop
-            width="750px"
-          ></video>
-        </div>
+    </div>
+    <!-- How-It-Section -->
+    <div class="how-it" id="howitworks">
+      <h2 class="main-header">How It Works</h2>
+      <h1 class="sub-header">You're one click away from cooking!</h1>
+      <div class="horizontal-flex-container">
+        <img src="/website/images/how-it.jpg" width="750px" />
         <div class="vertical-flex-container">
           <div class="flex-content">
             <p class="bold">Search By Recipe Name</p>
@@ -98,52 +95,45 @@
             </p>
           </div>
         </div>
+      </div>
+    </div>
+    <!-- About The Project Section -->
+    <div class="about" id="about">
+      <div class="horizontal-flex-container">
         <div class="vertical-flex-container">
-          <div class="align">
-            <h3>"FAQ"</h3>
-            <p>How do I contact you?</p>
-            <p>Wdasd</p>
-          </div>
+          <h1 class="main-header">About The Project</h1>
         </div>
+        <img
+          src="/website/images/about-project.png"
+          class="about-image"
+          alt="a collage of dishes."
+        />
       </div>
     </div>
-    <div class="divider">
-      <div class="section" id="about">
-        <h1 class="sectionTitle">About The Project</h1>
-        <p class="text">
-          Whether you’re a home cook or a foodie, Dish-It is a website that
-          gives you the freedom to get creative in the kitchen with a click.
-          Dish-it’s goal is to help people save time, eat healthier, and explore
-          different types of cuisines with a simple search. Along with that it
-          also provides users a way to analyze what exactly is going in their
-          dish in terms of nutrients.
-        </p>
-      </div>
-      <div class="section" id="contactus">
-        <h1 class="sectionTitle">Contact Us</h1>
-        <p class="text">
-          "Have any questions or concerns? Feel free to reach out to us!" -
-          Dish-It Team
-        </p>
-        <a href="mailto:testing@gmail.com"
-          ><img src="/website/images/email.png" width="100px"
-        /></a>
-      </div>
-      <div class="section" id="acknowledgments">
-        <h1 class="sectionTitle">Acknowledgments</h1>
-        <p class="text">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia
-          molestiae iure illo velit eligendi ipsam, perferendis dolor assumenda
-          asperiores impedit maiores est necessitatibus! Aliquid, placeat quod
-          non nihil impedit rerum.
-        </p>
-      </div>
+    <div class="section" id="contactus">
+      <h1 class="sectionTitle">Contact Us</h1>
+      <p class="text">
+        "Have any questions or concerns? Feel free to reach out to us!" -
+        Dish-It Team
+      </p>
+      <a href="mailto:testing@gmail.com"
+        ><img src="/website/images/email.png" width="100px"
+      /></a>
     </div>
-    <a href="#chatbot">
+    <div class="section" id="acknowledgments">
+      <h1 class="sectionTitle">Acknowledgments</h1>
+      <p class="text">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia
+        molestiae iure illo velit eligendi ipsam, perferendis dolor assumenda
+        asperiores impedit maiores est necessitatibus! Aliquid, placeat quod non
+        nihil impedit rerum.
+      </p>
+    </div>
+    <!-- <a href="#chatbot">
       <img
         src="images/chatbutton.png"
         alt="An image of a chat logo."
         class="chat-logo"
-    /></a>
+    /></a> -->
   </body>
 </html>

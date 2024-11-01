@@ -151,21 +151,46 @@ body {
 /* About The Project */
 .about {
   padding-top: 100px;
-  padding-left: 250px;
+  padding-left: 100px;
+  padding-right: 100px;
   padding-bottom: 250px;
   background-color: #e0ba88;
 }
 .about-image {
   height: auto;
-  width: 500px;
+  max-width: 500px;
   padding-top: 100px;
 }
 
 .about .main-header {
   font-size: 75px;
-  padding-top: 400px;
+  padding-top: 100px;
   padding-right: 0px;
   width: 100%;
+  max-width: 600px;
+}
+.about .text {
+  max-width: 600px;
+  font-size: 25px;
+}
+
+.about .sub-header {
+  font-size: 75px;
+  padding-top: 200px;
+  padding-right: 0px;
+  width: 100%;
+  max-width: 600px;
+}
+
+.about .vertical-flex-container .photo-name {
+  align-items: center;
+  text-align: center;
+}
+.about .face-photo {
+  width: 250px;
+  height: auto;
+  align-items: center;
+  border-radius: 50%;
 }
 
 /* Contact Us */

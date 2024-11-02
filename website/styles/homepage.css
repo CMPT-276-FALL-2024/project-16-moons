@@ -30,18 +30,24 @@ body {
   flex-direction: column;
 }
 /*Navigation Bar*/
-.header {
+.navigation-bar {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  padding-left: 35px;
+  padding-left: 50px;
   padding-right: 100px;
+  padding-bottom: 15px;
   background-color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
   z-index: 100;
+}
+
+.navigation-bar .image {
+  height: 50px;
+  object-fit: contain;
 }
 
 .logo {
@@ -76,7 +82,7 @@ body {
 /*Searching/Button Area*/
 .divider .search-container {
   padding-top: 250px;
-  padding-bottom: 250px;
+  padding-bottom: 350px;
 }
 #Dish-It-Search-Logo {
   margin-left: -75px;

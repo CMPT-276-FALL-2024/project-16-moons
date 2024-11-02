@@ -5,6 +5,9 @@
   box-sizing: border-box;
   font-family: Rubik;
 }
+html {
+  scroll-behavior: smooth;
+}
 /*Element Rules*/
 body {
   min-height: 100vh;
@@ -32,7 +35,8 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  padding: 20px 100px;
+  padding-left: 35px;
+  padding-right: 100px;
   background-color: white;
   display: flex;
   justify-content: space-between;
@@ -41,10 +45,8 @@ body {
 }
 
 .logo {
-  font-size: 32px;
-  color: rgb(0, 0, 0);
-  text-decoration: none;
-  font-weight: 700;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .navbar a {
@@ -130,12 +132,13 @@ body {
 }
 
 .how-it .main-header {
+  font-size: 75px;
   padding: 100px 0 25px 0;
   color: #e0ba88;
 }
 
 .how-it .sub-header {
-  padding: 0 0 25px 25px;
+  padding: 0 0 25px 75px;
 }
 
 .flex-content {
@@ -151,8 +154,8 @@ body {
 /* About The Project */
 .about {
   padding-top: 100px;
-  padding-left: 100px;
-  padding-right: 100px;
+  padding-left: 50px;
+  padding-right: 0px;
   padding-bottom: 250px;
   background-color: #e0ba88;
 }
@@ -171,7 +174,7 @@ body {
 }
 .about .text {
   max-width: 600px;
-  font-size: 25px;
+  font-size: 20px;
 }
 
 .about .sub-header {
@@ -194,12 +197,25 @@ body {
 }
 
 /* Contact Us */
-
+.contact {
+  align-items: center;
+  text-align: center;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+.contact .main-header {
+  font-size: 55px;
+  padding-bottom: 50px;
+}
+.contact .text {
+  font-size: 25px;
+  text-align: center;
+}
 /* Chat-Bot */
 .chat-logo {
   position: fixed;
   bottom: 45px;
-  left: 45px;
+  left: 1900px;
   width: 75px;
   z-index: 1000;
 }

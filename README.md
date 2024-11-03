@@ -11,6 +11,9 @@ AI Disclosures [M0]
 [Kevin Tan](./docs/ai-disclosure/M0_AI_Declaration_Kevin_Tan_301542481.pdf)
 
 AI Disclosures [M1]
-[Gabriel Bello]
+[Gabriel Bello](./docs/ai-disclosure/M1_AI_Declaration_Gabriel_Bello_301430169.pdf)
+[Quang Anh Pham]()
+[Tyler Ho]()
+[Kevin]()
 
 Project Description: Dish-It is a project created to help anyone who wants to cook more at home, by allowing them to explore meal recipes based on the ingredients that are available to their household currently.

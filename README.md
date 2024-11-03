@@ -12,7 +12,7 @@ AI Disclosures [M0]
 
 AI Disclosures [M1]
 [Gabriel Bello](./docs/ai-disclosure/M1_AI_Declaration_Gabriel_Bello_301430169.pdf)
-[Quang Anh Pham]()
+[Quang Anh Pham](./docs/ai-disclosure/M1_AI_Declaration_Quang_Anh_Pham_301576174.pdf)
 [Tyler Ho](./docs/ai-disclosure/M1_AI_Declaration_Tyler_Ho_301351482.pdf)
 [Kevin](./docs/ai-disclosure/M1_AI_Declaration_Kevin_Tan_301542481.pdf)
 

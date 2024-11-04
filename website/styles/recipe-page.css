@@ -11,6 +11,7 @@ html {
 /*Element Rules*/
 body {
   min-height: 100vh;
+  background-color: #e0ba88;
 }
 
 .bold {
@@ -98,4 +99,79 @@ body {
   right: 2rem;
   width: 50px;
   height: 50px;
+}
+
+.recipe {
+  padding-top: 150px;
+  padding-left: 100px;
+  padding-right: 100px;
+  padding-bottom: 150px;
+}
+
+.recipe-details {
+  padding: 50px;
+  width: 1000px;
+  margin-right: auto;
+  background-color: #e88e65;
+  border-radius: 10px;
+}
+
+.recipe-details h1 {
+  text-align: center;
+}
+
+.recipe-details .recipe-img {
+  max-width: 800px;
+  display: block;
+  margin: 0 auto;
+  border-radius: 10px;
+}
+
+.recipe-details .overview {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.recipe-details .preparation p {
+  padding-bottom: 25px;
+}
+
+.recipe-details .directions h2 {
+  padding-bottom: 25px;
+}
+
+.recipe-details .directions p {
+  padding-bottom: 25px;
+}
+
+.ingredients-nutrition {
+  margin-right: auto;
+  padding-top: 150px;
+  gap: 100px;
+}
+
+.ingredients-nutrition .ingredient-list {
+  padding: 50px;
+  font-size: 20px;
+  background-color: #ffbd59;
+  border-radius: 10px;
+}
+
+.ingredients-nutrition .ingredient-list li {
+  padding-bottom: 25px;
+}
+
+.ingredients-nutrition .nutrition-values {
+  padding: 50px;
+  font-size: 20px;
+  background-color: #ffbd59;
+  border-radius: 10px;
+}
+
+.ingredients-nutrition.nutrition-values h1 {
+  padding-bottom: 25px;
+}
+
+.ingredients-nutrition .nutrition-values p {
+  padding-bottom: 50px;
 }

@@ -22,8 +22,6 @@
           of Dish-It"
     /></a>
     <nav class="navbar">
-      <a href="#">ANALYZE</a>
-      <a href="#how-to">HOW IT WORKS</a>
       <a href="index.html">GO BACK</a>
     </nav>
   </header>
@@ -40,57 +38,80 @@
       class="bottom-right"
   /></a>
   <body>
-    <!-- Food-Trivia-Section -->
-    <section class="ingredient-analyzer">
+    <section class="recipe">
       <div class="horizontal-flex-container">
-        <div class="vertical-flex-container">
-          <h1>Your Ingredient List</h1>
-          <div class="ingredient-list-block" contenteditable="true"></div>
-          <div class="horizontal-flex-container">
-            <a href="#how-to" class="how-to">Click HERE for instructions</a>
-            <button class="submit-button">Submit</button>
+        <div class="vertical-flex-container ingredients-nutrition">
+          <div class="ingredient-list">
+            <h1>Ingredient List</h1>
+            <ul>
+              <li>1 (3 pound) whole chicken, giblets removed</li>
+              <li>salt and black pepper to taste</li>
+              <li>1 tablespoon onion powder, or to taste</li>
+              <li>1/2 cup butter</li>
+              <li>1 stalk celery, leaves removed</li>
+            </ul>
+          </div>
+          <div class="nutrition-values">
+            <h1>Nutrition Values</h1>
+            <ul>
+              <p><strong>432</strong> Calories</p>
+              <p><strong>32g</strong> Fat</p>
+              <p><strong>1g</strong> Carbs</p>
+              <p><strong>31g</strong> Protein</p>
+            </ul>
           </div>
         </div>
-        <div class="vertical-flex-container">
-          <h1 class>Nutritional Values</h1>
-          <div class="nutritional-label">Place holder for nutrional label</div>
-        </div>
-      </div>
-    </section>
-    <!-- How-It-Section -->
-    <section class="how-it" id="how-to">
-      <h2 class="main-header">How To Analyze</h2>
-      <h1 class="sub-header"></h1>
-      <div class="horizontal-flex-container">
-        <img
-          src="/website/images/how-to-ingredient-analyzer.jpg"
-          width="750px"
-        />
-        <div class="vertical-flex-container">
-          <div class="flex-content">
-            <p><strong>Step One</strong>: Type in ingredient(s)</p>
-            <br />
+        <div class="vertical-flex-container recipe-details">
+          <h1>Juicy Roasted Chicken Recipe</h1>
+          <img
+            src="/website/images/placeholder-recipe-image.jpg"
+            alt="An image of a chicken"
+            class="recipe-img"
+          />
+          <div class="overview">
+            <h2>Overview</h2>
             <p>
-              Ensure that each ingredient is on a new line and is separted using
-              a comma.
-            </p>
-            <br />
-            <p>(Shift button + Enter button to create new line)</p>
-          </div>
-          <div class="flex-content">
-            <p><strong>Step Two</strong>: Click the Submit button!</p>
-            <br />
-            <p>
-              Just directly below the ingredient list box there will be a
-              "Analyze" button.
+              This roasted chicken is perfectly seasoned and just like the way
+              my grandmother used to make it. The method used in this recipe
+              results in the juiciest chicken! We loved to nibble on the celery
+              after it was cooked.
             </p>
           </div>
-          <div class="flex-content">
-            <p><strong>Step Three</strong>: Check out your results!</p>
-            <br />
+          <div class="preparation">
+            <h2>Preparation</h2>
+            <p>Prep Time: 15 Minutes</p>
+            <p>Cook Time: 1 Hour and 15 Minutes</p>
+            <p>Additional Time: 30 Minutes</p>
+            <p>Total Time: 2 Hours</p>
+            <p>Servings: Good for 6 individuals</p>
+          </div>
+          <div class="directions">
+            <h2>Directions</h2>
+            <h3>Step 1</h3>
             <p>
-              To the right of the your ingredient list will now show your
-              ingredients nutrional value!
+              Gather all ingredients. Preheat the oven to 350 degrees F (175
+              degrees C).
+            </p>
+            <h3>Step 2</h3>
+            <p>
+              Place chicken in a roasting pan; season generously inside and out
+              with onion powder, salt, and pepper. Place 3 tablespoons of butter
+              in chicken cavity; arrange dollops of remaining butter on the
+              outside of chicken.
+            </p>
+            <h3>Step 3</h3>
+            <p>Cut celery into 3 or 4 pieces; place in the chicken cavity.</p>
+            <h3>Step 4</h3>
+            <p>
+              Bake chicken uncovered in the preheated oven until no longer pink
+              at the bone and the juices run clear, about 1 hour and 15 minutes.
+              An instant-read thermometer inserted into the thickest part of the
+              thigh, near the bone, should read 165 degrees F (74 degrees C).
+            </p>
+            <h3>Step 5</h3>
+            <p>
+              Remove from the oven and baste with drippings. Cover with aluminum
+              foil and allow to rest for about 30 minutes before serving.
             </p>
           </div>
         </div>

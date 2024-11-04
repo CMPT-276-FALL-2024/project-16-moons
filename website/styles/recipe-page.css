@@ -49,6 +49,7 @@ body {
   justify-content: space-between;
   align-items: center;
   z-index: 100;
+  box-shadow: 0px 5px 5px rgba(0 0 0/0.2);
 }
 
 .navigation-bar .image {

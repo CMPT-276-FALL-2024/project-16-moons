@@ -22,125 +22,79 @@
           of Dish-It"
     /></a>
     <nav class="navbar">
-      <a href="index.html">HOME</a>
-      <a href="#how-to">HOW TO</a>
-      <a href="#about">ABOUT</a>
-      <a href="#contact-us">CONTACT US</a>
+      <a href="#">ANALYZE</a>
+      <a href="#how-to">HOW IT WORKS</a>
+      <a href="index.html">GO BACK</a>
     </nav>
   </header>
+  <a href="#chatbot">
+    <img
+      src="/website/images/chatbot.png"
+      alt="Logo for a Chat Bot."
+      class="bottom-left"
+  /></a>
+  <a href="#">
+    <img
+      src="/website/images/scroll-back-up.png"
+      alt="Logo for a scroll up button."
+      class="bottom-right"
+  /></a>
   <body>
     <!-- Food-Trivia-Section -->
-    <div class="ingredient-analyzer">
+    <section class="ingredient-analyzer">
       <div class="horizontal-flex-container">
         <div class="vertical-flex-container">
-          <h1>Ingredient List</h1>
-          <div class="ingredient-list-block">Add Ingredients...</div>
+          <h1>Your Ingredient List</h1>
+          <div class="ingredient-list-block" contenteditable="true"></div>
+          <div class="horizontal-flex-container">
+            <a href="#how-to" class="how-to">Click HERE for instructions</a>
+            <button class="submit-button">Submit</button>
+          </div>
         </div>
         <div class="vertical-flex-container">
-          <div class="ingredient-nutrients">Place holder</div>
+          <h1 class>Nutritional Values</h1>
+          <div class="nutritional-label">Place holder for nutrional label</div>
         </div>
       </div>
-    </div>
+    </section>
     <!-- How-It-Section -->
-    <div class="how-it" id="how-to">
+    <section class="how-it" id="how-to">
       <h2 class="main-header">How To Analyze</h2>
       <h1 class="sub-header"></h1>
       <div class="horizontal-flex-container">
-        <img src="/website/images/how-it.jpg" width="750px" />
-        <div class="vertical-flex-container">
-          <div class="flex-content">
-            <p class="bold">???</p>
-            <p>????????</p>
-          </div>
-          <div class="flex-content">
-            <p class="bold">???</p>
-            <p>?????</p>
-          </div>
-          <div class="flex-content">
-            <p class="bold">????/</p>
-            <p>????????</p>
-          </div>
-        </div>
-        <div class="vertical-flex-container">
-          <div class="flex-content">
-            <p class="bold">?????/</p>
-            <p>???????</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- About The Project Section -->
-    <div class="about" id="about">
-      <div class="horizontal-flex-container">
-        <div class="vertical-flex-container">
-          <h1 class="main-header">About Dish-It</h1>
-          <p class="text">
-            Dish-It is a project developed by a team of four students from Simon
-            Fraser University. This project was created as a part of the CMPT
-            276 Final Project.
-          </p>
-          <br />
-          <br />
-          <p class="text">
-            Our design hopes to help individuals looking to eat healthier by
-            understanding what goes into their food, explore new cuisines or
-            cooking techniques, and simplify meal planning.
-          </p>
-          <br /><br /><br />
-          <p class="text">
-            Special thanks to <strong>Spoonacular</strong> and
-            <strong>Edamam </strong>for providing access to their APIs for this
-            project.
-          </p>
-        </div>
         <img
-          src="/website/images/about-project.png"
-          class="about-image"
-          alt="a collage of different types of foods."
+          src="/website/images/how-to-ingredient-analyzer.jpg"
+          width="750px"
         />
         <div class="vertical-flex-container">
-          <h1 class="sub-header">Meet The Team</h1>
-          <div class="horizontal-flex-container">
-            <div class="vertical-flex-container">
-              <div class="photo-name">
-                <img src="/website/images/faceless.jpg" class="face-photo" />
-                <p>Gabriel Bello</p>
-              </div>
-            </div>
-            <div class="vertical-flex-container">
-              <div class="photo-name">
-                <img src="/website/images/faceless.jpg" class="face-photo" />
-                <p>Tyler Ho</p>
-              </div>
-            </div>
+          <div class="flex-content">
+            <p><strong>Step One</strong>: Type in ingredient(s)</p>
+            <br />
+            <p>
+              Ensure that each ingredient is on a new line and is separted using
+              a comma.
+            </p>
+            <br />
+            <p>(Shift button + Enter button to create new line)</p>
           </div>
-          <div class="horizontal-flex-container">
-            <div class="vertical-flex-container">
-              <div class="photo-name">
-                <img src="/website/images/faceless.jpg" class="face-photo" />
-                <p>Kevin Tan</p>
-              </div>
-            </div>
-            <div class="vertical-flex-container">
-              <div class="photo-name">
-                <img src="/website/images/faceless.jpg" class="face-photo" />
-                <p>Quang Anh Pham</p>
-              </div>
-            </div>
+          <div class="flex-content">
+            <p><strong>Step Two</strong>: Click the Submit button!</p>
+            <br />
+            <p>
+              Just directly below the ingredient list box there will be a
+              "Analyze" button.
+            </p>
+          </div>
+          <div class="flex-content">
+            <p><strong>Step Three</strong>: Check out your results!</p>
+            <br />
+            <p>
+              To the right of the your ingredient list will now show your
+              ingredients nutrional value!
+            </p>
           </div>
         </div>
       </div>
-    </div>
-    <!-- Contact Us Section -->
-    <div class="contact" id="contact-us">
-      <h1 class="main-header">Contact Us</h1>
-      <p class="text">
-        "Have any questions, concerns or suggestions? Feel free to reach out to
-        us!"- Dish-It Team
-      </p>
-      <a href="mailto:moonconsulting276@gmail.com"
-        ><img src="/website/images/email.png" width="200px"
-      /></a>
-    </div>
+    </section>
   </body>
 </html>

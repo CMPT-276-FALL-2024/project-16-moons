@@ -80,7 +80,11 @@ body {
 }
 
 /*Searching/Button Area*/
-.divider .search-container {
+.search {
+  background-color: #e0ba88;
+  padding: 100px 0;
+  align-items: center;
+  text-align: center;
   padding-top: 250px;
   padding-bottom: 350px;
 }
@@ -88,12 +92,6 @@ body {
   margin-left: -75px;
 }
 
-.search-container {
-  background-color: #e0ba88;
-  padding: 100px 0;
-  align-items: center;
-  text-align: center;
-}
 .dropdown {
   position: relative;
   display: inline-block;

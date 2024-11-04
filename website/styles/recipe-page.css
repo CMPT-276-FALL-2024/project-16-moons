@@ -1,0 +1,101 @@
+/*Universal Rules*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Rubik;
+}
+html {
+  scroll-behavior: smooth;
+}
+/*Element Rules*/
+body {
+  min-height: 100vh;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+/* Flex Box */
+.horizontal-flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  overflow-x: auto;
+  gap: 20px;
+  flex-direction: row;
+}
+
+.vertical-flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  overflow-x: auto;
+  gap: 20px;
+  flex-direction: column;
+}
+
+/*Navigation Bar*/
+.navigation-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding-left: 50px;
+  padding-right: 100px;
+  padding-bottom: 15px;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+}
+
+.navigation-bar .image {
+  height: 50px;
+  object-fit: contain;
+}
+
+.logo {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.navbar a {
+  position: relative;
+  font-size: 18px;
+  color: black;
+  font-weight: 500;
+  text-decoration: none;
+  margin-left: 40px;
+}
+
+.navbar a::before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: black;
+  transition: 0.3s;
+}
+
+.navbar a:hover:before {
+  width: 100%;
+}
+
+.bottom-left {
+  position: fixed;
+  bottom: 2rem;
+  left: 2rem;
+  width: 50px;
+  height: 50px;
+}
+
+.bottom-right {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 50px;
+  height: 50px;
+}

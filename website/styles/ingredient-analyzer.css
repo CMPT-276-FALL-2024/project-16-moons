@@ -11,6 +11,7 @@ html {
 /*Element Rules*/
 body {
   min-height: 100vh;
+  position: relative;
 }
 
 .bold {
@@ -101,13 +102,33 @@ body {
   height: 50px;
 }
 
+h1 {
+  color: #ffbd59;
+  font-size: 40px;
+}
 /* Ingredient-Analyzer */
 .ingredient-analyzer {
   padding-top: 200px;
   padding-left: 100px;
   padding-right: 100px;
   padding-bottom: 250;
-  background-color: #e0ba88;
+  overflow: hidden;
+  position: relative;
+}
+
+.ingredient-analyzer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("/website/images/recipe-page-background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: blur(6px);
+  z-index: -1;
 }
 
 .ingredient-list-block {
@@ -120,21 +141,21 @@ body {
   box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
   font-size: 20px;
   outline: none;
-}
-
-.ingredient-list-block:empty::before {
-  content: "Each ingredient on a new-line and separated by commas | Shift + Enter to create a new line";
+  scrollbar-width: none;
+  resize: none;
   color: #888;
 }
 
 .nutritional-label {
   width: 500px;
   height: 800px;
-  padding: 10px;
+  padding: 20px;
   background-color: #f5f5f5;
   border: 1px solid #ddd;
   border-radius: 8px;
   box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
+  color: #888;
+  text-align: center;
 }
 
 .ingredient-analyzer .horizontal-flex-container {
@@ -159,6 +180,7 @@ body {
   outline: none;
   background: #dddddddd;
   cursor: pointer;
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
 }
 
 .submit-button:hover {
@@ -170,6 +192,7 @@ body {
   padding-top: 100px;
   padding-left: 250px;
   padding-bottom: 250px;
+  background-color: #f9f9f9;
 }
 
 .how-it .main-header {
@@ -180,6 +203,11 @@ body {
 
 .how-it .sub-header {
   padding: 0 0 25px 75px;
+}
+
+.how-to-img {
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
 }
 
 .flex-content {

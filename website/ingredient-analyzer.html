@@ -29,7 +29,7 @@
   </header>
   <a href="#chatbot">
     <img
-      src="/website/images/chatbot.png"
+      src="/website/images/chatbot-colored.png"
       alt="Logo for a Chat Bot."
       class="bottom-left"
   /></a>
@@ -45,15 +45,18 @@
       <div class="horizontal-flex-container">
         <div class="vertical-flex-container">
           <h1>Your Ingredient List</h1>
-          <div class="ingredient-list-block" contenteditable="true"></div>
+          <textarea
+            class="ingredient-list-block"
+            placeholder="Place holder for nutrional label"
+            maxlength="200"
+          ></textarea>
           <div class="horizontal-flex-container">
-            <a href="#how-to" class="how-to">Click HERE for instructions</a>
             <button class="submit-button">Submit</button>
           </div>
         </div>
         <div class="vertical-flex-container">
           <h1 class>Nutritional Values</h1>
-          <div class="nutritional-label">Place holder for nutrional label</div>
+          <div class="nutritional-label">Place Holder For Nutrional Values</div>
         </div>
       </div>
     </section>
@@ -63,6 +66,7 @@
       <h1 class="sub-header"></h1>
       <div class="horizontal-flex-container">
         <img
+          class="how-to-img"
           src="/website/images/how-to-ingredient-analyzer.jpg"
           width="750px"
         />

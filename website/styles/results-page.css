@@ -11,7 +11,24 @@ html {
 /*Element Rules*/
 body {
   min-height: 100vh;
-  background-color: #e0ba88;
+  padding-left: 100px;
+  padding-top: 150px;
+  position: relative; /* Allows the pseudo-element to be layered correctly */
+}
+
+section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("/website/images/results-page-background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: blur(6px);
+  z-index: -1;
 }
 
 .bold {
@@ -23,7 +40,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   overflow-x: auto;
-  gap: 20px;
+  gap: 100px;
   flex-direction: row;
 }
 
@@ -31,7 +48,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   overflow-x: auto;
-  gap: 20px;
+  gap: 50px;
   flex-direction: column;
 }
 
@@ -102,77 +119,66 @@ body {
   height: 50px;
 }
 
-.recipe {
-  padding-top: 150px;
-  padding-left: 100px;
-  padding-right: 100px;
-  padding-bottom: 150px;
-}
-
-.recipe-details {
-  padding: 50px;
-  width: 1000px;
-  margin-right: auto;
-  background-color: #e88e65;
+.ingredient-list-input {
+  background-color: #e0ba88;
+  max-height: 50px;
+  width: 500px;
   border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
+  color: gray; /* Corrected color to a valid hex */
+  outline: none; /* Prevents default outline */
+  scrollbar-width: none;
+  resize: none;
 }
 
-.recipe-details h1 {
+.ingredient-list {
+  background-color: #e0ba88;
+  height: 600px;
+  width: 500px;
+  border-radius: 10px;
+  padding: 50px;
   text-align: center;
 }
 
-.recipe-details .recipe-img {
-  max-width: 800px;
-  display: block;
-  margin: 0 auto;
+.ingredient-list li {
+  list-style: none;
+  padding-bottom: 10px;
+}
+
+.container {
+  width: 500px;
+  padding: 20px;
+  /* background: #f9f9f9; */
+  display: flex;
+  justify-content: center;
+}
+
+.search-result {
+  background-color: #e0ba88;
+  width: 350px;
+  height: 220px;
+  border-radius: 10px;
+  transition: 1s;
+}
+
+.search-result img {
+  width: 350px;
+  height: 200px;
   border-radius: 10px;
 }
 
-.recipe-details .overview {
-  padding-top: 50px;
-  padding-bottom: 50px;
+.search-result a {
+  text-decoration: none;
+  color: black;
+  text-align: center;
+  font-weight: bold;
 }
 
-.recipe-details .preparation p {
-  padding-bottom: 25px;
-}
-
-.recipe-details .directions h2 {
-  padding-bottom: 25px;
-}
-
-.recipe-details .directions p {
-  padding-bottom: 25px;
-}
-
-.ingredients-nutrition {
-  margin-right: auto;
-  padding-top: 150px;
-  gap: 100px;
-}
-
-.ingredients-nutrition .ingredient-list {
-  padding: 50px;
-  font-size: 20px;
-  background-color: #ffbd59;
-  border-radius: 10px;
-}
-
-.ingredients-nutrition .ingredient-list li {
-  padding-bottom: 25px;
-}
-
-.ingredients-nutrition .nutrition-values {
-  padding: 50px;
-  font-size: 20px;
-  background-color: #ffbd59;
-  border-radius: 10px;
-}
-
-.ingredients-nutrition.nutrition-values h1 {
-  padding-bottom: 25px;
-}
-
-.ingredients-nutrition .nutrition-values p {
-  padding-bottom: 50px;
+.search-result:hover {
+  transform: scale(1.1);
+  background: #e0ba88;
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
+  z-index: 2;
 }

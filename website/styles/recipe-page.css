@@ -11,7 +11,6 @@ html {
 /*Element Rules*/
 body {
   min-height: 100vh;
-  background-color: #e0ba88;
 }
 
 .bold {
@@ -49,6 +48,7 @@ body {
   justify-content: space-between;
   align-items: center;
   z-index: 100;
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
 }
 
 .navigation-bar .image {
@@ -112,12 +112,14 @@ body {
   padding: 50px;
   width: 1000px;
   margin-right: auto;
-  background-color: #e88e65;
+  background-color: #e0ba88;
   border-radius: 10px;
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
 }
 
 .recipe-details h1 {
   text-align: center;
+  font-size: 50px;
 }
 
 .recipe-details .recipe-img {
@@ -153,8 +155,9 @@ body {
 .ingredients-nutrition .ingredient-list {
   padding: 50px;
   font-size: 20px;
-  background-color: #ffbd59;
+  background-color: #e0ba88;
   border-radius: 10px;
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
 }
 
 .ingredients-nutrition .ingredient-list li {
@@ -164,8 +167,9 @@ body {
 .ingredients-nutrition .nutrition-values {
   padding: 50px;
   font-size: 20px;
-  background-color: gray;
+  background-color: #f9f9f9;
   border-radius: 10px;
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
 }
 
 .ingredients-nutrition.nutrition-values h1 {

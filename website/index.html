@@ -13,44 +13,62 @@
     <title>Dish-It | Cooking All In One!</title>
   </head>
   <body>
+    <div class="background-image">
+      <div class="filter-blur"></div>
+    </div>
     <!-- Navigation Bar -->
-    <header class="header logo">
+    <header class="navigation-bar">
       <a href="#">
         <img
-          src="images/Dish-It-Black.png"
-          height="75px"
+          src="/website/images/Dish-It-Smaller.png"
+          class="image"
           alt="logo
         of Dish-It"
       /></a>
       <nav class="navbar">
-        <a href="#">RANDOM RECIPE</a>
-        <a href="#">FOOD TRIVIA</a>
+        <a href="#">HOME</a>
         <a href="#howitworks">HOW IT WORKS</a>
         <a href="#about">ABOUT</a>
+        <a
+          href="https://docs.google.com/document/d/1JZCWgFncoqhTWbnXguZtalruUfB7CJaEjLOR9sbGqdo/edit?usp=sharing"
+          target="_blank"
+          >DOCUMENTATION</a
+        >
         <a href="#contactus">CONTACT US</a>
       </nav>
     </header>
+    <a href="#chatbot">
+      <img
+        src="/website/images/chatbot-colored.png"
+        alt="Logo for a Chat Bot."
+        class="bottom-left"
+    /></a>
+    <a href="#">
+      <img
+        src="/website/images/scroll-back-up.png"
+        alt="Logo for a scroll up button."
+        class="bottom-right"
+    /></a>
     <!-- Searching Option Section -->
-    <div class="divider">
-      <div class="search-container">
-        <img
-          src="/website/images/Dish-It-Smaller.png"
-          id="Dish-It-Search-Logo"
-        />
-        <br />
-        <h2>Cooking All In One!</h2>
-        <div class="dropdown">
-          <button>Let's chef it up!</button>
-          <div class="content">
-            <a href="">Search By Recipe Name</a>
-            <a href="">Search By Ingredients</a>
-            <a href="">Ingredient Analyzer</a>
-          </div>
+    <section class="search">
+      <img src="/website/images/Dish-It-Smaller.png" id="Dish-It-Search-Logo" />
+      <br />
+      <!-- Fun Fact -->
+      <h2>FUN FACT HERE</h2>
+      <div class="dropdown">
+        <button>Let's chef it up!</button>
+        <div class="content">
+          <a href="recipe-search-results.html">Search By Recipe Name</a>
+          <a href="ingredient-search-results-page.html"
+            >Search By Ingredients</a
+          >
+          <a href="ingredient-analyzer.html">Ingredient Analyzer</a>
+          <a href="recipe-page.html">Random Recipe</a>
         </div>
       </div>
-    </div>
+    </section>
     <!-- How-It-Section -->
-    <div class="how-it" id="howitworks">
+    <section class="how-it" id="howitworks">
       <h2 class="main-header">How It Works</h2>
       <h1 class="sub-header">You're one click away from cooking!</h1>
       <div class="horizontal-flex-container">
@@ -93,18 +111,11 @@
               is in 2 apples?" let our Chat Bot know!
             </p>
           </div>
-          <div class="flex-content">
-            <p class="bold">Food Trivia</p>
-            <p>
-              Want to expand your knowledge of foods? Well now is your chance!
-              Participate in our Food Trivias!
-            </p>
-          </div>
         </div>
       </div>
-    </div>
+    </section>
     <!-- About The Project Section -->
-    <div class="about" id="about">
+    <section class="about" id="about">
       <div class="horizontal-flex-container">
         <div class="vertical-flex-container">
           <h1 class="main-header">About Dish-It</h1>
@@ -164,9 +175,9 @@
           </div>
         </div>
       </div>
-    </div>
+    </section>
     <!-- Contact Us Section -->
-    <div class="contact" id="contactus">
+    <section class="contact" id="contactus">
       <h1 class="main-header">Contact Us</h1>
       <p class="text">
         "Have any questions, concerns or suggestions? Feel free to reach out to
@@ -175,12 +186,6 @@
       <a href="mailto:moonconsulting276@gmail.com"
         ><img src="/website/images/email.png" width="200px"
       /></a>
-    </div>
-    <!-- <a href="#chatbot">
-      <img
-        src="images/chatbutton.png"
-        alt="An image of a chat logo."
-        class="chat-logo"
-    /></a> -->
+    </section>
   </body>
 </html>

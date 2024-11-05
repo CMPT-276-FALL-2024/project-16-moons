@@ -1,0 +1,197 @@
+/*Universal Rules*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Rubik;
+}
+html {
+  scroll-behavior: smooth;
+}
+/*Element Rules*/
+body {
+  min-height: 100vh;
+  position: relative;
+}
+
+section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("/website/images/recipe-page-background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: blur(6px);
+  z-index: -1;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+/* Flex Box */
+.horizontal-flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  overflow-x: auto;
+  gap: 20px;
+  flex-direction: row;
+}
+
+.vertical-flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  overflow-x: auto;
+  gap: 20px;
+  flex-direction: column;
+}
+
+/*Navigation Bar*/
+.navigation-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding-left: 50px;
+  padding-right: 100px;
+  padding-bottom: 15px;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+.navigation-bar .image {
+  height: 50px;
+  object-fit: contain;
+}
+
+.logo {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.navbar a {
+  position: relative;
+  font-size: 18px;
+  color: black;
+  font-weight: 500;
+  text-decoration: none;
+  margin-left: 40px;
+}
+
+.navbar a::before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: black;
+  transition: 0.3s;
+}
+
+.navbar a:hover:before {
+  width: 100%;
+}
+
+.bottom-left {
+  position: fixed;
+  bottom: 2rem;
+  left: 2rem;
+  width: 50px;
+  height: 50px;
+}
+
+.bottom-right {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 50px;
+  height: 50px;
+}
+
+.recipe {
+  padding-top: 150px;
+  padding-left: 100px;
+  padding-right: 100px;
+  padding-bottom: 150px;
+}
+
+.recipe-details {
+  padding: 50px;
+  width: 1000px;
+  margin-right: auto;
+  background-color: #e0ba88;
+  border-radius: 10px;
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+.recipe-details h1 {
+  text-align: center;
+  font-size: 50px;
+}
+
+.recipe-details .recipe-img {
+  max-width: 800px;
+  display: block;
+  margin: 0 auto;
+  border-radius: 10px;
+}
+
+.recipe-details .overview {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.recipe-details .preparation p {
+  padding-bottom: 25px;
+}
+
+.recipe-details .directions h2 {
+  padding-bottom: 25px;
+}
+
+.recipe-details .directions p {
+  padding-bottom: 25px;
+}
+
+.ingredients-nutrition {
+  margin-right: auto;
+  padding-top: 150px;
+  gap: 100px;
+}
+
+.ingredients-nutrition .ingredient-list {
+  padding: 50px;
+  font-size: 20px;
+  background-color: #e0ba88;
+  border-radius: 10px;
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+.ingredients-nutrition .ingredient-list li {
+  padding-bottom: 25px;
+}
+
+.ingredients-nutrition .nutrition-values {
+  padding: 50px;
+  font-size: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+.ingredients-nutrition.nutrition-values h1 {
+  padding-bottom: 25px;
+}
+
+.ingredients-nutrition .nutrition-values p {
+  padding-bottom: 50px;
+}

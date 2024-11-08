@@ -32,7 +32,7 @@ const FoodFactComponent = () => {
     // Return the fun fact
     return (
         <div>
-            <h1>Did you know? {funFact}</h1>
+            <h2>Did you know? {funFact}</h2>
         </div>
     );
 }

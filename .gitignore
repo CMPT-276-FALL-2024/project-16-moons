@@ -1,0 +1,2 @@
+# Below are the files that should not be pushed to the repository
+.env

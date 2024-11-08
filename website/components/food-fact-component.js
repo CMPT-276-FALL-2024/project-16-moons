@@ -14,10 +14,10 @@ const FoodFactComponent = () => {
                     // Throw an error if the response is not OK
                     if (response.status === 401) {
                         // API key is invalid
-                        throw new Error('Unauthorized request: API key is invalid. Please contact one of our team members for help')
+                        throw new Error('Unauthorized request: API key is invalid. Please contact one of our team members for help by clicking the mail symbol in the "Contact Us" section')
                     }
                     // Generic error
-                    throw new Error('Error occured while getting a fun fact. Please contact one of our team members for help')
+                    throw new Error('Error occured while getting a fun fact. Please contact one of our team members for help by clicking the mail symbol in the "Contact Us" section')
                 }
                 return response.json()
             })

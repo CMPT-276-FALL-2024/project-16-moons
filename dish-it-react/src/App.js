@@ -3,6 +3,7 @@ import HomeBackground from './homepageComponents/homeBackground';
 import NavBar from './homepageComponents/navBar';
 import ChatBot from './homepageComponents/chatBot';
 import ScrollUp from './homepageComponents/scrollUp';
+import SearchOption from './homepageComponents/searchOption';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <NavBar />
       <ChatBot />
       <ScrollUp />
+      <SearchOption />
     </div>
   );
 }

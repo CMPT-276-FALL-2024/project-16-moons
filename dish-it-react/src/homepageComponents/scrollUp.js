@@ -8,7 +8,7 @@ const ScrollUp = () => {
             <img
                 src="/images/scroll-back-up.png"
                 alt="Logo for a scroll up button."
-                class="bottom-right"
+                className="bottom-right"
             /></a>
         </div>
     )

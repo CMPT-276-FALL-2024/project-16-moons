@@ -1,4 +1,5 @@
 import React from "react";
+import FoodFactComponent from "./foodFactComponent";
 import "../index.css";
 
 const SearchOption = () => {
@@ -7,7 +8,7 @@ const SearchOption = () => {
             <img src="/images/Dish-It-Smaller.png" id="Dish-It-Search-Logo" alt="Dish it logo"/>
             <br />
             {/* <!-- Fun Fact --> */}
-            <h2>FUN FACT HERE</h2>
+            <FoodFactComponent/>
             <div className="dropdown">
                 <button>Let's chef it up!</button>
                 <div className="content">

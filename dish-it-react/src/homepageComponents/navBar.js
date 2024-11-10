@@ -21,7 +21,7 @@ const NavBar = () => {
             >
             <a href="#contactus">CONTACT US</a>
         </nav>
-    </header>
+    </header> 
     )
 }
 

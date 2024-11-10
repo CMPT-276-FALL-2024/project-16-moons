@@ -1,4 +1,4 @@
-import './App.css';
+import './homepage.css';
 import HomeBackground from './homepageComponents/homeBackground';
 import NavBar from './homepageComponents/navBar';
 import ChatBot from './homepageComponents/chatBot';
@@ -8,7 +8,7 @@ import HowItWorks from './homepageComponents/howItWorks';
 import AboutTheProject from './homepageComponents/aboutTheProject';
 import ContactUs from './homepageComponents/contactUs';
 
-function App() {
+function Homepage() {
   return (
     <div>
       <HomeBackground />
@@ -23,4 +23,4 @@ function App() {
   );
 }
 
-export default App;
+export default Homepage;

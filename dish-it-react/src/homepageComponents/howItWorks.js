@@ -7,7 +7,7 @@ const HowItWorks = () => {
             <h2 className="main-header">How It Works</h2>
             <h1 className="sub-header">You're one click away from cooking!</h1>
             <div className="horizontal-flex-container">
-                <img src="/images/how-it.jpg" width="750px" />
+                <img src="/images/how-it.jpg" width="750px" alt="Food for how it works section"/>
                 <div className="vertical-flex-container">
                 <div className="flex-content">
                     <p className="bold">Search By Recipe Name</p>

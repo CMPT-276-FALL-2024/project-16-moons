@@ -5,6 +5,7 @@ import ChatBot from './homepageComponents/chatBot';
 import ScrollUp from './homepageComponents/scrollUp';
 import SearchOption from './homepageComponents/searchOption';
 import HowItWorks from './homepageComponents/howItWorks';
+import AboutTheProject from './homepageComponents/aboutTheProject';
 
 function App() {
   return (
@@ -15,7 +16,7 @@ function App() {
       <ScrollUp />
       <SearchOption />
       <HowItWorks />
-
+      <AboutTheProject />
     </div>
   );
 }

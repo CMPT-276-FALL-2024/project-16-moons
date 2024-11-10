@@ -6,7 +6,7 @@ const NavBar = () => {
     <header className="navigation-bar">
         <a href="#">
             <img
-            src="/website/images/Dish-It-Smaller.png"
+            src=".../public/images/Dish-It-Smaller.png"
             className="image"
             alt="logo of Dish-It"
         /></a>

@@ -1,9 +1,10 @@
 import React from "react";
+import "../index.css";
 
 const HomeBackground = () => {
     return (
-    <div class="background-image">
-      <div class="filter-blur"></div>
+    <div className="background-image">
+      <div className="filter-blur">test</div>
     </div>
     )
 }

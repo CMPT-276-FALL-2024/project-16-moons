@@ -6,6 +6,7 @@ import ScrollUp from './homepageComponents/scrollUp';
 import SearchOption from './homepageComponents/searchOption';
 import HowItWorks from './homepageComponents/howItWorks';
 import AboutTheProject from './homepageComponents/aboutTheProject';
+import ContactUs from './homepageComponents/contactUs';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <SearchOption />
       <HowItWorks />
       <AboutTheProject />
+      <ContactUs />
     </div>
   );
 }

@@ -4,6 +4,7 @@ import NavBar from './homepageComponents/navBar';
 import ChatBot from './homepageComponents/chatBot';
 import ScrollUp from './homepageComponents/scrollUp';
 import SearchOption from './homepageComponents/searchOption';
+import HowItWorks from './homepageComponents/howItWorks';
 
 function App() {
   return (
@@ -13,6 +14,8 @@ function App() {
       <ChatBot />
       <ScrollUp />
       <SearchOption />
+      <HowItWorks />
+
     </div>
   );
 }

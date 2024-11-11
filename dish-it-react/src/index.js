@@ -1,12 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import randomDish from "./homepageComponents/randomDish";
+import Homepage from "./pages/homepage";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(
-  <React.StrictMode>
-    <randomDish />
-  </React.StrictMode>
-);
-npm;
+root.render(<Homepage />);

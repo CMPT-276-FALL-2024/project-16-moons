@@ -1,5 +1,9 @@
 const randomDish = () => {
-  return <h1>Random Dish</h1>;
+  return (
+    <div className="tsting">
+      <h1>yoyo</h1>
+    </div>
+  );
 };
 
 export default randomDish;

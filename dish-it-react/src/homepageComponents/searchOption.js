@@ -1,6 +1,4 @@
-import React from "react";
 import FoodFactComponent from "./foodFactComponent";
-import "../index.css";
 
 const SearchOption = () => {
   return (

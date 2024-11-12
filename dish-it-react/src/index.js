@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import Homepage from "./pages/homepage";
+import RandomDishPage from "./randomDish/randomDishPage";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<Homepage />);
+root.render(<RandomDishPage></RandomDishPage>);

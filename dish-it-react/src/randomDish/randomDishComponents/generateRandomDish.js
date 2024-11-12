@@ -13,7 +13,6 @@ const GenerateRandomDish = () => {
   useEffect(() => {
     const fetchRecipeData = async () => {
       try {
-        const cachedRecipe = localStorage.getItem("ca");
         const response = await fetch(
           "https://api.spoonacular.com/recipes/random?number=1&apiKey=" + apiKey
         );
@@ -38,11 +37,52 @@ const GenerateRandomDish = () => {
 
   return (
     recipeData && (
-      <div>
-        <h1>{recipeData.title}</h1>
-        <p>Cooking Time: {recipeData.readyInMinutes} minutes</p>
-        <p>Servings: {recipeData.servings}</p>
-        <img src={recipeData.image} alt={recipeData.title} />
+      <div className="recipe">
+        <div className="hero">
+          <div>
+            <h1>{recipeData.title}</h1>
+            <h2>Summary</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum
+              consectetur fugiat tempora! Recusandae veniam, distinctio libero
+              aperiam assumenda voluptate vitae quod voluptatibus provident
+              fugit mollitia voluptatem non eaque earum corporis.
+            </p>
+            {/* {recipeData.summary} */}
+            <button>Let's Start Cooking!</button>
+          </div>
+
+          <img
+            src={recipeData.image}
+            alt={recipeData.title}
+            className="heroImg"
+          />
+        </div>
+        <div className="recipeInformation">
+          <div>
+            <h1>Recipe Information</h1>
+            <div className="ingredientList">
+              <h2>Ingredients</h2>
+              <ul>
+                {recipeData.extendedIngredients.map((ingredient) => (
+                  <li>
+                    {ingredient.amount} {ingredient.unit} {ingredient.name}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+          <p>Cooking Time: {recipeData.readyInMinutes} minutes</p>
+          <p>Servings: {recipeData.servings}</p>
+        </div>
+        <div>
+          <h2>Instructions</h2>
+          <ol>
+            {recipeData.analyzedInstructions[0].steps.map((instruction) => (
+              <li>{instruction.step}</li>
+            ))}
+          </ol>
+        </div>
       </div>
     )
   );

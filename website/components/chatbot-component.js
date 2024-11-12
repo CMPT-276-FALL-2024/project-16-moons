@@ -1,46 +1,62 @@
 import React, { useState } from 'react';
-const apiKey = process.env.REACT_APP_SPOONACULAR_API_KEY
+const apiKey = process.env.REACT_APP_SPOONACULAR_API_KEY;
 
 const ChatbotComponent = () => {
-    // States to store user's questions and Chatbot's answers
-    // conversation is an array storing pairs of Q/A
     const [question, setQuestion] = useState('');
     const [conversation, setConversation] = useState([]);
 
     const Conversation = () => {
-        // make sure question is not empty
         if (question.trim() === '') {
-            alert('Please enter a question.');
+            alert('Welcome! What would you like to know?');
             return;
         }
 
-        // user input -> URL component
-        // example: tell a joke => tell+a+joke
         const formattedQuestion = encodeURIComponent(question);
 
         fetch(`https://api.spoonacular.com/food/converse?apiKey=${apiKey}&text=${formattedQuestion}`)
-            .then(reponse => {
-                if (!reponse.ok) {
-                    // error: invalid API key
-                    if (reponse.status === 401) {
-                        throw new Error('Unauthorized request: API key is invalid. Please contact one of our team members for help by clicking the mail symbol in the "Contact Us" section')
+            .then(response => {
+                if (!response.ok) {
+                    if (response.status === 401) {
+                        throw new Error('Unauthorized request: API key is invalid. Please contact one of our team members for help by clicking the mail symbol in the "Contact Us" section.');
                     }
-                    // Other errors
-                    throw new Error('Error occured while getting a fun fact. Please contact one of our team members for help by clicking the mail symbol in the "Contact Us" section')
+                    throw new Error('Something went wrong trying to process your request. Please contact one of our team members for help by clicking the mail symbol in the "Contact Us" section.');
                 }
-                return reponse.json()
+                return response.json();
             })
-            // append Q/A pair into converstaion, reset question
             .then(data => {
-                setConversation([...conversation, {question, answer: data.reponse}]);
+                // Update conversation with the question and the answerText from the API response
+                setConversation(prevConversation => [...prevConversation, { question, answer: data.answerText }]);
                 setQuestion('');
             })
             .catch(error => {
-                alert(error.message)
-            })
-    }
-    //TODO: display data
-    return (<div></div>);
-}
+                alert(error.message);
+            });
+    };
 
-export default ChatbotComponent
+    return (
+        <div>
+            <h2>Chatbot</h2> 
+            <input
+                //input field for user input 
+                type="text"
+                value={question}
+                onChange={(e) => setQuestion(e.target.value)}
+                placeholder="Ask me something..."
+            />
+            {/* Button press sends search query into above function */}
+            <button onClick={Conversation}>Send</button>
+
+            <div>
+                {/* Maps conversation array into a new array with indices for fast re-rendering */}
+                {conversation.map((entry, index) => (
+                    <div key={index}>
+                        {/* Iterates through every entry in the newly created array of question/answer pairs */}
+                        <p><strong>You:</strong> {entry.question}</p>
+                        <p><strong>Bot:</strong> {entry.answer}</p>
+                    </div>
+                ))}
+            </div>
+        </div>
+    );
+};
+export default ChatbotComponent;

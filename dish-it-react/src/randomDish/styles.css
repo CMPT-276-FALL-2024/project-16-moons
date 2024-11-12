@@ -1,0 +1,100 @@
+/*
+SPACING SYSTEM (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+
+FONT SIZE SYSTEM (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+MAIN COLOR: #087f5b
+GREY COLOR: #343a40
+
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Rubik;
+}
+
+h1 {
+  font-size: 98px;
+}
+
+h2 {
+  font-size: 52px;
+}
+
+.hero {
+  padding-top: 200px;
+  padding-bottom: 200px;
+  background-color: #e0ba88;
+  padding-left: 150px;
+  padding-right: 150px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: auto;
+  width: auto;
+  gap: 150px;
+}
+.hero h1 {
+  padding-bottom: 96px;
+}
+
+.hero h2 {
+  color: #343a40;
+}
+
+.hero p {
+  font-size: 24px;
+  color: #343a40;
+  line-height: 48px;
+  padding-bottom: 48px;
+}
+.heroImg {
+  width: 750px;
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
+  border: solid 10px white;
+}
+
+button {
+  font-size: 24px;
+  width: 300px;
+  font-weight: 500;
+  border-radius: 1em;
+  padding: 0.5em 1em;
+  margin: 0.25em;
+  margin-left: auto;
+  border-radius: 1em;
+  border: none;
+  outline: none;
+  color: #343a40;
+  background: #dddddddd;
+  cursor: pointer;
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+  color: #000000;
+  background: #ffff;
+  width: 300px;
+}
+/* Ingredients & Servings */
+.recipeInformation {
+  padding: 200px 100px 200px 100px;
+  display: grid;
+  grid-template-columns: 1fr 0.5fr;
+}
+
+.ingredientList {
+  padding-left: 50px;
+}
+
+.ingredientList h2 {
+  padding-bottom: 25px;
+}
+
+.ingredientList li {
+  padding-left: 50px;
+  font-size: 24px;
+}

@@ -1,0 +1,124 @@
+import React from "react";
+import { useEffect, useState } from "react";
+// import exampleDish from "./exampleDish.json";
+
+const apiKey = process.env.REACT_APP_SPOONACULAR_API_KEY_RANDOM_DISH;
+
+const GenerateRandomDish = () => {
+  // Recipe Data
+  const [recipeData, setRecipeData] = useState(null);
+  // API Verification Proccess
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchRecipeData = async () => {
+      try {
+        const response = await fetch(
+          "https://api.spoonacular.com/recipes/random?number=1&apiKey=" + apiKey
+        );
+        if (!response.ok) {
+          throw new Error("Failed to fetch recipe");
+        }
+
+        const data = await response.json();
+        setRecipeData(data.recipes[0]);
+      } catch (err) {
+        setError(err.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+    // const fetchRecipeData = () => {
+    //   try {
+    //     setRecipeData(exampleDish.recipes[0]); // Assuming JSON structure has a "recipes" array
+    //   } catch (err) {
+    //     setError("Failed to load recipe");
+    //   } finally {
+    //     setLoading(false);
+    //   }
+    // };
+
+    fetchRecipeData();
+  }, []);
+
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error: {error} </p>;
+
+  return (
+    recipeData && (
+      <div className="recipe">
+        <div className="hero">
+          <div>
+            <h1>{recipeData.title}</h1>
+            <h2>Summary</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum
+              consectetur fugiat tempora! Recusandae veniam, distinctio libero
+              aperiam assumenda voluptate vitae quod voluptatibus provident
+              fugit mollitia voluptatem non eaque earum corporis.
+            </p>
+            {/* {recipeData.summary} */}
+            <button>Let's Start Cooking!</button>
+          </div>
+
+          <img
+            src={recipeData.image}
+            alt={recipeData.title}
+            className="heroImg"
+          />
+        </div>
+        <div className="recipeInformation">
+          <h1>Recipe Information</h1>
+          <div className="gridContainer">
+            {/* Recipe Information Block */}
+            <div className="ingredientList gridBox">
+              <h2>Ingredients</h2>
+              <ul>
+                {recipeData.extendedIngredients.map((ingredient) => (
+                  <li>
+                    {ingredient.amount} {ingredient.unit} {ingredient.name}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="altInformation gridBox">
+              {/* Cooking Time & Serving Size Block */}
+              <h3>Cooking Time</h3>
+              <h3>{recipeData.readyInMinutes} minutes</h3>
+              <h3>This recipe is for..</h3>
+              <h3>{recipeData.servings} servings</h3>
+            </div>
+            <div className="nutrients gridBox">
+              <h2>Nutrients</h2>
+              <ul>
+                {" "}
+                {recipeData.nutrition.nutrients.map((nutrient) => (
+                  <li>
+                    <strong>
+                      {nutrient.amount} {nutrient.unit}
+                    </strong>{" "}
+                    of {nutrient.name}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+        {/* Instructions */}
+        <div className="instructionsBackground">
+          <h2>Instructions</h2>
+          <div className="instructionsGrid">
+            {recipeData.analyzedInstructions[0].steps.map((instruction) => (
+              <div className="instructions">
+                {instruction.number}. {instruction.step}
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    )
+  );
+};
+
+export default GenerateRandomDish;

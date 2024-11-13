@@ -1,6 +1,6 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import exampleDish from "./exampleDish.json";
+// import exampleDish from "./exampleDish.json";
 
 const apiKey = process.env.REACT_APP_SPOONACULAR_API_KEY_RANDOM_DISH;
 
@@ -12,32 +12,32 @@ const GenerateRandomDish = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    // const fetchRecipeData = async () => {
-    //   try {
-    //     const response = await fetch(
-    //       "https://api.spoonacular.com/recipes/random?number=1&apiKey=" + apiKey
-    //     );
-    //     if (!response.ok) {
-    //       throw new Error("Failed to fetch recipe");
-    //     }
-
-    //     const data = await response.json();
-    //     setRecipeData(data.recipes[0]);
-    //   } catch (err) {
-    //     setError(err.message);
-    //   } finally {
-    //     setLoading(false);
-    //   }
-    // };
-    const fetchRecipeData = () => {
+    const fetchRecipeData = async () => {
       try {
-        setRecipeData(exampleDish.recipes[0]); // Assuming JSON structure has a "recipes" array
+        const response = await fetch(
+          "https://api.spoonacular.com/recipes/random?number=1&apiKey=" + apiKey
+        );
+        if (!response.ok) {
+          throw new Error("Failed to fetch recipe");
+        }
+
+        const data = await response.json();
+        setRecipeData(data.recipes[0]);
       } catch (err) {
-        setError("Failed to load recipe");
+        setError(err.message);
       } finally {
         setLoading(false);
       }
     };
+    // const fetchRecipeData = () => {
+    //   try {
+    //     setRecipeData(exampleDish.recipes[0]); // Assuming JSON structure has a "recipes" array
+    //   } catch (err) {
+    //     setError("Failed to load recipe");
+    //   } finally {
+    //     setLoading(false);
+    //   }
+    // };
 
     fetchRecipeData();
   }, []);

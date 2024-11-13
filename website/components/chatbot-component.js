@@ -25,7 +25,7 @@ const ChatbotComponent = () => {
             })
             .then(data => {
                 // Update conversation with the question and the answerText from the API response
-                setConversation(prevConversation => [...prevConversation, { question, answer: data.answerText }]);
+                setConversation(prevConversation => [...prevConversation, {question, answer: data.answerText}]);
                 setQuestion('');
             })
             .catch(error => {
@@ -38,25 +38,23 @@ const ChatbotComponent = () => {
             <h2>Chatbot</h2> 
             <input
                 //input field for user input 
-                type="text"
-                value={question}
-                onChange={(e) => setQuestion(e.target.value)}
-                placeholder="Ask me something..."
+                type = "text"
+                value = {question}
+                onChange = {(e) => setQuestion(e.target.value)}
+                placeholder = "Ask me something..."
             />
-            {/* Button press sends search query into above function */}
-            <button onClick={Conversation}>Send</button>
+            <button onClick={Conversation}> &#8594; </button>
 
             <div>
-                {/* Maps conversation array into a new array with indices for fast re-rendering */}
                 {conversation.map((entry, index) => (
                     <div key={index}>
-                        {/* Iterates through every entry in the newly created array of question/answer pairs */}
-                        <p><strong>You:</strong> {entry.question}</p>
-                        <p><strong>Bot:</strong> {entry.answer}</p>
+                        <p><strong> Q: </strong> {entry.question}</p>
+                        <p><strong> A: </strong> {entry.answer}</p>
                     </div>
                 ))}
             </div>
         </div>
     );
 };
+
 export default ChatbotComponent;

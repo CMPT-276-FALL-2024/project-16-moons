@@ -1,151 +1,235 @@
-/*
-SPACING SYSTEM (px)
-2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
-
-FONT SIZE SYSTEM (px)
-10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
-
-text-GREY COLOR: #343a40 
-background-OFF WHITE COLOR: #f5f5f5;
-
-*/
-
+/*Universal Rules/e*/
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: Rubik;
 }
-
-h1 {
-  font-size: 98px;
+html {
+  scroll-behavior: smooth;
 }
 
-h2 {
-  font-size: 52px;
+/*Element Rules*/
+body {
+  min-height: 100vh;
 }
 
-h3 {
-  font-size: 36px;
-}
-.hero {
-  padding: 400px 150px;
-  background-color: #e0ba88;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  height: auto;
-  width: auto;
-  gap: 150px;
+/* Flex Box */
+.horizontal-flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  overflow-x: auto;
+  gap: 60px;
+  flex-direction: row;
 }
 
-.hero h1 {
-  padding-bottom: 96px;
+.vertical-flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  overflow-x: auto;
+  gap: 20px;
+  flex-direction: column;
 }
-
-.hero h2 {
-  color: #343a40;
-}
-
-.hero p {
-  font-size: 24px;
-  color: #343a40;
-  line-height: 48px;
-  padding-bottom: 48px;
-}
-.heroImg {
-  width: 750px;
+/*Navigation Bar*/
+.navigation-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding-left: 50px;
+  padding-right: 100px;
+  padding-bottom: 15px;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
   box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
-  border: solid 10px white;
 }
 
-button {
-  font-size: 24px;
-  width: 300px;
+.navigation-bar .image {
+  height: 50px;
+  object-fit: contain;
+}
+
+.logo {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.navbar a {
+  position: relative;
+  font-size: 18px;
+  color: black;
   font-weight: 500;
-  border-radius: 1em;
-  padding: 0.5em 1em;
-  margin: 0.25em;
-  margin-left: auto;
-  border-radius: 1em;
+  text-decoration: none;
+  margin-left: 40px;
+}
+
+.navbar a::before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: black;
+  transition: 0.3s;
+}
+
+.navbar a:hover:before {
+  width: 100%;
+}
+
+.bottom-left {
+  position: fixed;
+  bottom: 2rem;
+  left: 2rem;
+  width: 50px;
+  height: 50px;
+}
+
+.bottom-right {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 50px;
+  height: 50px;
+}
+
+/*Searching/Button Area*/
+.search {
+  background-color: #e0ba88;
+  padding: 100px 0;
+  align-items: center;
+  text-align: center;
+  padding-top: 250px;
+  padding-bottom: 350px;
+}
+#Dish-It-Search-Logo {
+  margin-left: -75px;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+.dropdown button {
+  background-color: rgb(240, 235, 230);
+  color: black;
+  padding: 10px 100px;
   border: none;
-  outline: none;
-  color: #343a40;
-  background: #dddddddd;
   cursor: pointer;
-  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
+  font-weight: bold;
 }
 
-button:hover {
-  color: #000000;
-  background: #ffff;
-  width: 300px;
-}
-/* Ingredients & Servings */
-.recipeInformation {
-  background-color: #f9f9f9;
-  padding: 200px 150px;
-}
-.recipeInformation h1 {
-  text-align: center;
-  padding-bottom: 100px;
+.dropdown a {
+  display: block;
+  color: black;
+  text-decoration: none;
+  padding: 10px 110px;
 }
 
-.gridContainer {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 50px;
+.dropdown .content {
+  display: none;
+  position: absolute;
+  background-color: rgb(240, 235, 230);
+  min-width: 100px;
+  box-shadow: 2px 2px 5px black;
 }
 
-.gridBox {
-  text-align: center;
-  border-radius: 20px;
-  box-shadow: 0px 20px 30px 0 rgba(0, 0, 0, 0.2);
-  padding: 50px 0px;
+.dropdown:hover .content {
+  display: block;
 }
 
-.ingredientList h2 {
-  padding-bottom: 25px;
+.bold {
+  font-weight: bold;
 }
 
-.ingredientList li {
-  font-size: 24px;
-  list-style: none;
+/*How-To*/
+.how-it {
+  padding-top: 100px;
+  padding-left: 250px;
+  padding-bottom: 250px;
 }
 
-.altInformation {
-  line-height: 3;
+.how-it .main-header {
+  font-size: 75px;
+  padding: 100px 0 25px 0;
+  color: #e0ba88;
 }
 
-/* Instructions */
-.instructionsBackground {
-  padding: 200px 150px;
+.how-it .sub-header {
+  padding: 0 0 25px 75px;
+}
+
+.flex-content {
+  max-width: 300px;
+  margin: auto;
+  padding: 20px;
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* About The Project */
+.about {
+  padding-top: 100px;
+  padding-left: 50px;
+  padding-right: 0px;
+  padding-bottom: 250px;
   background-color: #e0ba88;
 }
+.about-image {
+  height: auto;
+  max-width: 500px;
+  padding-top: 100px;
+}
 
-.instructionsBackground h2 {
+.about .main-header {
+  font-size: 75px;
+  padding-top: 100px;
+  padding-right: 0px;
+  width: 100%;
+  max-width: 600px;
+}
+.about .text {
+  max-width: 600px;
+  font-size: 20px;
+}
+
+.about .sub-header {
+  font-size: 75px;
+  padding-top: 200px;
+  padding-right: 0px;
+  width: 100%;
+  max-width: 600px;
+}
+
+.about .vertical-flex-container .photo-name {
+  align-items: center;
+  text-align: center;
+}
+.about .face-photo {
+  width: 250px;
+  height: auto;
+  align-items: center;
+  border-radius: 50%;
+}
+
+/* Contact Us */
+.contact {
+  align-items: center;
+  text-align: center;
+  padding-top: 100px;
   padding-bottom: 100px;
 }
-
-.instructionsGrid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 50px;
+.contact .main-header {
+  font-size: 55px;
+  padding-bottom: 50px;
 }
-
-.instructions {
-  width: 500px;
-  background-color: #ffff;
-  padding: 25px;
-  box-shadow: 0px 20px 30px 0 rgba(0, 0, 0, 0.2);
-  gap: 50px;
-  border-radius: 20px;
-}
-
-.instructions li {
-  font-size: 24px;
-}
-
-.nutrients li {
-  list-style: none;
-  font-size: 24px;
+.contact .text {
+  font-size: 25px;
+  text-align: center;
 }

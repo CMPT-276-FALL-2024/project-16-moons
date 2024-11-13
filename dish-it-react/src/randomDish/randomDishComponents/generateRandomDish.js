@@ -1,5 +1,6 @@
 import React from "react";
 import { useEffect, useState } from "react";
+import exampleDish from "./exampleDish.json";
 
 const apiKey = process.env.REACT_APP_SPOONACULAR_API_KEY_RANDOM_DISH;
 
@@ -11,19 +12,28 @@ const GenerateRandomDish = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    const fetchRecipeData = async () => {
-      try {
-        const response = await fetch(
-          "https://api.spoonacular.com/recipes/random?number=1&apiKey=" + apiKey
-        );
-        if (!response.ok) {
-          throw new Error("Failed to fetch recipe");
-        }
+    // const fetchRecipeData = async () => {
+    //   try {
+    //     const response = await fetch(
+    //       "https://api.spoonacular.com/recipes/random?number=1&apiKey=" + apiKey
+    //     );
+    //     if (!response.ok) {
+    //       throw new Error("Failed to fetch recipe");
+    //     }
 
-        const data = await response.json();
-        setRecipeData(data.recipes[0]);
+    //     const data = await response.json();
+    //     setRecipeData(data.recipes[0]);
+    //   } catch (err) {
+    //     setError(err.message);
+    //   } finally {
+    //     setLoading(false);
+    //   }
+    // };
+    const fetchRecipeData = () => {
+      try {
+        setRecipeData(exampleDish.recipes[0]); // Assuming JSON structure has a "recipes" array
       } catch (err) {
-        setError(err.message);
+        setError("Failed to load recipe");
       } finally {
         setLoading(false);
       }
@@ -59,9 +69,10 @@ const GenerateRandomDish = () => {
           />
         </div>
         <div className="recipeInformation">
-          <div>
-            <h1>Recipe Information</h1>
-            <div className="ingredientList">
+          <h1>Recipe Information</h1>
+          <div className="gridContainer">
+            {/* Recipe Information Block */}
+            <div className="ingredientList gridBox">
               <h2>Ingredients</h2>
               <ul>
                 {recipeData.extendedIngredients.map((ingredient) => (
@@ -71,17 +82,37 @@ const GenerateRandomDish = () => {
                 ))}
               </ul>
             </div>
+            <div className="altInformation gridBox">
+              {/* Cooking Time & Serving Size Block */}
+              <h3>Cooking Time</h3>
+              <h3>{recipeData.readyInMinutes} minutes</h3>
+              <h3>This recipe is for..</h3>
+              <h3>{recipeData.servings} servings</h3>
+            </div>
+            <div className="nutrients gridBox">
+              <h2>Nutrients</h2>
+              <ul>
+                {" "}
+                {recipeData.nutrition.nutrients.map((nutrient) => (
+                  <li>
+                    <strong>
+                      {nutrient.amount} {nutrient.unit}
+                    </strong>{" "}
+                    of {nutrient.name}
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
-          <p>Cooking Time: {recipeData.readyInMinutes} minutes</p>
-          <p>Servings: {recipeData.servings}</p>
         </div>
-        <div>
+        {/* Instructions */}
+        <div className="instructionsBackground">
           <h2>Instructions</h2>
-          <ol>
+          <div>
             {recipeData.analyzedInstructions[0].steps.map((instruction) => (
-              <li>{instruction.step}</li>
+              <div className="instructions">{instruction.step}</div>
             ))}
-          </ol>
+          </div>
         </div>
       </div>
     )

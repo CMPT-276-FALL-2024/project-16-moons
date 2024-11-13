@@ -108,9 +108,11 @@ const GenerateRandomDish = () => {
         {/* Instructions */}
         <div className="instructionsBackground">
           <h2>Instructions</h2>
-          <div>
+          <div className="instructionsGrid">
             {recipeData.analyzedInstructions[0].steps.map((instruction) => (
-              <div className="instructions">{instruction.step}</div>
+              <div className="instructions">
+                {instruction.number}. {instruction.step}
+              </div>
             ))}
           </div>
         </div>

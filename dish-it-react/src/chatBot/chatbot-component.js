@@ -39,6 +39,12 @@ const ChatbotComponent = () => {
             });
     };
 
+    const enterKeyDown = (event) => {
+        if (event.key === 'Enter' && question.trim() !== '') {
+            Conversation();
+        }
+    };
+
     return (
         <div>
             {/* Chatbot Button */}
@@ -58,6 +64,7 @@ const ChatbotComponent = () => {
                         type="text"
                         value={question}
                         onChange={(e) => setQuestion(e.target.value)}
+                        onKeyDown={enterKeyDown}
                         placeholder="Ask me something..."
                     />
                     <button onClick={Conversation}> &#8594; </button>

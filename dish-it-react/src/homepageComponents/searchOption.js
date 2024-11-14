@@ -1,4 +1,5 @@
 import FoodFactComponent from "./foodFactComponent";
+import { Link } from "react-router-dom";
 
 const SearchOption = () => {
   return (
@@ -17,7 +18,7 @@ const SearchOption = () => {
           <a href="recipe-search-results.html">Search By Recipe Name</a>
           <a href="ingredient-search-results.html">Search By Ingredients</a>
           <a href="ingredient-analyzer.html">Ingredient Analyzer</a>
-          <a href="recipe-page.html">Random Recipe</a>
+          <Link to="/randomdish">Random Recipe</Link>
         </div>
       </div>
     </section>

@@ -1,8 +1,8 @@
 services:
   react-app:
     build:
-      context: ./dish-it-react
-      dockerfile: Dockerfile
+      context: .
+      dockerfile: dish-it-react/Dockerfile
     ports:
       - "3000:3000"
     networks:
@@ -10,8 +10,8 @@ services:
 
   static-website:
     build:
-      context: ./website
-      dockerfile: Dockerfile
+      context: .
+      dockerfile: website/Dockerfile
     ports:
       - "80:80" 
     networks:

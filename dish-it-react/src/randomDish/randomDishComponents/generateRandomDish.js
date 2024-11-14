@@ -1,6 +1,5 @@
 import React from "react";
 import { useEffect, useState } from "react";
-// import exampleDish from "./exampleDish.json";
 
 const apiKey = process.env.REACT_APP_SPOONACULAR_API_KEY_RANDOM_DISH;
 
@@ -15,7 +14,8 @@ const GenerateRandomDish = () => {
     const fetchRecipeData = async () => {
       try {
         const response = await fetch(
-          "https://api.spoonacular.com/recipes/random?number=1&apiKey=" + apiKey
+          "https://api.spoonacular.com/recipes/random?includeNutrition=true&number=1&apiKey=" +
+            apiKey
         );
         if (!response.ok) {
           throw new Error("Failed to fetch recipe");
@@ -29,15 +29,6 @@ const GenerateRandomDish = () => {
         setLoading(false);
       }
     };
-    // const fetchRecipeData = () => {
-    //   try {
-    //     setRecipeData(exampleDish.recipes[0]); // Assuming JSON structure has a "recipes" array
-    //   } catch (err) {
-    //     setError("Failed to load recipe");
-    //   } finally {
-    //     setLoading(false);
-    //   }
-    // };
 
     fetchRecipeData();
   }, []);
@@ -48,7 +39,7 @@ const GenerateRandomDish = () => {
   return (
     recipeData && (
       <div className="recipe">
-        <div className="hero">
+        <div className="hero" id="summary">
           <div>
             <h1>{recipeData.title}</h1>
             <h2>Summary</h2>
@@ -68,7 +59,7 @@ const GenerateRandomDish = () => {
             className="heroImg"
           />
         </div>
-        <div className="recipeInformation">
+        <div className="recipeInformation" id="recipeinformation">
           <h1>Recipe Information</h1>
           <div className="gridContainer">
             {/* Recipe Information Block */}
@@ -106,12 +97,14 @@ const GenerateRandomDish = () => {
           </div>
         </div>
         {/* Instructions */}
-        <div className="instructionsBackground">
-          <h2>Instructions</h2>
+        <div className="instructionsBackground" id="instructions">
+          <h1>Instructions</h1>
           <div className="instructionsGrid">
             {recipeData.analyzedInstructions[0].steps.map((instruction) => (
               <div className="instructions">
-                {instruction.number}. {instruction.step}
+                <p>
+                  <strong>{instruction.number}</strong>. {instruction.step}
+                </p>
               </div>
             ))}
           </div>

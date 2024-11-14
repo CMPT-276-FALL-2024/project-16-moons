@@ -1,0 +1,144 @@
+/*
+SPACING SYSTEM (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+
+FONT SIZE SYSTEM (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+*/
+
+/* 
+/* 
+MAIN COLOR: #087f5b
+GREY COLOR: #343a40
+text-GREY COLOR: #343a40 
+background-OFF WHITE COLOR: #f5f5f5; */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Rubik;
+}
+
+h1 {
+  font-size: 98px;
+}
+
+h2 {
+  font-size: 52px;
+}
+
+h3 {
+  font-size: 36px;
+}
+
+.hero {
+  padding: 400px 150px;
+  background-color: #e0ba88;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: auto;
+  width: auto;
+  gap: 150px;
+}
+.hero h1 {
+  padding-bottom: 96px;
+}
+
+.hero h2 {
+  color: #343a40;
+}
+
+.hero p {
+  font-size: 24px;
+  color: #343a40;
+  line-height: 48px;
+  padding-bottom: 48px;
+}
+
+.heroImg {
+  width: 750px;
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
+  border: solid 10px white;
+}
+
+button {
+  font-size: 24px;
+  color: #343a40;
+  width: 500px;
+  height: 80px;
+  font-weight: 500;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  transition: blackground-color 0.3s;
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+  color: #000000;
+}
+/* Ingredients & Servings */
+.recipeInformation {
+  background-color: #f9f9f9;
+  padding: 200px 150px;
+}
+.recipeInformation h1 {
+  text-align: center;
+  padding-bottom: 100px;
+}
+.gridContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 50px;
+}
+
+.gridBox {
+  padding: 50px 0px;
+  text-align: center;
+  border-radius: 50px;
+  box-shadow: 0px 20px 30px 0 rgba(0, 0, 0, 0.2);
+}
+
+.ingredientList h2 {
+  padding-bottom: 25px;
+}
+
+.ingredientList li {
+  font-size: 24px;
+  list-style: none;
+}
+.altInformation {
+  line-height: 3;
+}
+
+.nutrients li {
+  list-style: none;
+  font-size: 24px;
+}
+/* Instructions */
+.instructionsBackground {
+  padding: 200px 150px;
+  background-color: #e0ba88;
+}
+
+.instructionsBackground h1 {
+  padding-bottom: 100px;
+}
+.instructions {
+  width: 400px;
+  max-width: 800px;
+  background-color: #ffff;
+  border-radius: 50px;
+  padding: 50px;
+  box-shadow: 0px 20px 30px 0 rgba(0, 0, 0, 0.07);
+  font-size: 24px;
+  line-height: 48px;
+}
+
+.instructionsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  justify-items: center;
+}

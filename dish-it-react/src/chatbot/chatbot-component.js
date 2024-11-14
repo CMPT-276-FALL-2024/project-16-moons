@@ -54,7 +54,7 @@ const ChatbotComponent = () => {
                 ))}
             </div>
         </div>
-    ); 
+    );
 };
 
 export default ChatbotComponent;

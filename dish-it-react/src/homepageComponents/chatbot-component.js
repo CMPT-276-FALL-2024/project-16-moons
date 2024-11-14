@@ -5,6 +5,11 @@ const apiKey = process.env.REACT_APP_SPOONACULAR_API_KEY_CHATBOT;
 const ChatbotComponent = () => {
     const [question, setQuestion] = useState('');
     const [conversation, setConversation] = useState([]);
+    const [isOpen, setIsOpen] = useState(false); // State to handle dialogue visibility
+
+    const toggleChat = () => {
+        setIsOpen(!isOpen); // Toggle the visibility of the chat dialogue
+    };
 
     const Conversation = () => {
         if (question.trim() === '') {
@@ -36,24 +41,37 @@ const ChatbotComponent = () => {
 
     return (
         <div>
-            <h2>Chatbot</h2> 
-            <input
-                //input field for user input 
-                type = "text"
-                value = {question}
-                onChange = {(e) => setQuestion(e.target.value)}
-                placeholder = "Ask me something..."
-            />
-            <button onClick={Conversation}> &#8594; </button>
+            {/* Chatbot Button */}
+            <button onClick={toggleChat} className="chat-button">
+                <img
+                    src="/images/chatbot-colored.png"
+                    alt="Chat Bot Icon"
+                    className="bottom-left"
+                />
+            </button>
 
-            <div>
-                {conversation.map((entry, index) => (
-                    <div key={index}>
-                        <p><strong> Q: </strong> {entry.question}</p>
-                        <p><strong> A: </strong> {entry.answer}</p>
+            {/* Chat Dialogue */}
+            {isOpen && (
+                <div className="chat-dialogue">
+                    <h2>Chatbot</h2> 
+                    <input
+                        type="text"
+                        value={question}
+                        onChange={(e) => setQuestion(e.target.value)}
+                        placeholder="Ask me something..."
+                    />
+                    <button onClick={Conversation}> &#8594; </button>
+
+                    <div className="conversation">
+                        {conversation.map((entry, index) => (
+                            <div key={index} className="chat-entry">
+                                <p><strong>Q:</strong> {entry.question}</p>
+                                <p><strong>A:</strong> {entry.answer}</p>
+                            </div>
+                        ))}
                     </div>
-                ))}
-            </div>
+                </div>
+            )}
         </div>
     );
 };

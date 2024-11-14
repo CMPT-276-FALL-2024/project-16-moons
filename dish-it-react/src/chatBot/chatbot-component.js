@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import "../index.css";
-const apiKey = process.env.REACT_APP_SPOONACULAR_API_KEY_CHATBOT;
+const apiKey = process.env.REACT_APP_SPOONACULAR_API_KEY;
 
 const ChatbotComponent = () => {
     const [question, setQuestion] = useState('');

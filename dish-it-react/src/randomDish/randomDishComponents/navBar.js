@@ -1,16 +1,20 @@
+import { Link } from "react-router-dom";
+
 const NavBar = () => {
   return (
     <header class="navigation-bar">
-      <a href="https://www.google.com/">
+      {/* Sends back to homepage */}
+      <Link to="/">
         <img
           src="../../images/Dish-It-Smaller.png"
           class="image"
           alt="logo
           of Dish-It"
         />
-      </a>
+      </Link>
+      {/* Sends back to homepage */}
       <nav class="navbar">
-        <a href="https://www.google.com/">GO BACK</a>
+        <Link to="/">GO BACK</Link>
       </nav>
     </header>
   );

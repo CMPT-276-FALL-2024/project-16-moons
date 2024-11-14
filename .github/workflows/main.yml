@@ -29,7 +29,7 @@ jobs:
       - name: Run Unit Tests for React Application (with Jest)
         run: |
           cd dish-it-react
-          npm test --coverage
+          npm test 
     
       - name: Build React App for Production
         run: |

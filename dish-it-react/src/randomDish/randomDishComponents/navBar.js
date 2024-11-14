@@ -14,6 +14,9 @@ const NavBar = () => {
       </Link>
       {/* Sends back to homepage */}
       <nav class="navbar">
+        <a href="#summary">SUMMARY</a>
+        <a href="#recipeinformation">INGREDIENTS</a>
+        <a href="#instructions">INSTRUCTIONS</a>
         <Link to="/">GO BACK</Link>
       </nav>
     </header>

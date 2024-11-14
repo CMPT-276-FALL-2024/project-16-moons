@@ -1,0 +1,24 @@
+version: '1.0'
+
+services:
+  react-app:
+    build:
+      context: .
+      dockerfile: dish-it-react/dockerfile
+    ports:
+      - "3000:3000"
+    networks:
+      - dish-it-network
+
+  static-website:
+    build:
+      context: .
+      dockerfile: website/dockerfile
+    ports:
+      - "80:80" 
+    networks:
+      - dish-it-network
+
+networks:
+  dish-it-network:
+    driver: bridge

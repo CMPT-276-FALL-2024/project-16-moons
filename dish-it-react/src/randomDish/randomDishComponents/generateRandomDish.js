@@ -50,9 +50,10 @@ const GenerateRandomDish = () => {
               fugit mollitia voluptatem non eaque earum corporis.
             </p>
             {/* {recipeData.summary} */}
-            <button>Let's Start Cooking!</button>
+            <a href="#recipeinformation">
+              <button>Let's Start Cooking! </button>
+            </a>
           </div>
-
           <img
             src={recipeData.image}
             alt={recipeData.title}

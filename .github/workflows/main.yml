@@ -27,4 +27,4 @@ jobs:
         run: npm install
 
       - name: Run specific tests for chatbot-component
-        run: npm test src/homepageComponents/chatbot-component.test.js -- --watchAll=false
+        run: npm test dish-it-react/src/chatBot/chatbot-component.test.js -- --watchAll=false

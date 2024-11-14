@@ -48,11 +48,11 @@ jobs:
 
       - name: Build Docker image for integration testing
         run: |
-          docker build -f Dockerfile.test -t test-image .
+          docker build -f dish-it-react/Dockerfile.test -t integration-test .
 
       - name: Run Integration Tests
         run: |
-          docker run --rm test-image
+          docker run --rm integration-test
   
   deploy:
     runs-on: ubuntu-latest

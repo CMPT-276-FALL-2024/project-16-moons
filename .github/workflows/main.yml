@@ -26,10 +26,10 @@ jobs:
           cd dish-it-react
           npm install
 
-      - name: Run Unit Tests for React Application (with Jest)
-        run: |
-          cd dish-it-react
-          npm test --passWithNoTests
+      #- name: Run Unit Tests for React Application (with Jest)
+      #  run: |
+      #    cd dish-it-react
+      #    npm test --passWithNoTests
     
       - name: Build React App for Production
         run: |

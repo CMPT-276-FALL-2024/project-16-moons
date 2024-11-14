@@ -1,7 +1,7 @@
 import "./homepage.css";
 import HomeBackground from "../homepageComponents/homeBackground";
 import NavBar from "../homepageComponents/navBar";
-import ChatBot from "../homepageComponents/chatBot";
+import ChatBot from "../homepageComponents/chatbot-component";
 import ScrollUp from "../homepageComponents/scrollUp";
 import SearchOption from "../homepageComponents/searchOption";
 import HowItWorks from "../homepageComponents/howItWorks";

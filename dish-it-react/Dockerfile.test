@@ -1,0 +1,19 @@
+# Integration testing for React elements
+
+# Base Image same as dockerfile for react app
+FROM node:18-alpine
+
+# Set working directory
+WORKDIR /app
+
+# Copy package.json and package-lock.json
+COPY package*.json ./
+
+# Installing dependencies
+RUN npm install
+
+# Copy all app files
+COPY . .
+
+# Run integration testing with Jest
+CMD ["npm","run","test:integration"]

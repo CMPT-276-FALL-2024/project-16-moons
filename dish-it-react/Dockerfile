@@ -25,4 +25,4 @@ RUN npm run build
 EXPOSE 3000
 
 # Start react APP (serve build folder)
-CMD ["npx",'serve','build']
+CMD npx serve -s build

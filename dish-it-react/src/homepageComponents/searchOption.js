@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const SearchOption = () => {
   return (
-    <section className="search">
+    <section className="search" id="search">
       <img
         src="/images/Dish-It-Smaller.png"
         id="Dish-It-Search-Logo"

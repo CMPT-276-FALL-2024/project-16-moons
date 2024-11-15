@@ -12,6 +12,9 @@ COPY dish-it-react/package*.json ./
 # Install dependencies ...
 RUN npm install
 
+# Install 'serve' globally to serve the production build
+RUN npm install -g serve
+
 # Copy rest of React app
 COPY dish-it-react/ ./
 

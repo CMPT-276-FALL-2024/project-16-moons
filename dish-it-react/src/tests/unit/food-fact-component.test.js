@@ -8,10 +8,11 @@ describe("foodFactComponent", () => {
     test("renders foodFactComponent", () => {
         render (<foodFactComponent />);
         const foodFactElement = screen.getByText(/did you know/i);
+        
         expect(foodFactElement).toBeInTheDocument();
     }
     
     // Second te
-    
+
 
 });

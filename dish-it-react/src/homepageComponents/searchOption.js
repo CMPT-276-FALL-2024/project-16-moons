@@ -2,6 +2,7 @@ import FoodFactComponent from "./foodFactComponent";
 import { Link } from "react-router-dom";
 
 const SearchOption = () => {
+  const apiKey = process.env.REACT_APP_SPOONACULAR_API_KEY
   return (
     <section className="search" id="search">
       <img
@@ -11,7 +12,7 @@ const SearchOption = () => {
       />
       <br />
       {/* <!-- Fun Fact --> */}
-      <FoodFactComponent />
+      <FoodFactComponent apiKey={apiKey} />
       <div className="dropdown">
         <button>Let's chef it up!</button>
         <div className="content">

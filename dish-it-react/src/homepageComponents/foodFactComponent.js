@@ -1,7 +1,7 @@
 import React from 'react';
-const apiKey = process.env.REACT_APP_SPOONACULAR_API_KEY
 
-const FoodFactComponent = () => {
+
+const FoodFactComponent = ({apiKey}) => {
     // State to store the fun fact
     const [funFact, setFunFact] = React.useState('')
 

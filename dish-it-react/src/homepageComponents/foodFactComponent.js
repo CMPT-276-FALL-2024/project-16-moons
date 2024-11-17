@@ -22,9 +22,13 @@ const FoodFactComponent = ({apiKey}) => {
                     throw new Error('Error occured while getting a fun fact. Please contact one of our team members for help by clicking the mail symbol in the "Contact Us" section')
                 }
                 const data = await response.json()
-                setFunFact(data.text)
+                setFunFact("Did you know? " + data.text)
             } catch (error) {
-                alert(error.message)
+                setFunFact(error.message)
+                // Alerts only if not in test environment
+                if (process.env.NODE_ENV !== 'test') { 
+                    alert(error.message);
+                }
             }
         }
         fetchRandomFoodFact();
@@ -33,7 +37,7 @@ const FoodFactComponent = ({apiKey}) => {
     // Return the fun fact
     return (
         <div>
-            <h2>Did you know? {funFact}</h2>
+            <h2>{funFact}</h2>
         </div>
     );
 }

@@ -17,7 +17,7 @@ const SearchOption = () => {
         <div className="content">
           <a href="recipe-search-results.html">Search By Recipe Name</a>
           <a href="ingredient-search-results.html">Search By Ingredients</a>
-          <a href="ingredient-analyzer.html">Ingredient Analyzer</a>
+          <Link to="/ingredient-analyzer">Ingredient Analyzer</Link>
           <Link to="/randomdish">Random Recipe</Link>
         </div>
       </div>

@@ -59,17 +59,17 @@ const ChatbotComponent = () => {
             {/* Chat Dialogue */}
             {isOpen && (
                 <div className="chat-dialogue">
-                    <h2>Chatbot</h2> 
-                    <input
-                        type="text"
-                        value={question}
-                        onChange={(e) => setQuestion(e.target.value)}
-                        onKeyDown={enterKeyDown}
-                        placeholder="Ask me something..."
-                    />
-                    <button onClick={Conversation}> &#8594; </button>
+                    <h2>Chatbot</h2>
 
-                    <div className="conversation">
+                    <div>
+                        <input
+                            type="text"
+                            value={question}
+                            onChange={(e) => setQuestion(e.target.value)}
+                            onKeyDown={enterKeyDown}
+                            placeholder="Ask me something..."
+                            />
+                        <button onClick={Conversation}> &#8594; </button>
                         {conversation.map((entry, index) => (
                             <div key={index} className="chat-entry">
                                 <p><strong>Q:</strong> {entry.question}</p>

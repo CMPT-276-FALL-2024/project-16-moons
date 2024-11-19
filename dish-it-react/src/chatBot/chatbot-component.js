@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import "../index.css";
+import React, { useEffect, useRef, useState } from 'react';
+import "./styles.css";
 const apiKey = process.env.REACT_APP_SPOONACULAR_API_KEY_CHATBOT;
 
 const ChatbotComponent = () => {
@@ -7,13 +7,15 @@ const ChatbotComponent = () => {
     const [conversation, setConversation] = useState([]);
     const [isOpen, setIsOpen] = useState(false); // State to handle dialogue visibility
 
+    const chatRef = useRef(null);
+
     const toggleChat = () => {
         setIsOpen(!isOpen); // Toggle the visibility of the chat dialogue
     };
 
     const Conversation = () => {
         if (question.trim() === '') {
-            alert('Welcome! What would you like to know?');
+            alert('Please insert a question');
             return;
         }
 
@@ -45,6 +47,12 @@ const ChatbotComponent = () => {
         }
     };
 
+    useEffect(() => {
+        if (chatRef.current) {
+            chatRef.current.scrollTop = chatRef.current.scrollHeight;
+        }
+    }, [conversation]);
+
     return (
         <div>
             {/* Chatbot Button */}
@@ -58,24 +66,26 @@ const ChatbotComponent = () => {
 
             {/* Chat Dialogue */}
             {isOpen && (
-                <div className="chat-dialogue">
+                <div className="chat-box">
                     <h2>Chatbot</h2>
 
-                    <div>
+                    <div className='chat-history' ref={chatRef}>
+                        {conversation.map((entry, index) => (
+                            <div key={index} className="chat-entry">
+                                <p> <strong>Q:</strong> {entry.question} </p>
+                                <p> <strong>A:</strong> {entry.answer} </p>
+                            </div>
+                        ))}
+                    </div>
+                    <div className='chat-input'>
                         <input
                             type="text"
                             value={question}
                             onChange={(e) => setQuestion(e.target.value)}
                             onKeyDown={enterKeyDown}
                             placeholder="Ask me something..."
-                            />
+                        />
                         <button onClick={Conversation}> &#8594; </button>
-                        {conversation.map((entry, index) => (
-                            <div key={index} className="chat-entry">
-                                <p><strong>Q:</strong> {entry.question}</p>
-                                <p><strong>A:</strong> {entry.answer}</p>
-                            </div>
-                        ))}
                     </div>
                 </div>
             )}

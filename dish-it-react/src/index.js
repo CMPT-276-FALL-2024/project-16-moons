@@ -7,12 +7,10 @@ import RandomDishPage from "./randomDish/randomDishPage";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
-    <Router>
-      <Routes>
-        <Route path="/" element={<Homepage />} />
-        <Route path="/randomdish" element={<RandomDishPage />} />
-      </Routes>
-    </Router>
-  </React.StrictMode>
+  <Router>
+    <Routes>
+      <Route path="/" element={<Homepage />} />
+      <Route path="/randomdish" element={<RandomDishPage />} />
+    </Routes>
+  </Router>
 );

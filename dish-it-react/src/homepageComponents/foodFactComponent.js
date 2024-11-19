@@ -36,6 +36,7 @@ const FoodFactComponent = ({apiKey}) => {
     // Return the fun fact
     return (
         <div>
+            <h3>Did you know...</h3>
             <h2>{funFact}</h2>
         </div>
     );

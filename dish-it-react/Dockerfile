@@ -12,6 +12,9 @@ COPY dish-it-react/package*.json ./
 # Install dependencies ...
 RUN npm install
 
+# Install 'serve' globally to serve the production build
+RUN npm install -g serve
+
 # Copy rest of React app
 COPY dish-it-react/ ./
 
@@ -22,4 +25,4 @@ RUN npm run build
 EXPOSE 3000
 
 # Start react APP (serve build folder)
-CMD ["npx",'serve','build']
+CMD npx serve -s build

@@ -7,7 +7,7 @@ const ChatBot = () => {
         <img
             src="/images/chatbot-colored.png"
             alt="Logo for a Chat Bot."
-            class="bottom-left"
+            className="bottom-left"
         /></a>
     );
 }

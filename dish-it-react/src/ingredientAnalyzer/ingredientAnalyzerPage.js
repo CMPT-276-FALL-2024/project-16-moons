@@ -1,7 +1,11 @@
+import "./ingredientAnalyzerPage.css";
+// Import nav bar
+import IngredientAnalyzer from "./ingredientAnalyzerComponents/ingredientAnalyzer";
+
 function IngredientAnalyzerPage() {
   return (
     <div>
-      <h1>testing</h1>
+      <IngredientAnalyzer></IngredientAnalyzer>
     </div>
   );
 }

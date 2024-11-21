@@ -1,5 +1,5 @@
 import React from "react";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const appId = process.env.REACT_APP_EDAMAM_APP_ID_INGREDIENT_ANALYZER;
 const appKey = process.env.REACT_APP_EDAMAM_APP_KEY_INGREDIENT_ANALYZER;
@@ -7,6 +7,7 @@ const appKey = process.env.REACT_APP_EDAMAM_APP_KEY_INGREDIENT_ANALYZER;
 const IngredientAnalyzer = () => {
   const [ingredient, setIngredient] = useState("");
   let [ingredientList, setIngredientList] = useState([]);
+  const [error, setError] = useState(null);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -31,6 +32,12 @@ const IngredientAnalyzer = () => {
           body: JSON.stringify(jsonData),
         }
       );
+      if (!response.ok) {
+        throw new Error("Failed to fetch analysis");
+      }
+
+      const data = await response.json();
+      console.log("API response: ", data);
     } catch (err) {
       setError(err.message);
     }

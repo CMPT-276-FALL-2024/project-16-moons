@@ -19,3 +19,9 @@ background-OFF WHITE COLOR: #f5f5f5; */
   box-sizing: border-box;
   font-family: Rubik;
 }
+
+.user-input {
+  width: 50rem;
+  height: 10rem;
+  padding: 1rem;
+}

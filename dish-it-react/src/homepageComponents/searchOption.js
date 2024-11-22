@@ -2,6 +2,10 @@ import FoodFactComponent from "./foodFactComponent";
 import { Link } from "react-router-dom";
 
 const SearchOption = () => {
+  function showRecipeSearch(){
+    document.getElementById("recipe-search").style.display = "block";
+  }
+
   return (
     <section className="search" id="search">
       <img
@@ -15,11 +19,18 @@ const SearchOption = () => {
       <div className="dropdown">
         <button>Let's chef it up!</button>
         <div className="content">
-          <a href="recipe-search-results.html">Search By Recipe Name</a>
+          <p onClick={showRecipeSearch}>Search By Recipe Name</p>
           <a href="ingredient-search-results.html">Search By Ingredients</a>
           <a href="ingredient-analyzer.html">Ingredient Analyzer</a>
           <Link to="/randomdish">Random Recipe</Link>
         </div>
+      </div>
+      <div class="recipe-search-section-homepage">
+        <div class="search-container">
+          <input type="text" placeholder="Search For Recipe" class="search-input"/>
+          <button class="search-button"></button> 
+        </div>
+        <button>Back</button>
       </div>
     </section>
   );

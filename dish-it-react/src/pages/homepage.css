@@ -193,6 +193,10 @@ body {
   background-color: rgb(240, 235, 230);
 }
 
+#search-icon {
+  width: 2rem;
+  height: 2rem;
+}
 /*How-To*/
 .how-it {
   padding-top: 100px;

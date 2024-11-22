@@ -3,7 +3,13 @@ import { Link } from "react-router-dom";
 
 const SearchOption = () => {
   function showRecipeSearch(){
-    document.getElementById("recipe-search").style.display = "block";
+    document.getElementById("recipe-search-section-homepage").style.visibility = "visible";
+    document.getElementById("dropdown").style.visibility = "hidden";
+  }
+
+  function hideRecipeSearch(){
+    document.getElementById("recipe-search-section-homepage").style.visibility = "hidden";
+    document.getElementById("dropdown").style.visibility = "visible";
   }
 
   return (
@@ -16,7 +22,7 @@ const SearchOption = () => {
       <br />
       {/* <!-- Fun Fact --> */}
       <FoodFactComponent />
-      <div className="dropdown">
+      <div id="dropdown">
         <button>Let's chef it up!</button>
         <div className="content">
           <p onClick={showRecipeSearch}>Search By Recipe Name</p>
@@ -25,13 +31,15 @@ const SearchOption = () => {
           <Link to="/randomdish">Random Recipe</Link>
         </div>
       </div>
-      <div class="recipe-search-section-homepage">
-        <div class="search-container">
-          <input type="text" placeholder="Search For Recipe" class="search-input"/>
-          <button class="search-button"><img id="search-icon" src="/images/search-icon.png" alt="search icon"/></button> 
+      <section>
+        <div id="recipe-search-section-homepage">
+          <div className="search-container">
+            <input type="text" placeholder="Search For Recipe" class="search-input"/>
+            <button class="search-button"><img id="search-icon" src="/images/search-icon.png" alt="search icon"/></button> 
+          </div>
+          <button onClick={hideRecipeSearch}>Back to see other features</button>
         </div>
-        <button>Back</button>
-      </div>
+      </section>
     </section>
   );
 };

@@ -28,7 +28,7 @@ const SearchOption = () => {
       <div class="recipe-search-section-homepage">
         <div class="search-container">
           <input type="text" placeholder="Search For Recipe" class="search-input"/>
-          <button class="search-button"></button> 
+          <button class="search-button"><img id="search-icon" src="/images/search-icon.png" alt="search icon"/></button> 
         </div>
         <button>Back</button>
       </div>

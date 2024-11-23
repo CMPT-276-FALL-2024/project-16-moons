@@ -1,29 +1,21 @@
-import React from "react";
-import { useState } from "react";
-
-const appId = process.env.REACT_APP_EDAMAM_APP_ID_INGREDIENT_ANALYZER;
-const appKey = process.env.REACT_APP_EDAMAM_APP_KEY_INGREDIENT_ANALYZER;
+import React, { useState } from "react";
 
 const IngredientAnalyzer = () => {
-  const [ingredient, setIngredient] = useState("");
-  let [ingredientList, setIngredientList] = useState([]);
   const [error, setError] = useState(null);
+  const [ingredient, setIngredient] = useState("");
+  const [nutrientsAnalysis, setNutrientsAnalysis] = useState(null);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log("User entered ingredient:", ingredient);
-    // Placing it into an array that is split each time we detect a ","
-    ingredientList = ingredient.split(",").map((item) => item.trim());
-    const jsonData = {
-      ingr: ingredientList,
-    };
-    console.log(jsonData);
 
-    // API calling
-    //const response = await fetch(`https://api.edamam.com/api/nutrition-details?app_id=${appId}&app_key=${appKey}`);
+    // Prepare the jsonData with the ingredients
+    const jsonData = {
+      ingr: ingredient.split(",").map((item) => item.trim()),
+    };
+
     try {
       const response = await fetch(
-        `https://api.edamam.com/api/nutrition-details?app_id=${appId}&app_key=${appKey}`,
+        "https://api.edamam.com/api/nutrition-details?app_id=d4406b35&app_key=b6dea5d36362f9277434b75f9598104b",
         {
           method: "POST",
           headers: {
@@ -32,32 +24,65 @@ const IngredientAnalyzer = () => {
           body: JSON.stringify(jsonData),
         }
       );
+
       if (!response.ok) {
         throw new Error("Failed to fetch analysis");
       }
 
       const data = await response.json();
-      console.log("API response: ", data);
+      setNutrientsAnalysis(data);
     } catch (err) {
-      setError(err.message);
+      setError(err.message); // Set error state to display to the user
+      console.error("Error:", err.message); // Log the error
     }
   };
 
   return (
     <div>
-      <div>
-        <form onSubmit={handleSubmit}>
-          <input
-            type="text"
-            placeholder="Enter an ingredient"
-            value={ingredient}
-            onChange={(e) => setIngredient(e.target.value)} // Updates state with user input
-            className="user-input"
-          />
-          <button type="submit">Analyze</button>
-        </form>
-      </div>
+      <h1>Ingredient Analyzer</h1>
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          value={ingredient}
+          onChange={(e) => setIngredient(e.target.value)}
+          placeholder="Enter ingredients, separated by commas"
+          className="user-input"
+        />
+        <button type="submit">Analyze</button>
+      </form>
+      {/* {error && <div style={{ color: "red" }}>{error}</div>}{" "} */}
+      {nutrientsAnalysis && (
+        <div>
+          <h2>Nutrition Facts</h2>
+          <h4>Amount per serving</h4>
+          <h3>
+            <strong>Calories:</strong> {nutrientsAnalysis.calories}
+          </h3>
+          <ul>
+            <li>
+              {" "}
+              <strong>Total Fat:</strong>{" "}
+              {nutrientsAnalysis.totalNutrients.FAT.quantity} g
+            </li>
+            <li>Cholesterol</li>
+            <li>Sodium</li>
+            <li>
+              <strong>Carbohydrate</strong>{" "}
+              {nutrientsAnalysis.totalNutrients.CHOCDF.quantity} g
+            </li>
+            <li>
+              <strong>Protein:</strong>{" "}
+              {nutrientsAnalysis.totalNutrients.PROCNT.quantity} g
+            </li>
+            <li>Vitamin D</li>
+            <li>Calcium</li>
+            <li>Iron</li>
+            <li>Potassium</li>
+          </ul>
+        </div>
+      )}
     </div>
   );
 };
+
 export default IngredientAnalyzer;

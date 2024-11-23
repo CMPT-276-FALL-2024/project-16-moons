@@ -8,7 +8,6 @@ const FoodFactComponent = () => {
     // useEffect to fetch a random food trivia from the Spoonacular API
     React.useEffect(() => {
         // Fetch request to get a random food trivia
-        console.log("Fetched api")
         const fetchRandomFoodFact = async () => {
             try {
                 const response = await fetch(`https://api.spoonacular.com/food/trivia/random?apiKey=${apiKey}`)

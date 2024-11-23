@@ -1,4 +1,5 @@
 import React from 'react';
+import '../recipeSpecificSearchPage.css';
 
 function RecipeCard({ recipeName, recipeImage }) {
   return (

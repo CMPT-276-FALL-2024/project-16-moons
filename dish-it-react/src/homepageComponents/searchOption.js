@@ -1,5 +1,6 @@
 import FoodFactComponent from "./foodFactComponent";
 import { Link } from "react-router-dom";
+import React from "react";
 
 const SearchOption = () => {
   function showRecipeSearch(){
@@ -11,6 +12,8 @@ const SearchOption = () => {
     document.getElementById("recipe-search-section-homepage").style.visibility = "hidden";
     document.getElementById("dropdown").style.visibility = "visible";
   }
+
+  const [searchRecipe, setSearchRecipe] = React.useState("");
 
   return (
     <section className="search" id="search">
@@ -34,8 +37,14 @@ const SearchOption = () => {
       <section>
         <div id="recipe-search-section-homepage">
           <div className="search-container">
-            <input type="text" placeholder="Search For Recipe" class="search-input"/>
-            <button class="search-button"><img id="search-icon" src="/images/search-icon.png" alt="search icon"/></button> 
+            <input type="text" placeholder="Search For Recipe" id="search-input" onChange={(e) => setSearchRecipe(e.target.value)}/>
+            <div>
+              <Link to="/recipeSpecificSearch" state={{ recipe: searchRecipe }}>
+                <button className="search-button">
+                  <img id="search-icon" src="/images/search-icon.png" alt="search icon"/>
+                </button> 
+              </Link>
+            </div>
           </div>
           <button onClick={hideRecipeSearch}>Back to see other features</button>
         </div>

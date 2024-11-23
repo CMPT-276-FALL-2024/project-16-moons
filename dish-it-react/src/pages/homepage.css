@@ -162,11 +162,9 @@ body {
   cursor: pointer;
 }
 
-
 .bold {
   font-weight: bold;
 }
-
 
 .search-container {
   display: flex;
@@ -174,7 +172,7 @@ body {
   align-items: center;
 }
 
-.search-input{
+#search-input{
   padding: 2rem 1rem;
   width: 25rem;
   margin: 10px;

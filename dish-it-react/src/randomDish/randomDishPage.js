@@ -2,6 +2,7 @@ import "./randomDishPageStyles.css";
 import NavBar from "./randomDishComponents/navBar";
 import GenerateRandomDish from "./randomDishComponents/generateRandomDish";
 
+
 function RandomDishPage() {
   return (
     <div>

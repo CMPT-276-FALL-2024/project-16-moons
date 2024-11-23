@@ -1,5 +1,7 @@
 import React from "react";
 import { useLocation } from 'react-router-dom'
+import RecipeCard from "./recipeSpecificSearchComponents/recipeCard";
+import RecipeSpecificSearchNavbar from "./recipeSpecificSearchComponents/recipeSpecificSearchNavbar";
 
 const appId = process.env.REACT_APP_EDAMAM_APP_ID
 const apiKey = process.env.REACT_APP_EDAMAM_API_KEY
@@ -9,6 +11,7 @@ export default function RecipeSpecificSearchPage() {
     const { recipe } = location.state || {};
     const [recipeToFetch, setRecipe] = React.useState(recipe)
     const [recipeName, setRecipeName] = React.useState('')
+    const [data, setData] = React.useState(null)
 
     React.useEffect( () => {
         const fetchSpecificRecipe = async () => {
@@ -26,6 +29,7 @@ export default function RecipeSpecificSearchPage() {
                 console.log(data.hits[0].recipe)
                 console.log(data.hits[0].recipe.label)
                 setRecipeName(data.hits[0].recipe.label)
+                setData(data)
             }   catch (error) {
                 alert(error.message)
             }   
@@ -35,8 +39,12 @@ export default function RecipeSpecificSearchPage() {
   
     return (
         <div>
+            <RecipeSpecificSearchNavbar />
             <h1>Recipe Specific Search Page</h1>
             <h1>{recipeName}</h1>
+            {data && data.hits.length > 0 && (
+                <RecipeCard recipeImage={data.hits[0].recipe.image} recipeName={data.hits[0].recipe.label} recipeIngredients={data.hits[0].recipe.ingredientLines} recipeUrl={data.hits[0].recipe.url}/>
+            )}
         </div>
     )
 }

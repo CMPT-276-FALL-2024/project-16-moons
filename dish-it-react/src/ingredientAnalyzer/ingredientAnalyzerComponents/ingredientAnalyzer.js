@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+const apiKey = process.env.REACT_APP_EDAMAM_APP_KEY_INGREDIENT_ANALYZER;
+const apiId = process.env.REACT_APP_EDAMAM_APP_ID_INGREDIENT_ANALYZER;
 
 const IngredientAnalyzer = () => {
   const [error, setError] = useState(null);
@@ -15,7 +17,10 @@ const IngredientAnalyzer = () => {
 
     try {
       const response = await fetch(
-        "https://api.edamam.com/api/nutrition-details?app_id=d4406b35&app_key=b6dea5d36362f9277434b75f9598104b",
+        "https://api.edamam.com/api/nutrition-details?app_id=" +
+          apiId +
+          "&app_key=" +
+          apiKey,
         {
           method: "POST",
           headers: {

@@ -1,17 +1,17 @@
-import '../recipeSpecificSearchPage.css';
+import { Link } from "react-router-dom";
 
 function RecipeSpecificSearchNavbar() {
   return (
     <header className="navigation-bar">
-        <a href="#">
+        <Link to="/">
         <img
             src="./images/Dish-It-Smaller.png"
             class="image"
             alt="logo
             of Dish-It"
-        /></a>
+        /></Link>
         <nav className="navbar">
-        <a href="index.html">GO BACK</a>
+            <Link to="/">GO BACK</Link>
         </nav>
     </header>
   )

@@ -52,72 +52,106 @@ const IngredientAnalyzer = () => {
       </form>
       {/* {error && <div style={{ color: "red" }}>{error}</div>}{" "} */}
       {nutrientsAnalysis && (
-        <div>
+        <div className="nutritionFacts">
           <h2>Nutrition Facts</h2>
           <h4>Amount per serving</h4>
           <h3>
             <strong>Calories </strong> {nutrientsAnalysis.calories}
           </h3>
-          <ul>
-            <li>
-              <strong>Total Fat</strong>{" "}
-              {nutrientsAnalysis.totalNutrients.FAT.quantity.toFixed(1)}{" "}
-              {nutrientsAnalysis.totalNutrients.FAT.unit}
-              <ul className="sub-nutrients">
+          <p> % Daily Value*</p>
+          <div className="container">
+            <div>
+              {" "}
+              <ul>
                 <li>
-                  Satured Fat{" "}
-                  {nutrientsAnalysis.totalNutrients.FASAT.quantity.toFixed(1)}{" "}
-                  {nutrientsAnalysis.totalNutrients.FASAT.unit}
+                  <strong>Total Fat</strong>{" "}
+                  {nutrientsAnalysis.totalNutrients.FAT.quantity.toFixed(1)}{" "}
+                  {nutrientsAnalysis.totalNutrients.FAT.unit}
+                  <ul className="subNutrients">
+                    <li>
+                      Satured Fat{" "}
+                      {nutrientsAnalysis.totalNutrients.FASAT.quantity.toFixed(
+                        1
+                      )}{" "}
+                      {nutrientsAnalysis.totalNutrients.FASAT.unit}
+                    </li>
+                    <li>
+                      Trans Fat{" "}
+                      {nutrientsAnalysis.totalNutrients.FATRN.quantity.toFixed(
+                        1
+                      )}{" "}
+                      {nutrientsAnalysis.totalNutrients.FATRN.unit}
+                    </li>
+                  </ul>
                 </li>
                 <li>
-                  Trans Fat{" "}
-                  {nutrientsAnalysis.totalNutrients.FATRN.quantity.toFixed(1)}{" "}
-                  {nutrientsAnalysis.totalNutrients.FATRN.unit}
+                  <strong>Cholesterol</strong>{" "}
+                  {nutrientsAnalysis.totalNutrients.CHOLE.quantity.toFixed(1)}{" "}
+                  {nutrientsAnalysis.totalNutrients.CHOLE.unit}
+                </li>
+                <li>
+                  <strong>Sodium</strong>{" "}
+                  {nutrientsAnalysis.totalNutrients.NA.quantity.toFixed(1)}{" "}
+                  {nutrientsAnalysis.totalNutrients.NA.unit}
+                </li>
+                <li>
+                  <strong>Carbohydrate </strong>
+                  {nutrientsAnalysis.totalNutrients.CHOCDF.quantity.toFixed(
+                    1
+                  )}{" "}
+                  {nutrientsAnalysis.totalNutrients.CHOCDF.unit}
+                  <ul className="subNutrients">
+                    <li>
+                      Dietary Fiber{" "}
+                      {nutrientsAnalysis.totalNutrients.FIBTG.quantity.toFixed(
+                        1
+                      )}{" "}
+                      {nutrientsAnalysis.totalNutrients.FIBTG.unit}
+                    </li>
+                    <li>
+                      Total Sugars{" "}
+                      {nutrientsAnalysis.totalNutrients.SUGAR.quantity.toFixed(
+                        1
+                      )}{" "}
+                      {nutrientsAnalysis.totalNutrients.SUGAR.unit}
+                    </li>
+                    <li>
+                      {/* {nutrientsAnalysis.totalNutrients.SUGAR.label ===
+                      "Sugars, total including NLEA"
+                        ? "Includes - Added Sugars"
+                        : ""} */}
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <strong>Protein </strong>
+                  {nutrientsAnalysis.totalNutrients.PROCNT.quantity.toFixed(
+                    1
+                  )}{" "}
+                </li>
+                <li>
+                  Vitamin D
+                  {nutrientsAnalysis.totalNutrients.VITD.quantity.toFixed(1)}{" "}
+                  {nutrientsAnalysis.totalNutrients.VITD.unit}
+                </li>
+                <li>
+                  Calcium{" "}
+                  {nutrientsAnalysis.totalNutrients.CA.quantity.toFixed(1)}{" "}
+                  {nutrientsAnalysis.totalNutrients.CA.unit}
+                </li>
+                <li>
+                  Iron {nutrientsAnalysis.totalNutrients.FE.quantity.toFixed(1)}{" "}
+                  {nutrientsAnalysis.totalNutrients.FE.unit}
+                </li>
+                <li>
+                  Potassium{" "}
+                  {nutrientsAnalysis.totalNutrients.K.quantity.toFixed(1)}{" "}
+                  {nutrientsAnalysis.totalNutrients.K.unit}
                 </li>
               </ul>
-            </li>
-            <li>
-              <strong>Cholesterol</strong>{" "}
-              {nutrientsAnalysis.totalNutrients.CHOLE.quantity.toFixed(1)}{" "}
-              {nutrientsAnalysis.totalNutrients.CHOLE.unit}
-            </li>
-            <li>
-              <strong>Sodium</strong>{" "}
-              {nutrientsAnalysis.totalNutrients.NA.quantity.toFixed(1)}{" "}
-              {nutrientsAnalysis.totalNutrients.NA.unit}
-            </li>
-            <li>
-              <strong>Carbohydrate </strong>
-              {nutrientsAnalysis.totalNutrients.CHOCDF.quantity.toFixed(1)}{" "}
-              {nutrientsAnalysis.totalNutrients.CHOCDF.unit}
-              <ul className="sub-nutrients">
-                <li>
-                  Dietary Fiber{" "}
-                  {nutrientsAnalysis.totalNutrients.FIBTG.quantity.toFixed(1)}{" "}
-                  {nutrientsAnalysis.totalNutrients.FIBTG.unit}
-                </li>
-                <li>
-                  Total Sugars{" "}
-                  {nutrientsAnalysis.totalNutrients.SUGAR.quantity.toFixed(1)}{" "}
-                  {nutrientsAnalysis.totalNutrients.SUGAR.unit}
-                </li>
-                <li>
-                  {nutrientsAnalysis.totalNutrients.SUGAR.label[1].includes ===
-                  "total including NLEA"
-                    ? "Includes - Added Sugars"
-                    : ""}{" "}
-                </li>
-              </ul>
-            </li>
-            <li>
-              <strong>Protein </strong>
-              {nutrientsAnalysis.totalNutrients.PROCNT.quantity} g
-            </li>
-            <li>Vitamin D</li>
-            <li>Calcium</li>
-            <li>Iron</li>
-            <li>Potassium</li>
-          </ul>
+            </div>
+            <div></div>
+          </div>
         </div>
       )}
     </div>

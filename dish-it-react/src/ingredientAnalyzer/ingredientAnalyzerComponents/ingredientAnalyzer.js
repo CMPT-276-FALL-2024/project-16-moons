@@ -116,10 +116,10 @@ const IngredientAnalyzer = () => {
                       {nutrientsAnalysis.totalNutrients.SUGAR.unit}
                     </li>
                     <li>
-                      {/* {nutrientsAnalysis.totalNutrients.SUGAR.label ===
+                      {nutrientsAnalysis.totalNutrients.SUGAR.label ===
                       "Sugars, total including NLEA"
                         ? "Includes - Added Sugars"
-                        : ""} */}
+                        : ""}
                     </li>
                   </ul>
                 </li>

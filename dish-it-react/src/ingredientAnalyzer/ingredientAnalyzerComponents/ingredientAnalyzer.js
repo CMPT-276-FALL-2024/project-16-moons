@@ -56,22 +56,61 @@ const IngredientAnalyzer = () => {
           <h2>Nutrition Facts</h2>
           <h4>Amount per serving</h4>
           <h3>
-            <strong>Calories:</strong> {nutrientsAnalysis.calories}
+            <strong>Calories </strong> {nutrientsAnalysis.calories}
           </h3>
           <ul>
             <li>
-              {" "}
-              <strong>Total Fat:</strong>{" "}
-              {nutrientsAnalysis.totalNutrients.FAT.quantity} g
+              <strong>Total Fat</strong>{" "}
+              {nutrientsAnalysis.totalNutrients.FAT.quantity.toFixed(1)}{" "}
+              {nutrientsAnalysis.totalNutrients.FAT.unit}
+              <ul className="sub-nutrients">
+                <li>
+                  Satured Fat{" "}
+                  {nutrientsAnalysis.totalNutrients.FASAT.quantity.toFixed(1)}{" "}
+                  {nutrientsAnalysis.totalNutrients.FASAT.unit}
+                </li>
+                <li>
+                  Trans Fat{" "}
+                  {nutrientsAnalysis.totalNutrients.FATRN.quantity.toFixed(1)}{" "}
+                  {nutrientsAnalysis.totalNutrients.FATRN.unit}
+                </li>
+              </ul>
             </li>
-            <li>Cholesterol</li>
-            <li>Sodium</li>
             <li>
-              <strong>Carbohydrate</strong>{" "}
-              {nutrientsAnalysis.totalNutrients.CHOCDF.quantity} g
+              <strong>Cholesterol</strong>{" "}
+              {nutrientsAnalysis.totalNutrients.CHOLE.quantity.toFixed(1)}{" "}
+              {nutrientsAnalysis.totalNutrients.CHOLE.unit}
             </li>
             <li>
-              <strong>Protein:</strong>{" "}
+              <strong>Sodium</strong>{" "}
+              {nutrientsAnalysis.totalNutrients.NA.quantity.toFixed(1)}{" "}
+              {nutrientsAnalysis.totalNutrients.NA.unit}
+            </li>
+            <li>
+              <strong>Carbohydrate </strong>
+              {nutrientsAnalysis.totalNutrients.CHOCDF.quantity.toFixed(1)}{" "}
+              {nutrientsAnalysis.totalNutrients.CHOCDF.unit}
+              <ul className="sub-nutrients">
+                <li>
+                  Dietary Fiber{" "}
+                  {nutrientsAnalysis.totalNutrients.FIBTG.quantity.toFixed(1)}{" "}
+                  {nutrientsAnalysis.totalNutrients.FIBTG.unit}
+                </li>
+                <li>
+                  Total Sugars{" "}
+                  {nutrientsAnalysis.totalNutrients.SUGAR.quantity.toFixed(1)}{" "}
+                  {nutrientsAnalysis.totalNutrients.SUGAR.unit}
+                </li>
+                <li>
+                  {nutrientsAnalysis.totalNutrients.SUGAR.label[1].includes ===
+                  "total including NLEA"
+                    ? "Includes - Added Sugars"
+                    : ""}{" "}
+                </li>
+              </ul>
+            </li>
+            <li>
+              <strong>Protein </strong>
               {nutrientsAnalysis.totalNutrients.PROCNT.quantity} g
             </li>
             <li>Vitamin D</li>

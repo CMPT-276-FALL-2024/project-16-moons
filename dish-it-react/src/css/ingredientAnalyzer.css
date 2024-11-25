@@ -29,11 +29,13 @@
   width: 50%;
   border-radius: 11px;
   border-style: none;
-  background-color: #cf711f;
+  background-color: #ffbd59;
   cursor: pointer;
+  transition: 0.3s all;
 }
 
 .btn:hover {
+  background-color: #ffca7a;
 }
 
 /*Nutrition Facts*/

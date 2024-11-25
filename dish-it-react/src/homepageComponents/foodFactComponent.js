@@ -1,7 +1,7 @@
 import React from 'react';
-const apiKey = process.env.REACT_APP_SPOONACULAR_API_KEY
 
-const FoodFactComponent = () => {
+
+const FoodFactComponent = ({apiKey}) => {
     // State to store the fun fact
     const [funFact, setFunFact] = React.useState('')
 
@@ -21,9 +21,13 @@ const FoodFactComponent = () => {
                     throw new Error('Error occured while getting a fun fact. Please contact one of our team members for help by clicking the mail symbol in the "Contact Us" section')
                 }
                 const data = await response.json()
-                setFunFact(data.text)
+                setFunFact("Did you know? " + data.text)
             } catch (error) {
-                alert(error.message)
+                setFunFact(error.message)
+                // Alerts only if not in test environment
+                if (process.env.NODE_ENV !== 'test') { 
+                    alert(error.message);
+                }
             }
         }
         fetchRandomFoodFact();
@@ -32,7 +36,8 @@ const FoodFactComponent = () => {
     // Return the fun fact
     return (
         <div>
-            <h2>Did you know? {funFact}</h2>
+            <h3>Did you know...</h3>
+            <h2>{funFact}</h2>
         </div>
     );
 }

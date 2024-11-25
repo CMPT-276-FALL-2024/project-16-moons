@@ -14,7 +14,6 @@ const SearchOption = () => {
   }
 
   const [searchRecipe, setSearchRecipe] = React.useState("");
-
   return (
     <section className="search" id="search">
       <img

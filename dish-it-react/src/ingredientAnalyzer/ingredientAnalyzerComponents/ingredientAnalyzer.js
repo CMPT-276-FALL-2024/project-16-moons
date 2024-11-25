@@ -83,12 +83,16 @@ const IngredientAnalyzer = () => {
             <input
               type="text"
               value={ingredient}
-              onChange={(e) => setIngredient(e.target.value)}
+              onChange={(e) => {
+                setIngredient(e.target.value);
+                setError(null);
+              }}
               placeholder="Example 10oz Chicken, 1 cup rice"
               className="user-input"
             />
             <button type="submit" className="btn">
-              <p>Analyze</p>
+              <p></p>
+              Analyze
             </button>
           </form>
           {error && (

@@ -3,6 +3,8 @@ import "../css/general.css"; // Importing second stylesheet
 
 import { Link } from "react-router-dom";
 import FoodFactComponent from "./homepageComponents/foodFactComponent";
+import ChatbotComponent from "../chatBot/chatbot-component";
+import ScrollUp from "../scrollUp/scrollUp";
 
 function Homepage() {
   return (
@@ -12,7 +14,11 @@ function Homepage() {
         <title>Dish-It | Cooking All In One!</title>
       </head>
       <header className="header">
-        <img className="logo" alt="Dish-It Logo" src="images/logo.png"></img>
+        <img
+          className="logo"
+          alt="Dish-It Logo"
+          src="images/logoNavBar.png"
+        ></img>
         <nav className="main-nav">
           <ul className="main-nav-list">
             <li>
@@ -53,7 +59,7 @@ function Homepage() {
           <section className="section-search" id="home">
             <div class="search">
               <img
-                src="/images/logo3.png"
+                src="/images/logoBig.png"
                 id="Dish-It-Search-Logo"
                 alt="Dish it logo"
                 className="search-image"
@@ -272,6 +278,8 @@ function Homepage() {
               </div>
             </div>
           </section>
+          <ChatbotComponent />
+          <ScrollUp />
         </main>
       </body>
     </html>

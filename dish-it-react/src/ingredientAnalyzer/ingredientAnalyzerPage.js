@@ -1,5 +1,5 @@
-import "./ingredientAnalyzerPage.css";
-// Import nav bar
+import "../styles/general.css";
+import "../styles/ingredientAnalyzer.css";
 import IngredientAnalyzer from "./ingredientAnalyzerComponents/ingredientAnalyzer";
 
 function IngredientAnalyzerPage() {

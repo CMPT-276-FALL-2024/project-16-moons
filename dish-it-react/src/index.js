@@ -1,8 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "./index.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Homepage from "./pages/homepage";
+import Homepage from "./homePage/homepage";
 import RandomDishPage from "./randomDish/randomDishPage";
 import IngredientAnalyzerPage from "./ingredientAnalyzer/ingredientAnalyzerPage";
 

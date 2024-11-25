@@ -16,28 +16,33 @@ function Homepage() {
         <nav className="main-nav">
           <ul className="main-nav-list">
             <li>
-              <a className="main-nav-link" href="#">
+              <a className="main-nav-link" href="#home">
                 Home
               </a>
             </li>
             <li>
-              <a className="main-nav-link" href="#">
-                How it works
+              <a className="main-nav-link" href="#features">
+                Features
               </a>
             </li>
             <li>
-              <a className="main-nav-link" href="#">
+              <a className="main-nav-link" href="#about">
                 About
               </a>
             </li>
             <li>
-              <a className="main-nav-link" href="#">
-                Documentation
+              <a className="main-nav-link" href="#team">
+                Meet The Team
               </a>
             </li>
             <li>
-              <a className="main-nav-link" href="#">
-                Contact Us
+              <a
+                className="main-nav-link"
+                href="https://docs.google.com/document/d/1JZCWgFncoqhTWbnXguZtalruUfB7CJaEjLOR9sbGqdo/edit?usp=sharing"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Documentation
               </a>
             </li>
           </ul>
@@ -45,7 +50,7 @@ function Homepage() {
       </header>
       <body>
         <main>
-          <section className="section-search">
+          <section className="section-search" id="home">
             <div class="search">
               <img
                 src="/images/logo3.png"
@@ -53,7 +58,9 @@ function Homepage() {
                 alt="Dish it logo"
                 className="search-image"
               />
-              {/* <FoodFactComponent /> */}
+              <div className="food-fact">
+                <FoodFactComponent />
+              </div>
               <div className="search-menu">
                 <div className="search-menu-content grid grid--2-cols">
                   <a href="recipe-search-results.html" class="btn btn--full">
@@ -78,7 +85,7 @@ function Homepage() {
               </div>
             </div>
           </section>
-          <section className="section-features">
+          <section className="section-features" id="features">
             <div className="container">
               <span className="subheading">Features</span>
               <h2 className="heading-secondary">
@@ -142,7 +149,7 @@ function Homepage() {
               </div>
             </div>
           </section>
-          <section className="section-about">
+          <section className="section-about" id="about">
             <span className="subheading">About The Project</span>
             <div class="grid grid--2-cols">
               <div>
@@ -169,10 +176,12 @@ function Homepage() {
                   <img
                     className="api-logo"
                     src="images/api-logos/edamam.png"
+                    alt="Edamam API logo"
                   ></img>
                   <img
                     className="api-logo"
                     src="images/api-logos/spoonacular.png"
+                    alt="Spoonacular API logo"
                   ></img>
                 </div>
               </div>
@@ -180,39 +189,86 @@ function Homepage() {
                 <img
                   class="image-collage"
                   src="images/collages/collage-1.jpg"
+                  alt="a photography of an amazing looking dish"
                 ></img>
                 <img
                   class="image-collage"
                   src="images/collages/collage-2.jpg"
+                  alt="a photography of an amazing looking dish"
                 ></img>
                 <img
                   class="image-collage"
                   src="images/collages/collage-3.jpg"
+                  alt="a photography of an amazing looking dish"
                 ></img>
                 <img
                   class="image-collage"
                   src="images/collages/collage-4.jpg"
+                  alt="a photography of an amazing looking dish"
                 ></img>
                 <img
                   class="image-collage"
                   src="images/collages/collage-5.jpg"
+                  alt="a photography of an amazing looking dish"
                 ></img>
                 <img
                   class="image-collage"
                   src="images/collages/collage-6.jpg"
+                  alt="a photography of an amazing looking dish"
                 ></img>
                 <img
                   class="image-collage"
                   src="images/collages/collage-7.jpg"
+                  alt="a photography of an amazing looking dish"
                 ></img>
                 <img
                   class="image-collage"
                   src="images/collages/collage-8.jpg"
+                  alt="a photography of an amazing looking dish"
                 ></img>
                 <img
                   class="image-collage"
                   src="images/collages/collage-9.jpg"
+                  alt="a photography of an amazing looking dish"
                 ></img>
+              </div>
+            </div>
+          </section>
+          <section className="section-team" id="team">
+            <span className="subheading">Meet The Team</span>
+            <h2 className="heading-secondary">Creators of Dish-It</h2>
+            <div class="grid grid--4-cols grid--center-v">
+              <div class="profile-container">
+                <img
+                  class="creator-image"
+                  src="images/faceless.jpg"
+                  alt="headshot of Gabriel Bello"
+                ></img>
+                <h3>Gabriel Bello</h3>
+              </div>
+              <div class="profile-container">
+                <img
+                  class="creator-image"
+                  src="images/faceless.jpg"
+                  alt="headshot of Gabriel Bello"
+                ></img>
+                <h3>Tyler Ho</h3>
+              </div>
+              <div class="profile-container">
+                <img
+                  class="creator-image"
+                  src="images/faceless.jpg"
+                  alt="headshot of Gabriel Bello"
+                ></img>
+                <h3>Quang Anh Pham</h3>
+              </div>
+              <div class="profile-container">
+                <img
+                  class="creator-image"
+                  src="images/faceless.jpg"
+                  alt="headshot of Gabriel Bello"
+                ></img>
+                <h3>Kevin Tan</h3>
               </div>
             </div>
           </section>

@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 const FoodFactComponent = ({apiKey}) => {
     // State to store the fun fact
     const [funFact, setFunFact] = React.useState('')

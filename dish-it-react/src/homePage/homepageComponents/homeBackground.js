@@ -1,12 +1,12 @@
 import React from "react";
-import "../index.css";
+import "../../styles/general.css";
 
 const HomeBackground = () => {
-    return (
+  return (
     <div className="background-image">
       <div className="filter-blur">test</div>
     </div>
-    )
-}
+  );
+};
 
 export default HomeBackground;

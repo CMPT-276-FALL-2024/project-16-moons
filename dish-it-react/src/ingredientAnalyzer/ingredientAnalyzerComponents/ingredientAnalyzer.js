@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 const apiKey = process.env.REACT_APP_EDAMAM_APP_KEY_INGREDIENT_ANALYZER;
 const apiId = process.env.REACT_APP_EDAMAM_APP_ID_INGREDIENT_ANALYZER;
 
@@ -45,6 +46,36 @@ const IngredientAnalyzer = () => {
 
   return (
     <div>
+      <head>
+        <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+        <title>Dish-It | Cooking All In One!</title>
+      </head>
+      <header className="header">
+        <img
+          className="logo"
+          alt="Dish-It Logo"
+          src="images/logoNavBar.png"
+        ></img>
+        <nav className="main-nav">
+          <ul className="main-nav-list">
+            <li>
+              <Link to="/" className="main-nav-link">
+                Go back
+              </Link>
+            </li>
+            <li>
+              <a
+                className="main-nav-link"
+                href="https://docs.google.com/document/d/1JZCWgFncoqhTWbnXguZtalruUfB7CJaEjLOR9sbGqdo/edit?usp=sharing"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Documentation
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </header>
       <section className="ingredient-analyzer-section grid grid--2-cols">
         <div className="input">
           <h1>Ingredient Analyzer</h1>
@@ -56,9 +87,15 @@ const IngredientAnalyzer = () => {
               placeholder="Example 10oz Chicken, 1 cup rice"
               className="user-input"
             />
-            <button type="submit">Analyze</button>
+            <button type="submit" className="btn">
+              <p>Analyze</p>
+            </button>
           </form>
-          {error && <div style={{ color: "red" }}>{error}</div>}{" "}
+          {error && (
+            <div className="error-message">
+              Seems like your input is invalid.
+            </div>
+          )}{" "}
         </div>
         {nutrientsAnalysis && (
           <div className="nutritionFacts">

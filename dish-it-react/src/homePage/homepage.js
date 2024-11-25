@@ -1,4 +1,4 @@
-import "./homepage.css";
+import "../styles/homepage.css";
 import HomeBackground from "./homepageComponents/homeBackground";
 import NavBar from "./homepageComponents/navBar";
 import ChatBot from "../chatBot/chatbot-component";
@@ -10,16 +10,20 @@ import ContactUs from "./homepageComponents/contactUs";
 
 function Homepage() {
   return (
-    <div>
-      <HomeBackground />
-      <NavBar />
-      <ChatBot />
-      <ScrollUp />
-      <SearchOption />
-      <HowItWorks />
-      <AboutTheProject />
-      <ContactUs />
-    </div>
+    <html>
+      <header></header>
+      <body></body>
+    </html>
+    // <div>
+    //   <HomeBackground />
+    //   <NavBar />
+    //   <ChatBot />
+    //   <ScrollUp />
+    //   <SearchOption />
+    //   <HowItWorks />
+    //   <AboutTheProject />
+    //   <ContactUs />
+    // </div>
   );
 }
 

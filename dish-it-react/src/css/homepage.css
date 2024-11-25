@@ -15,6 +15,9 @@
   grid-template-columns: 1fr;
 }
 
+.search-menu a {
+  margin: 0 auto;
+}
 .search-image {
   width: 100%;
 }

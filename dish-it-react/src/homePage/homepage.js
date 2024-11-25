@@ -68,15 +68,9 @@ function Homepage() {
             </div>
             <div className="search-menu">
               <div className="search-menu-content grid grid--2-cols">
-                <a href="recipe-search-results.html" className="btn btn--full">
-                  Search By Recipe Name
-                </a>
-                <a
-                  href="ingredient-search-results.html"
-                  className="btn btn--full"
-                >
-                  Search By Ingredients
-                </a>
+                <Link to="/recipeSpecificSearch" className="btn btn--full">
+                  Recipe Search
+                </Link>
                 <Link to="/ingredient-analyzer" className="btn btn--full">
                   Ingredient Analyzer
                 </Link>

@@ -1,0 +1,28 @@
+/*******************************/
+/*Ingredient Analyzer */
+/*******************************/
+.ingredient-analyzer-section {
+  padding: 9.6rem 9.6rem;
+}
+
+/*Nutrition Facts*/
+.nutritionFacts {
+  margin-top: 2rem; /* TEMPORARY */
+  margin-left: 2rem; /* TEMPORARY */
+  padding: 5rem; /* TEMPORARY */
+  max-width: 30rem; /* TEMPORARY */
+  border-radius: 20px;
+  background-color: #ffff;
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+  list-style: none;
+}
+
+.nutritionFacts ul {
+  list-style-type: none;
+  line-height: 24px;
+}
+
+.nutrition-grid--2-cols {
+  grid-template-columns: 2fr 0.8fr;
+}

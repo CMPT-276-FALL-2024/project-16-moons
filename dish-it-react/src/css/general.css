@@ -161,6 +161,9 @@ section {
   margin: 0 auto;
 }
 
+.left-margin-extra {
+  margin-left: 1.2rem;
+}
 .top-margin-extra {
   margin-top: 4.2rem;
 }
@@ -172,6 +175,7 @@ section {
 strong {
   font-weight: 500;
 }
+
 /*******************************/
 /* GRID REUSABLE COMPONENTS */
 /*******************************/

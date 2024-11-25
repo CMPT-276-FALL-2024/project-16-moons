@@ -67,14 +67,21 @@ body {
   color: #555;
 }
 
+section {
+  scroll-margin-top: 8rem;
+}
 /*******************************/
 /* HEADER */
 /*******************************/
 .header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: #fdf2e9;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 
   /*Sticky Nav*/
   height: 9.6rem;
@@ -184,6 +191,10 @@ strong {
 
 .grid--3-cols {
   grid-template-columns: repeat(3, 1fr);
+}
+
+.grid--4-cols {
+  grid-template-columns: repeat(4, 1fr);
 }
 
 .grid--center-v {

@@ -69,16 +69,6 @@ const GenerateRandomDish = () => {
                 </a>
               </li>
               <li>
-                <a className="main-nav-link" href="#features">
-                  Ingredients
-                </a>
-              </li>
-              <li>
-                <a className="main-nav-link" href="#about">
-                  Instructions
-                </a>
-              </li>
-              <li>
                 <Link to="/" className="main-nav-link">
                   Go back
                 </Link>

@@ -166,6 +166,11 @@
   width: 100%;
 }
 
+.profile-container {
+  display: flex;
+  height: 10.4rem;
+}
+
 .profile-container h3 {
   text-align: center;
 }

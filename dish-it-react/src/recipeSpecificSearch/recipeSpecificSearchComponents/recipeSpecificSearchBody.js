@@ -62,8 +62,7 @@ export default function RecipeSpecificSearchBody() {
                                 {data.hits.slice(0, 10).map((hit, index) => (
                                     <RecipeCard
                                         key={index}
-                                        recipeImage={hit.recipe.image}
-                                        recipeName={hit.recipe.label}
+                                        data={hit}
                                     />
                                 ))}
                             </div>
@@ -71,8 +70,7 @@ export default function RecipeSpecificSearchBody() {
                                 {data.hits.slice(11, 20).map((hit, index) => (
                                     <RecipeCard
                                         key={index}
-                                        recipeImage={hit.recipe.image}
-                                        recipeName={hit.recipe.label}
+                                        data={hit}
                                     />
                                 ))}
                             </div>

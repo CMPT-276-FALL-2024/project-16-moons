@@ -1,4 +1,4 @@
-import React from "react";
+import "../css/recipeSpecificSearchPage.css"
 import RecipeSpecificSearchBody from "./recipeSpecificSearchComponents/recipeSpecificSearchBody";
 import RecipeSpecificSearchNavbar from "./recipeSpecificSearchComponents/recipeSpecificSearchNavbar";
 

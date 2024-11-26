@@ -5,6 +5,7 @@ on:
     branches:
       - main
       - pipeline
+      - testing
   pull_request:
     branches:
       - main

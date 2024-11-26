@@ -1,4 +1,4 @@
-name: CI/CD Pipeline
+name: CI Pipeline
 
 on: 
   push:
@@ -65,6 +65,7 @@ jobs:
         run: |
           cd testing-directory
           npm install jest
+          npm install --save-dev jest-fetch-mock
           
       - name: Install Babel for parsing testing files
         run: |

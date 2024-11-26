@@ -65,6 +65,11 @@ jobs:
         run: |
           cd testing-directory
           npm install jest
+          
+      - name: Install Babel for parsing testing files
+        run: |
+          cd testing-directory
+          npm install --save-dev @babel/preset-env @babel/preset-react babel-jest
 
       - name: Run unit tests
         run: |

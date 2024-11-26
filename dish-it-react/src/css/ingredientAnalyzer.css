@@ -1,0 +1,63 @@
+/*******************************/
+/*Ingredient Analyzer */
+/*******************************/
+.ingredient-analyzer-section {
+  padding: 9.6rem 9.6rem;
+}
+
+.ingredient-analyzer-section h1 {
+  font-size: 5.2rem;
+  margin-bottom: 2.2rem;
+}
+.user-input {
+  width: 100%; /* Adjust to your desired width */
+  height: 25rem; /* Increase the height */
+  padding: 10px; /* Add padding inside the input */
+  font-size: 2.2rem; /* Make the text bigger */
+  border: 1px solid #ccc; /* Optional: Define a border */
+  border-radius: 5px; /* Optional: Rounded corners */
+  box-sizing: border-box; /* Ensures padding doesn't affect total width/height */
+}
+
+.error-message {
+  color: red;
+}
+
+.btn {
+  margin-top: 2.2rem;
+  padding: 1.2rem;
+  width: 50%;
+  border-radius: 11px;
+  border-style: none;
+  background-color: #ffbd59;
+  cursor: pointer;
+  transition: 0.3s all;
+}
+
+.btn:hover {
+  background-color: #ffca7a;
+}
+
+/*Nutrition Facts*/
+.nutritionFacts {
+  margin-top: 2rem;
+  margin-left: 2rem;
+  padding: 5rem;
+  width: 80%;
+  border-radius: 20px;
+  background-color: #ffff;
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+  list-style: none;
+  font-size: 2.2rem;
+  line-height: 4.8rem;
+}
+
+.nutritionFacts ul {
+  list-style-type: none;
+  line-height: 24px;
+}
+
+.nutrition-grid--2-cols {
+  grid-template-columns: 2fr 0.8fr;
+}

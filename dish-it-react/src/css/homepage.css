@@ -1,0 +1,185 @@
+/*******************************/
+/* SEARCH SECTION */
+/*******************************/
+.section-search {
+  padding: 9.6rem 0;
+  background-color: #fdf2e9;
+}
+
+.search {
+  max-width: 130rem;
+  margin: 0 auto;
+  padding: 0 3.2rem;
+  display: grid;
+  gap: 9.6rem;
+  grid-template-columns: 1fr;
+}
+
+.search-menu a {
+  margin: 0 auto;
+}
+.search-image {
+  width: 100%;
+}
+
+.food-fact {
+  text-align: center;
+}
+
+.food-fact p {
+  font-size: 2.6rem;
+  margin-bottom: -4.6rem;
+}
+
+.btn:link,
+.btn:visited {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  font-weight: 600;
+  padding: 2.6rem;
+  border-radius: 9px;
+  text-align: center;
+  transition: all 0.3s;
+}
+
+.btn--full:link,
+.btn--full:visited {
+  background-color: #ffbd59;
+  color: #333;
+}
+
+.btn--full:hover,
+.btn--full:active {
+  background-color: #ffca7a;
+}
+
+/*******************************/
+/* FEATURE SECTION */
+/*******************************/
+.section-features {
+  padding: 9.6rem 0;
+}
+
+.section-features .heading-secondary {
+  padding-bottom: 2.4rem;
+}
+
+.feature {
+  background-color: #fae5d3;
+  border-radius: 11px;
+  padding: 2.4rem;
+}
+
+.feature-name {
+  color: #333;
+  font-size: 3.2rem;
+  font-weight: 500;
+  padding-bottom: 1.2rem;
+}
+
+.feature-description {
+  font-size: 1.6rem;
+  font-weight: 300;
+}
+.feature-img {
+  position: relative;
+  display: inline-block;
+}
+
+.feature-img::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 95%;
+  height: 145%;
+  background-color: #fdf2e9;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -2;
+}
+
+.feature-img::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 75%;
+  height: 120%;
+  background-color: #fae5d3;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+
+.feature-img img {
+  width: 100%;
+  border-radius: 9px;
+  position: relative;
+  z-index: 1;
+}
+
+/*******************************/
+/* ABOUT */
+/*******************************/
+.section-about {
+  padding: 9.6rem 9.6rem;
+  background-color: #fdf2e9;
+}
+
+.about-description,
+.about-api-description {
+  font-size: 2.4rem;
+  line-height: 1.6;
+}
+
+.about-api-description {
+  margin-top: 5.6rem;
+}
+
+.image-collage {
+  width: 100%;
+}
+
+.grid-collage {
+  display: grid;
+  column-gap: 3.2rem;
+  row-gap: 3.2rem;
+}
+
+.about-api-logos {
+  display: flex;
+  flex-direction: row;
+  margin-top: 3.2rem;
+  gap: 7.8rem;
+  justify-content: center;
+}
+
+.api-logo {
+  height: 20.2rem;
+}
+/*******************************/
+/* Team */
+/*******************************/
+.section-team {
+  padding: 9.6rem 9.6rem;
+}
+
+.about-team-img {
+  width: 100%;
+}
+
+.profile-container {
+  display: flex;
+}
+
+.profile-container h3 {
+  text-align: center;
+}
+
+.creator-image {
+  width: 100%;
+  border-radius: 50%;
+  margin-bottom: 1.2rem;
+}

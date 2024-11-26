@@ -88,7 +88,7 @@ const IngredientAnalyzer = () => {
                 setIngredient(e.target.value);
                 setError(null);
               }}
-              placeholder="Usagae Example: 10 oz Chicken, 1 cup rice"
+              placeholder="Usage Example: 10 oz Chicken, 1 cup rice"
               className="user-input"
             />
             <button type="submit" className="btn">

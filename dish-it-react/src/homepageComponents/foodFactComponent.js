@@ -1,7 +1,10 @@
 import React from "react";
-const apiKey = process.env.REACT_APP_SPOONACULAR_API_KEY;
+// const apiKey = process.env.REACT_APP_SPOONACULAR_API_KEY;
+const apiKey = process.env.REACT_APP_X_RAPIDAPI_KEY;
+const apiUa = process.env.REACT_APP_X_RAPIDAPI_UA;
+const apiHost = process.env.REACT_APP_X_RAPID_HOST;
 
-const FoodFactComponent = ({ apiKey }) => {
+const FoodFactComponent = ({}) => {
   // State to store the fun fact
   const [funFact, setFunFact] = React.useState("");
 
@@ -11,7 +14,15 @@ const FoodFactComponent = ({ apiKey }) => {
     const fetchRandomFoodFact = async () => {
       try {
         const response = await fetch(
-          `https://api.spoonacular.com/food/trivia/random?apiKey=${apiKey}`
+          `https://api.spoonacular.com/food/trivia/random?`,
+          {
+            method: "GET",
+            headers: {
+              "x-rapidapi-host": apiHost,
+              "x-rapidapi-key": apiKey,
+              "x-rapidapi-ua": apiUa,
+            },
+          }
         );
         if (!response.ok) {
           // Throw an error if the response is not OK

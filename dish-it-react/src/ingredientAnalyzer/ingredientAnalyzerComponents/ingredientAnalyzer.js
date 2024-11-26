@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-const apiKey = process.env.REACT_APP_EDAMAM_APP_KEY_INGREDIENT_ANALYZER;
-const apiId = process.env.REACT_APP_EDAMAM_APP_ID_INGREDIENT_ANALYZER;
+// const apiKey = process.env.REACT_APP_EDAMAM_APP_KEY_INGREDIENT_ANALYZER;
+// const apiId = process.env.REACT_APP_EDAMAM_APP_ID_INGREDIENT_ANALYZER;
+const apiId = process.env.REACT_APP_EDAMAM_APP_ID_BACKUP;
+const apiKey = process.env.REACT_APP_EDAMAM_API_KEY_BACKUP;
 
 const IngredientAnalyzer = () => {
   const [error, setError] = useState(null);
@@ -19,9 +21,9 @@ const IngredientAnalyzer = () => {
     try {
       const response = await fetch(
         "https://api.edamam.com/api/nutrition-details?app_id=" +
-          apiId +
+          "cdcaac6b" +
           "&app_key=" +
-          apiKey,
+          "090af090e285c5a3f51c901e67299657",
         {
           method: "POST",
           headers: {
@@ -37,7 +39,6 @@ const IngredientAnalyzer = () => {
 
       const data = await response.json();
       setNutrientsAnalysis(data);
-      console.log(data);
     } catch (err) {
       setError(err.message); // Set error state to display to the user
       console.error("Error:", err.message); // Log the error

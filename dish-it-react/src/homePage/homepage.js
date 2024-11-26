@@ -85,13 +85,13 @@ function Homepage() {
           </div>
         </section>
         <section className="section-features" id="features">
-          <div className="container">
+          <div>
             <span className="subheading">Features</span>
             <h2 className="heading-secondary">
               Checkout what each of our features do!
             </h2>
           </div>
-          <div className="container grid grid--2-cols grid--center-v">
+          <div className="grid grid--2-cols grid--center-v">
             <div className="feature">
               <p className="feature-name">Recipe Search</p>
               <p className="feature-description">

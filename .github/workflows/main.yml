@@ -73,4 +73,5 @@ jobs:
 
       - name: Run tests
         run: |
+          cd testing-directory
           npm test

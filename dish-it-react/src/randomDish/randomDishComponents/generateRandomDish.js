@@ -8,7 +8,7 @@ import ScrollUp from "../../scrollUp/scrollUp";
 const GenerateRandomDish = () => {
   // Recipe Data
   const [recipeData, setRecipeData] = useState(null);
-  // API Verification Proccess
+  // API Verification Process
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 

@@ -174,12 +174,12 @@ function Homepage() {
               <div className="about-api-logos">
                 <img
                   className="api-logo"
-                  src="images/api-logos/edamam.png"
+                  src="images/api-logos/Edamam.png"
                   alt="Edamam API logo"
                 ></img>
                 <img
                   className="api-logo"
-                  src="images/api-logos/spoonacular.png"
+                  src="images/api-logos/Spoonacular.png"
                   alt="Spoonacular API logo"
                 ></img>
               </div>

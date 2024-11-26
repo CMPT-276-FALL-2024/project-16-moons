@@ -1,5 +1,5 @@
 import React from "react";
-const apiKey = process.env.REACT_APP_SPOONACULAR_API_KEY;
+const apiKey = process.env.REACT_APP_SPOONACULAR_API_KEY_RANDOM_DISH;
 
 const FoodFactComponent = () => {
   // State to store the fun fact

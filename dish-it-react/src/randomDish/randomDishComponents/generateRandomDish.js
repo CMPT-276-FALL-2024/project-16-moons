@@ -67,8 +67,8 @@ const GenerateRandomDish = () => {
             <div className="ingredientList gridBox">
               <h2>Ingredients</h2>
               <ul>
-                {recipeData.extendedIngredients.map((ingredient) => (
-                  <li>
+                {recipeData.extendedIngredients.map((ingredient, index) => (
+                  <li key={ingredient.id || index}>
                     {ingredient.amount} {ingredient.unit} {ingredient.name}
                   </li>
                 ))}
@@ -84,13 +84,11 @@ const GenerateRandomDish = () => {
             <div className="nutrients gridBox">
               <h2>Nutrients</h2>
               <ul>
-                {" "}
-                {recipeData.nutrition.nutrients.map((nutrient) => (
-                  <li>
+                {recipeData.nutrition?.nutrients?.map((nutrient, index) => (
+                  <li key={index}>
                     <strong>
-                      {nutrient.amount} {nutrient.unit}
-                    </strong>{" "}
-                    of {nutrient.name}
+                      {nutrient.amount} {nutrient.unit} {nutrient.name}
+                    </strong>
                   </li>
                 ))}
               </ul>

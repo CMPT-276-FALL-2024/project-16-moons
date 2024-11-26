@@ -8,4 +8,5 @@ module.exports = {
     transformIgnorePatterns: [
         "/node_modules/(?!your-es6-module|another-es6-module).*/"
     ],
+    setupFiles: ['<rootDir>/jest.setup.js'],
 };

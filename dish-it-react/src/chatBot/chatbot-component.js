@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "../css/general.css";
 import "../css/chatBot.css";
 const apiKey = process.env.REACT_APP_SPOONACULAR_API_KEY_CHATBOT;
 
@@ -56,44 +57,42 @@ const ChatbotComponent = () => {
 
   return (
     <div>
-      {/* Chatbot Button */}
-      <button onClick={toggleChat} className="chat-button">
-        <img
-          src="/images/chatbot-colored.png"
-          alt="Chat Bot Icon"
-          className="bottom-left"
-        />
-      </button>
+        {/* Chatbot Button */}
+        <button onClick={toggleChat} className="chat-button">
+            <img
+                src="/images/chatbot-colored.png"
+                alt="Chat Bot Icon"
+                className="bottom-left"
+            />
+        </button>
 
-      {/* Chat Dialogue */}
-      {isOpen && (
-        <div className="chat-dialogue">
-          <h2>Chatbot</h2>
-          <input
-            type="text"
-            value={question}
-            onChange={(e) => setQuestion(e.target.value)}
-            onKeyDown={enterKeyDown}
-            placeholder="Ask me something..."
-          />
-          <button onClick={Conversation}> &#8594; </button>
+        {/* Chat Dialogue */}
+        {isOpen && (
+            <div className="chat-box">
+                <h1>Chatbot</h1>
 
-          <div className="conversation">
-            {conversation.map((entry, index) => (
-              <div key={index} className="chat-entry">
-                <p>
-                  <strong>Q:</strong> {entry.question}
-                </p>
-                <p>
-                  <strong>A:</strong> {entry.answer}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      )}
+                <div className='chat-history'>
+                    {conversation.map((entry, index) => (
+                        <div key={index} className="chat-entry">
+                            <p> <strong>Q:</strong> {entry.question} </p>
+                            <p> <strong>A:</strong> {entry.answer} </p>
+                        </div>
+                    ))}
+                </div>
+                <div className='chat-input'>
+                    <input
+                        type="text"
+                        value={question}
+                        onChange={(e) => setQuestion(e.target.value)}
+                        onKeyDown={enterKeyDown}
+                        placeholder="Ask me something..."
+                    />
+                    <button onClick={Conversation}> &#8594; </button>
+                </div>
+            </div>
+        )}
     </div>
-  );
+);
 };
 
 export default ChatbotComponent;

@@ -118,7 +118,7 @@ const GenerateRandomDish = () => {
                 <h2>Ingredients</h2>
                 <ul>
                   {recipeData.extendedIngredients.map((ingredient) => (
-                    <li key={ingredient.id || ingredient.name}>
+                    <li>
                       {ingredient.amount} {ingredient.unit} {ingredient.name}
                     </li>
                   ))}
@@ -129,7 +129,7 @@ const GenerateRandomDish = () => {
                 <ul>
                   {" "}
                   {recipeData.nutrition.nutrients.map((nutrient) => (
-                    <li key={nutrient.name || nutrient.id}>
+                    <li>
                       <strong>
                         {nutrient.amount} {nutrient.unit}
                       </strong>{" "}
@@ -141,7 +141,7 @@ const GenerateRandomDish = () => {
               <div className="instructions">
                 <h2>Instructions</h2>
                 {recipeData.analyzedInstructions[0].steps.map((instruction) => (
-                  <li key={instruction.number}>
+                  <li>
                     <strong>{instruction.number}</strong>. {instruction.step}
                   </li>
                 ))}

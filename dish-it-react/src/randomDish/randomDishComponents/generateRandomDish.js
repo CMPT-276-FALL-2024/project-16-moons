@@ -1,12 +1,11 @@
-import React from "react";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const apiKey = process.env.REACT_APP_SPOONACULAR_API_KEY_RANDOM_DISH;
 
 const GenerateRandomDish = () => {
   // Recipe Data
   const [recipeData, setRecipeData] = useState(null);
-  // API Verification Proccess
+  // API Verification Process
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -67,8 +66,8 @@ const GenerateRandomDish = () => {
             <div className="ingredientList gridBox">
               <h2>Ingredients</h2>
               <ul>
-                {recipeData.extendedIngredients.map((ingredient, index) => (
-                  <li key={ingredient.id || index}>
+                {recipeData.extendedIngredients.map((ingredient) => (
+                  <li key={ingredient.id || ingredient.name}>
                     {ingredient.amount} {ingredient.unit} {ingredient.name}
                   </li>
                 ))}
@@ -85,12 +84,12 @@ const GenerateRandomDish = () => {
               <h2>Nutrients</h2>
               <ul>
                 {recipeData.nutrition?.nutrients?.map((nutrient, index) => (
-                  <li key={index}>
+                  <li key={nutrient.name || index}>
                     <strong>
                       {nutrient.amount} {nutrient.unit} {nutrient.name}
                     </strong>
                   </li>
-                ))}
+                )) || <li>No nutrient information available.</li>}
               </ul>
             </div>
           </div>
@@ -99,13 +98,17 @@ const GenerateRandomDish = () => {
         <div className="instructionsBackground" id="instructions">
           <h1>Instructions</h1>
           <div className="instructionsGrid">
-            {recipeData.analyzedInstructions[0].steps.map((instruction) => (
-              <div className="instructions">
-                <p>
-                  <strong>{instruction.number}</strong>. {instruction.step}
-                </p>
-              </div>
-            ))}
+            {recipeData.analyzedInstructions?.[0]?.steps?.length ? (
+              recipeData.analyzedInstructions[0].steps.map((instruction, index) => (
+                <div className="instructions" key={instruction.number || index}>
+                  <p>
+                    <strong>{instruction.number}</strong>. {instruction.step}
+                  </p>
+                </div>
+              ))
+            ) : (
+              <p>No instructions available.</p>
+            )}
           </div>
         </div>
       </div>

@@ -1,5 +1,5 @@
 import React from 'react';
-const apiKey = process.env.REACT_APP_SPOONACULAR_API_KEY
+const apiKey = process.env.REACT_APP_SPOONACULAR_API_KEY;
 
 const FoodFactComponent = () => {
     // State to store the fun fact
@@ -8,8 +8,9 @@ const FoodFactComponent = () => {
     // useEffect to fetch a random food trivia from the Spoonacular API
     React.useEffect(() => {
         // Fetch request to get a random food trivia
-        fetch(`https://api.spoonacular.com/food/trivia/random?apiKey=${apiKey}`)
-            .then(response => {
+        const fetchRandomFoodFact = async () => {
+            try {
+                const response = await fetch(`https://api.spoonacular.com/food/trivia/random?apiKey=${apiKey}`)
                 if (!response.ok) {
                     // Throw an error if the response is not OK
                     if (response.status === 401) {
@@ -19,20 +20,24 @@ const FoodFactComponent = () => {
                     // Generic error
                     throw new Error('Error occured while getting a fun fact. Please contact one of our team members for help by clicking the mail symbol in the "Contact Us" section')
                 }
-                return response.json()
-            })
-            .then(data => {
+                const data = await response.json()
                 setFunFact(data.text)
-            })
-            .catch(error => {    
-                alert(error.message)
-            })
+            } catch (error) {
+                setFunFact(error.message)
+                // Alerts only if not in test environment
+                if (process.env.NODE_ENV !== 'test') { 
+                    alert(error.message);
+                }
+            }
+        }
+        fetchRandomFoodFact();
     }, [])
 
     // Return the fun fact
     return (
         <div>
-            <h2>Did you know? {funFact}</h2>
+            <h3>Did you know...</h3>
+            <h2>{funFact}</h2>
         </div>
     );
 }

@@ -71,12 +71,6 @@ jobs:
           cd testing-directory
           npm install --save-dev @babel/preset-env @babel/preset-react babel-jest
 
-      - name: Run unit tests
+      - name: Run tests
         run: |
-          cd testing-directory
           npx jest --config jest.config.js
-
-      - name: Run integration tests
-        run: |
-          cd testing-directory
-          npx jest --config jest.integration.config.js

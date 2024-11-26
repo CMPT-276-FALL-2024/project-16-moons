@@ -1,20 +1,20 @@
 import { Link } from "react-router-dom";
 
-function RecipeSpecificSearchNavbar() {
+function RecipeOverviewNavbar() {
   return (
     <header className="navigation-bar">
         <Link to="/">
         <img
-            src="/images/logoNavBar.png"
+            src="./images/Dish-It-Smaller.png"
             class="image"
             alt="logo
             of Dish-It"
         /></Link>
         <nav className="navbar">
-            <Link to="/">GO BACK</Link>
+            <Link to="/">BACK TO HOME</Link>
         </nav>
     </header>
   )
 }
 
-export default RecipeSpecificSearchNavbar;
+export default RecipeOverviewNavbar;

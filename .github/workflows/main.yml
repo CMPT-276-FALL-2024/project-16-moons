@@ -73,4 +73,5 @@ jobs:
 
       - name: Run tests
         run: |
-          npx jest --config jest.config.js
+          cd testing-directory
+          npm test

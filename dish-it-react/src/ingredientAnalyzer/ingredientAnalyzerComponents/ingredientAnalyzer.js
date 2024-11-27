@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-// const apiKey = process.env.REACT_APP_EDAMAM_APP_KEY_INGREDIENT_ANALYZER;
-// const apiId = process.env.REACT_APP_EDAMAM_APP_ID_INGREDIENT_ANALYZER;
-const apiId = process.env.REACT_APP_EDAMAM_APP_ID_BACKUP;
-const apiKey = process.env.REACT_APP_EDAMAM_API_KEY_BACKUP;
+const apiKey = process.env.REACT_APP_EDAMAM_APP_KEY_INGREDIENT_ANALYZER;
+const apiId = process.env.REACT_APP_EDAMAM_APP_ID_INGREDIENT_ANALYZER;
+// const apiId = process.env.REACT_APP_EDAMAM_APP_ID_BACKUP;
+// const apiKey = process.env.REACT_APP_EDAMAM_API_KEY_BACKUP;
 
 const IngredientAnalyzer = () => {
   const [error, setError] = useState(null);
@@ -34,6 +34,12 @@ const IngredientAnalyzer = () => {
       );
 
       if (!response.ok) {
+        if (response.status === 401) {
+          throw new Error("Unauthorized: Tokens have run out");
+        }
+        if (response.status === 501) {
+          throw new Error("Incorrect usage: Check your input data");
+        }
         throw new Error("Failed to fetch analysis");
       }
 
@@ -41,7 +47,21 @@ const IngredientAnalyzer = () => {
       setNutrientsAnalysis(data);
       console.log(nutrientsAnalysis);
     } catch (err) {
-      setError(err.message); // Set error state to display to the user
+      setError(err.message);
+
+      // Handle alerts directly in the catch block
+      if (err.message.includes("Tokens have run out")) {
+        alert("Dish-It's has ran out of requests for today sorry!");
+      } else if (err.message.includes("Incorrect usage")) {
+        alert(
+          "The request was incorrectly formatted. Refer to How To Use Section"
+        );
+      } else {
+        alert(
+          "The request was incorrectly formatted. Refer to How To Use Section"
+        );
+      }
+
       console.error("Error:", err.message); // Log the error
     }
   };
@@ -93,15 +113,22 @@ const IngredientAnalyzer = () => {
               className="user-input"
             />
             <button type="submit" className="btn">
-              <p></p>
-              Analyze
+              <h2>Analyze</h2>
             </button>
           </form>
-          {error && (
-            <div className="error-message">
-              Seems like your input is invalid.
-            </div>
-          )}{" "}
+          <div class="section-How-To-Use">
+            <h2>How To Use</h2>
+            <p>
+              Just simply type into any food that you'd like for Dish-It to
+              analyze!
+            </p>
+            <p>Our analyzer measures ingredients in Oz & cups!</p>
+            <p>
+              {" "}
+              Example of a correct input (for one ingredient): 1 Oz Chicken{" "}
+            </p>
+            <p></p>
+          </div>
         </div>
         {nutrientsAnalysis && (
           <div className="nutritionFacts">
@@ -126,13 +153,15 @@ const IngredientAnalyzer = () => {
                         )}{" "}
                         {nutrientsAnalysis.totalNutrients.FASAT.unit}
                       </li>
-                      {nutrientsAnalysis.totalNutrients.FATRN && <li className="left-margin-extra">
-                        Trans Fat{" "}
-                        {nutrientsAnalysis.totalNutrients.FATRN.quantity.toFixed(
-                          1
-                        )}{" "}
-                        {nutrientsAnalysis.totalNutrients.FATRN.unit}
-                      </li>}
+                      {nutrientsAnalysis.totalNutrients.FATRN && (
+                        <li className="left-margin-extra">
+                          Trans Fat{" "}
+                          {nutrientsAnalysis.totalNutrients.FATRN.quantity.toFixed(
+                            1
+                          )}{" "}
+                          {nutrientsAnalysis.totalNutrients.FATRN.unit}
+                        </li>
+                      )}
                     </ul>
                   </li>
                   <li>
@@ -152,26 +181,32 @@ const IngredientAnalyzer = () => {
                     )}{" "}
                     {nutrientsAnalysis.totalNutrients.CHOCDF.unit}
                     <ul className="subNutrients">
-                      {nutrientsAnalysis.totalNutrients.FIBTG && <li className="left-margin-extra">
-                        Dietary Fiber{" "}
-                        {nutrientsAnalysis.totalNutrients.FIBTG.quantity.toFixed(
-                          1
-                        )}{" "}
-                        {nutrientsAnalysis.totalNutrients.FIBTG.unit}
-                      </li>}
-                      {nutrientsAnalysis.totalNutrients.SUGAR && <li className="left-margin-extra">
-                        Total Sugars{" "}
-                        {nutrientsAnalysis.totalNutrients.SUGAR.quantity.toFixed(
-                          1
-                        )}{" "}
-                        {nutrientsAnalysis.totalNutrients.SUGAR.unit}
-                      </li>}
-                      {nutrientsAnalysis.totalNutrients.SUGAR && <li className="left-margin-extra">
-                        {nutrientsAnalysis.totalNutrients.SUGAR.label ===
-                        "Sugars, total including NLEA"
-                          ? "Includes - Added Sugars"
-                          : ""}
-                      </li>}
+                      {nutrientsAnalysis.totalNutrients.FIBTG && (
+                        <li className="left-margin-extra">
+                          Dietary Fiber{" "}
+                          {nutrientsAnalysis.totalNutrients.FIBTG.quantity.toFixed(
+                            1
+                          )}{" "}
+                          {nutrientsAnalysis.totalNutrients.FIBTG.unit}
+                        </li>
+                      )}
+                      {nutrientsAnalysis.totalNutrients.SUGAR && (
+                        <li className="left-margin-extra">
+                          Total Sugars{" "}
+                          {nutrientsAnalysis.totalNutrients.SUGAR.quantity.toFixed(
+                            1
+                          )}{" "}
+                          {nutrientsAnalysis.totalNutrients.SUGAR.unit}
+                        </li>
+                      )}
+                      {nutrientsAnalysis.totalNutrients.SUGAR && (
+                        <li className="left-margin-extra">
+                          {nutrientsAnalysis.totalNutrients.SUGAR.label ===
+                          "Sugars, total including NLEA"
+                            ? "Includes - Added Sugars"
+                            : ""}
+                        </li>
+                      )}
                     </ul>
                   </li>
                   <li>
@@ -232,13 +267,15 @@ const IngredientAnalyzer = () => {
                     {""}
                     {nutrientsAnalysis.totalDaily.CHOCDF.unit}
                   </li>
-                  {nutrientsAnalysis.totalNutrients.FIBTG &&<li>
-                    {nutrientsAnalysis.totalDaily.FIBTG.quantity.toFixed(1)}
-                    {""}
-                    {nutrientsAnalysis.totalDaily.FIBTG.unit}
-                  </li>}
-                  {nutrientsAnalysis.totalNutrients.SUGAR &&<li>-</li>}
-                  {nutrientsAnalysis.totalNutrients.SUGAR &&<li>-</li>}
+                  {nutrientsAnalysis.totalNutrients.FIBTG && (
+                    <li>
+                      {nutrientsAnalysis.totalDaily.FIBTG.quantity.toFixed(1)}
+                      {""}
+                      {nutrientsAnalysis.totalDaily.FIBTG.unit}
+                    </li>
+                  )}
+                  {nutrientsAnalysis.totalNutrients.SUGAR && <li>-</li>}
+                  {nutrientsAnalysis.totalNutrients.SUGAR && <li>-</li>}
                   <li>
                     {nutrientsAnalysis.totalDaily.PROCNT.quantity.toFixed(1)}{" "}
                     {nutrientsAnalysis.totalDaily.PROCNT.unit}

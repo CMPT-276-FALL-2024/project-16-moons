@@ -68,6 +68,7 @@ export default function RecipeSpecificSearchBody() {
                                     <RecipeCard
                                         key={index}
                                         data={hit}
+                                        searchInput={recipeToFetch}
                                     />
                                 ))}
                             </div>

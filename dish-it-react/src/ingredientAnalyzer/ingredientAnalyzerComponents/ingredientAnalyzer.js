@@ -15,7 +15,10 @@ const IngredientAnalyzer = () => {
 
     // Prepare the jsonData with the ingredients
     const jsonData = {
-      ingr: ingredient.split(",").map((item) => item.trim()),
+      ingr: ingredient
+        .split(",")
+        .map((item) => item.trim())
+        .filter((item) => item.length > 0), // Remove empty strings
     };
 
     try {
@@ -36,6 +39,7 @@ const IngredientAnalyzer = () => {
 
       const data = await response.json();
       setNutrientsAnalysis(data);
+      console.log(nutrientsAnalysis);
     } catch (err) {
       setError(err.message); // Set error state to display to the user
       console.error("Error:", err.message); // Log the error
@@ -85,7 +89,7 @@ const IngredientAnalyzer = () => {
                 setIngredient(e.target.value);
                 setError(null);
               }}
-              placeholder="Usage Example: 10 oz of Chicken"
+              placeholder="Usage Example: 10 oz Chicken, 1 cup rice"
               className="user-input"
             />
             <button type="submit" className="btn">
@@ -122,13 +126,13 @@ const IngredientAnalyzer = () => {
                         )}{" "}
                         {nutrientsAnalysis.totalNutrients.FASAT.unit}
                       </li>
-                      <li className="left-margin-extra">
+                      {nutrientsAnalysis.totalNutrients.FATRN && <li className="left-margin-extra">
                         Trans Fat{" "}
                         {nutrientsAnalysis.totalNutrients.FATRN.quantity.toFixed(
                           1
                         )}{" "}
                         {nutrientsAnalysis.totalNutrients.FATRN.unit}
-                      </li>
+                      </li>}
                     </ul>
                   </li>
                   <li>
@@ -148,26 +152,26 @@ const IngredientAnalyzer = () => {
                     )}{" "}
                     {nutrientsAnalysis.totalNutrients.CHOCDF.unit}
                     <ul className="subNutrients">
-                      <li className="left-margin-extra">
+                      {nutrientsAnalysis.totalNutrients.FIBTG && <li className="left-margin-extra">
                         Dietary Fiber{" "}
                         {nutrientsAnalysis.totalNutrients.FIBTG.quantity.toFixed(
                           1
                         )}{" "}
                         {nutrientsAnalysis.totalNutrients.FIBTG.unit}
-                      </li>
-                      <li className="left-margin-extra">
+                      </li>}
+                      {nutrientsAnalysis.totalNutrients.SUGAR && <li className="left-margin-extra">
                         Total Sugars{" "}
                         {nutrientsAnalysis.totalNutrients.SUGAR.quantity.toFixed(
                           1
                         )}{" "}
                         {nutrientsAnalysis.totalNutrients.SUGAR.unit}
-                      </li>
-                      <li className="left-margin-extra">
+                      </li>}
+                      {nutrientsAnalysis.totalNutrients.SUGAR && <li className="left-margin-extra">
                         {nutrientsAnalysis.totalNutrients.SUGAR.label ===
                         "Sugars, total including NLEA"
                           ? "Includes - Added Sugars"
                           : ""}
-                      </li>
+                      </li>}
                     </ul>
                   </li>
                   <li>
@@ -212,7 +216,7 @@ const IngredientAnalyzer = () => {
                     {""}
                     {nutrientsAnalysis.totalDaily.FASAT.unit}
                   </li>
-                  <li>-</li>
+                  {nutrientsAnalysis.totalNutrients.FATRN && <li>-</li>}
                   <li>
                     {nutrientsAnalysis.totalDaily.CHOLE.quantity.toFixed(1)}
                     {""}
@@ -228,13 +232,13 @@ const IngredientAnalyzer = () => {
                     {""}
                     {nutrientsAnalysis.totalDaily.CHOCDF.unit}
                   </li>
-                  <li>
+                  {nutrientsAnalysis.totalNutrients.FIBTG &&<li>
                     {nutrientsAnalysis.totalDaily.FIBTG.quantity.toFixed(1)}
                     {""}
                     {nutrientsAnalysis.totalDaily.FIBTG.unit}
-                  </li>
-                  <li>-</li>
-                  <li>-</li>
+                  </li>}
+                  {nutrientsAnalysis.totalNutrients.SUGAR &&<li>-</li>}
+                  {nutrientsAnalysis.totalNutrients.SUGAR &&<li>-</li>}
                   <li>
                     {nutrientsAnalysis.totalDaily.PROCNT.quantity.toFixed(1)}{" "}
                     {nutrientsAnalysis.totalDaily.PROCNT.unit}

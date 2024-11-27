@@ -77,7 +77,7 @@ function Homepage() {
                 <Link to="/ingredient-analyzer" className="btn btn--full">
                   Ingredient Analyzer
                 </Link>
-                <Link to="/random-dish" className="btn btn--full">
+                <Link to="/random-recipe" className="btn btn--full">
                   Random Recipe
                 </Link>
                 <Link to="/meal-planner" className="btn btn--full">
@@ -112,7 +112,7 @@ function Homepage() {
             <div className="feature-img">
               <img src="images/food-Images/2.jpg" alt="gif of function"></img>
             </div>
-            <Link to="/random-dish" class="feature-link">
+            <Link to="/random-recipe" class="feature-link">
               <p className="feature-name">Random Recipe</p>
               <p className="feature-description">
                 Not sure what to eat? Let Dish-It choose for you with just a

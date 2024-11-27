@@ -2,7 +2,7 @@ import "../css/homepage.css"; // Importing first stylesheet
 import "../css/general.css"; // Importing second stylesheet
 
 import { Link } from "react-router-dom";
-import FoodFactComponent from "./homepageComponents/foodFactComponent";
+import FoodFactComponent from "../foodFact/foodFactComponent";
 import ChatbotComponent from "../chatBot/chatbot-component";
 import ScrollUp from "../scrollUp/scrollUp";
 

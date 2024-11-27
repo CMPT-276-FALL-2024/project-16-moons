@@ -80,7 +80,7 @@ function Homepage() {
                 <Link to="/random-dish" className="btn btn--full">
                   Random Recipe
                 </Link>
-                <Link to="/mealplanner" className="btn btn--full">
+                <Link to="/meal-planner" className="btn btn--full">
                   Meal Planner
                 </Link>
               </div>

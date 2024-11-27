@@ -12,7 +12,7 @@ root.render(
   <Router>
     <Routes>
       <Route path="/" element={<Homepage />} />
-      <Route path="/random-dish" element={<RandomDishPage />} />
+      <Route path="/random-recipe" element={<RandomDishPage />} />
       <Route path="/ingredient-analyzer" element={<IngredientAnalyzerPage />} />
       <Route path="/recipe-search" element={<RecipeSpecificSearch />} />
       <Route path="/meal-planner" element={<MealPlannerPage />} />

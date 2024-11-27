@@ -71,13 +71,13 @@ function Homepage() {
             </div>
             <div className="search-menu">
               <div className="search-menu-content grid grid--2-cols">
-                <Link to="/recipeSpecificSearch" className="btn btn--full">
+                <Link to="/recipe-search" className="btn btn--full">
                   Recipe Search
                 </Link>
                 <Link to="/ingredient-analyzer" className="btn btn--full">
                   Ingredient Analyzer
                 </Link>
-                <Link to="/randomdish" className="btn btn--full">
+                <Link to="/random-dish" className="btn btn--full">
                   Random Recipe
                 </Link>
                 <Link to="/mealplanner" className="btn btn--full">
@@ -95,46 +95,52 @@ function Homepage() {
             </h2>
           </div>
           <div className="grid grid--2-cols grid--center-v">
-            <div className="feature">
+            <Link to="/recipe-search" class="feature-link">
               <p className="feature-name">Recipe Search</p>
               <p className="feature-description">
-                Simply enter the name of any dish you're craving like "Brownies"
-                or "Chicken Katsu" and start cooking.
+                Simply enter the name of any dish you're craving like "Salad" or
+                "Chicken Katsu" and start cooking.
               </p>
+            </Link>
+
+            <div className="feature-img">
+              <img
+                src="images/food-Images/1.jpg"
+                alt="A delicious looking"
+              ></img>
             </div>
             <div className="feature-img">
-              <img src="images/placeholder1.jpg" alt="gif of function"></img>
+              <img src="images/food-Images/2.jpg" alt="gif of function"></img>
             </div>
-            <div className="feature-img">
-              <img src="images/placeholder2.jpg" alt="gif of function"></img>
-            </div>
-            <div className="feature">
+            <Link to="/random" class="feature-link">
               <p className="feature-name">Random Recipe</p>
               <p className="feature-description">
                 Not sure what to eat? Let Dish-It choose for you with just a
                 click!
               </p>
-            </div>
-            <div className="feature">
+            </Link>
+            <Link to="/meal-planner" class="feature-link">
               <p className="feature-name">Meal Planner</p>
               <p className="feature-description">
                 Want to create your own personalized diet? Well start creating
                 now today using Dish-It!
               </p>
+            </Link>
+
+            <div className="feature-img">
+              <img src="images/food-Images/3.jpg" alt="gif of function"></img>
             </div>
             <div className="feature-img">
-              <img src="images/placeholder3.jpg" alt="gif of function"></img>
+              <img src="images/food-Images/4.jpg" alt="gif of function"></img>
             </div>
-            <div className="feature-img">
-              <img src="images/placeholder4.jpg" alt="gif of function"></img>
-            </div>
-            <div className="feature">
+            <Link to="/ingredient-analyzer" class="feature-link">
               <p className="feature-name">Ingredient Analyzer</p>
               <p className="feature-description">
                 List down your ingredients and have Dish-It analyze it for you
                 and give you back an estimate in their nutrient values.
               </p>
-            </div>
+            </Link>
+
             <div className="feature top-margin-extra">
               <p className="feature-name">Random Food Fact</p>
               <p className="feature-description">
@@ -166,7 +172,7 @@ function Homepage() {
                 food, explore new cuisines or cooking techniques, and simplify
                 meal planning.
               </p>
-              <h2 className="heading-secondary bottom-less-margin">
+              <h2 className="heading-secondary top-margin-extra bottom-less-margin">
                 APIs used in the project
               </h2>
               <p className="about-api-description">

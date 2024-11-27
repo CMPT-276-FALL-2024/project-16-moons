@@ -3,7 +3,7 @@ import "../css/scrollUp.css";
 const ScrollUp = () => {
   return (
     <div>
-      <a href="#home">
+      <a href="#main">
         <img
           src="../images/scroll-back-up.png"
           alt="Logo for a scroll up button."

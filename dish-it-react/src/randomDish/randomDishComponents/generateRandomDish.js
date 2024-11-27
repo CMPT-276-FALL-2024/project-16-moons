@@ -56,15 +56,17 @@ const GenerateRandomDish = () => {
           <title>Dish-It | Cooking All In One!</title>
         </head>
         <header className="header">
-          <img
-            className="logo"
-            alt="Dish-It Logo"
-            src="images/logoNavBar.png"
-          ></img>
+          <Link to="/">
+            <img
+              className="logo"
+              alt="Dish-It Logo"
+              src="images/logoNavBar.png"
+            ></img>
+          </Link>
           <nav className="main-nav">
             <ul className="main-nav-list">
               <li>
-                <a className="main-nav-link" href="#home">
+                <a className="main-nav-link" href="#main">
                   Summary
                 </a>
               </li>
@@ -73,21 +75,11 @@ const GenerateRandomDish = () => {
                   Go back
                 </Link>
               </li>
-              <li>
-                <a
-                  className="main-nav-link"
-                  href="https://docs.google.com/document/d/1JZCWgFncoqhTWbnXguZtalruUfB7CJaEjLOR9sbGqdo/edit?usp=sharing"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Documentation
-                </a>
-              </li>
             </ul>
           </nav>
         </header>
         <main>
-          <section className="section-summary" id="home">
+          <section className="section-summary" id="main">
             <h2 className="heading-secondary bottom-less-margin">
               {recipeData.title}
             </h2>

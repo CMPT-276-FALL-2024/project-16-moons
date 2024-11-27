@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import "../css/general.css";
 import "../css/chatBot.css";
-const apiKey = process.env.REACT_APP_SPOONACULAR_API_KEY_CHATBOT;
+const apiKey = process.env.REACT_APP_X_RAPIDAPI_KEY;
+const apiUa = process.env.REACT_APP_X_RAPIDAPI_UA;
+const apiHost = process.env.REACT_APP_X_RAPID_HOST;
 
 const ChatbotComponent = () => {
   const [question, setQuestion] = useState("");
@@ -21,7 +23,15 @@ const ChatbotComponent = () => {
     const formattedQuestion = encodeURIComponent(question);
 
     fetch(
-      `https://api.spoonacular.com/food/converse?apiKey=${apiKey}&text=${formattedQuestion}`
+      `https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/food/converse?text=${formattedQuestion}`,
+      {
+        method: "GET",
+        headers: {
+          "x-rapidapi-host": apiHost,
+          "x-rapidapi-key": apiKey,
+          "x-rapidapi-ua": apiUa,
+        },
+      }
     )
       .then((response) => {
         if (!response.ok) {
@@ -57,42 +67,48 @@ const ChatbotComponent = () => {
 
   return (
     <div>
-        {/* Chatbot Button */}
-        <button onClick={toggleChat} className="chat-button">
-            <img
-                src="/images/chatbot-colored.png"
-                alt="Chat Bot Icon"
-                className="bottom-left"
+      {/* Chatbot Button */}
+      <button onClick={toggleChat} className="chat-button">
+        <img
+          src="/images/chatbot-colored.png"
+          alt="Chat Bot Icon"
+          className="bottom-left"
+        />
+      </button>
+
+      {/* Chat Dialogue */}
+      {isOpen && (
+        <div className="chat-box">
+          <h1>Chatbot</h1>
+
+          <div className="chat-history">
+            {conversation.map((entry, index) => (
+              <div key={index} className="chat-entry">
+                <p>
+                  {" "}
+                  <strong>Q:</strong> {entry.question}{" "}
+                </p>
+                <p>
+                  {" "}
+                  <strong>A:</strong> {entry.answer}{" "}
+                </p>
+              </div>
+            ))}
+          </div>
+          <div className="chat-input">
+            <input
+              type="text"
+              value={question}
+              onChange={(e) => setQuestion(e.target.value)}
+              onKeyDown={enterKeyDown}
+              placeholder="Ask me something..."
             />
-        </button>
-
-        {/* Chat Dialogue */}
-        {isOpen && (
-            <div className="chat-box">
-                <h1>Chatbot</h1>
-
-                <div className='chat-history'>
-                    {conversation.map((entry, index) => (
-                        <div key={index} className="chat-entry">
-                            <p> <strong>Q:</strong> {entry.question} </p>
-                            <p> <strong>A:</strong> {entry.answer} </p>
-                        </div>
-                    ))}
-                </div>
-                <div className='chat-input'>
-                    <input
-                        type="text"
-                        value={question}
-                        onChange={(e) => setQuestion(e.target.value)}
-                        onKeyDown={enterKeyDown}
-                        placeholder="Ask me something..."
-                    />
-                    <button onClick={Conversation}> &#8594; </button>
-                </div>
-            </div>
-        )}
+            <button onClick={Conversation}> &#8594; </button>
+          </div>
+        </div>
+      )}
     </div>
-);
+  );
 };
 
 export default ChatbotComponent;

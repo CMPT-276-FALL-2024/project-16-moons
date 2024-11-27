@@ -1,5 +1,7 @@
 import React from "react";
-const apiKey = process.env.REACT_APP_SPOONACULAR_API_KEY;
+const apiKey = process.env.REACT_APP_X_RAPIDAPI_KEY;
+const apiUa = process.env.REACT_APP_X_RAPIDAPI_UA;
+const apiHost = process.env.REACT_APP_X_RAPID_HOST;
 
 const FoodFactComponent = () => {
   // State to store the fun fact
@@ -8,11 +10,18 @@ const FoodFactComponent = () => {
   // useEffect to fetch a random food trivia from the Spoonacular API
   React.useEffect(() => {
     // Fetch request to get a random food trivia
-    console.log("Fetched api");
     const fetchRandomFoodFact = async () => {
       try {
         const response = await fetch(
-          `https://api.spoonacular.com/food/trivia/random?apiKey=${apiKey}`
+          `https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/food/trivia/random`,
+          {
+            method: "GET",
+            headers: {
+              "x-rapidapi-host": apiHost,
+              "x-rapidapi-key": apiKey,
+              "x-rapidapi-ua": apiUa,
+            },
+          }
         );
         if (!response.ok) {
           // Throw an error if the response is not OK
@@ -28,9 +37,13 @@ const FoodFactComponent = () => {
           );
         }
         const data = await response.json();
-        setFunFact(data.text);
+        setFunFact("Did you know? " + data.text);
       } catch (error) {
-        alert(error.message);
+        setFunFact(error.message);
+        // Alerts only if not in test environment
+        if (process.env.NODE_ENV !== "test") {
+          alert(error.message);
+        }
       }
     };
     fetchRandomFoodFact();
@@ -40,7 +53,7 @@ const FoodFactComponent = () => {
   return (
     <div>
       <h2>Did you know?</h2>
-      <p>{funFact}</p>
+      <p>{funFact.replace(/did you know\?/i, "").trim()}</p>
     </div>
   );
 };

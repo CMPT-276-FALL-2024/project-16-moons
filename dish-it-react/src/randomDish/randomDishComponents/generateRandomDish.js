@@ -3,12 +3,14 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import ScrollUp from "../../scrollUp/scrollUp";
 
-// const apiKey = process.env.REACT_APP_SPOONACULAR_API_KEY_RANDOM_DISH;
+const apiKey = process.env.REACT_APP_X_RAPIDAPI_KEY;
+const apiUa = process.env.REACT_APP_X_RAPIDAPI_UA;
+const apiHost = process.env.REACT_APP_X_RAPID_HOST;
 
 const GenerateRandomDish = () => {
   // Recipe Data
   const [recipeData, setRecipeData] = useState(null);
-  // API Verification Proccess
+  // API Verification Process
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -20,11 +22,9 @@ const GenerateRandomDish = () => {
           {
             method: "GET",
             headers: {
-              "x-rapidapi-host":
-                "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
-              "x-rapidapi-key":
-                "9c8d5e865bmshf815406cc9dc192p1bb800jsn4b3bab2cc079",
-              "x-rapidapi-ua": "RapidAPI-Playground",
+              "x-rapidapi-host": apiHost,
+              "x-rapidapi-key": apiKey,
+              "x-rapidapi-ua": apiUa,
             },
           }
         );
@@ -56,15 +56,17 @@ const GenerateRandomDish = () => {
           <title>Dish-It | Cooking All In One!</title>
         </head>
         <header className="header">
-          <img
-            className="logo"
-            alt="Dish-It Logo"
-            src="images/logoNavBar.png"
-          ></img>
+          <Link to="/">
+            <img
+              className="logo"
+              alt="Dish-It Logo"
+              src="images/logoNavBar.png"
+            ></img>
+          </Link>
           <nav className="main-nav">
             <ul className="main-nav-list">
               <li>
-                <a className="main-nav-link" href="#home">
+                <a className="main-nav-link" href="#main">
                   Summary
                 </a>
               </li>
@@ -73,21 +75,11 @@ const GenerateRandomDish = () => {
                   Go back
                 </Link>
               </li>
-              <li>
-                <a
-                  className="main-nav-link"
-                  href="https://docs.google.com/document/d/1JZCWgFncoqhTWbnXguZtalruUfB7CJaEjLOR9sbGqdo/edit?usp=sharing"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Documentation
-                </a>
-              </li>
             </ul>
           </nav>
         </header>
         <main>
-          <section className="section-summary" id="home">
+          <section className="section-summary" id="main">
             <h2 className="heading-secondary bottom-less-margin">
               {recipeData.title}
             </h2>
@@ -124,20 +116,6 @@ const GenerateRandomDish = () => {
                   ))}
                 </ul>
               </div>
-              <div className="nutrients">
-                <h2>Nutrients</h2>
-                <ul>
-                  {" "}
-                  {recipeData.nutrition.nutrients.map((nutrient) => (
-                    <li>
-                      <strong>
-                        {nutrient.amount} {nutrient.unit}
-                      </strong>{" "}
-                      of {nutrient.name}
-                    </li>
-                  ))}
-                </ul>
-              </div>
               <div className="instructions">
                 <h2>Instructions</h2>
                 {recipeData.analyzedInstructions[0].steps.map((instruction) => (
@@ -145,6 +123,20 @@ const GenerateRandomDish = () => {
                     <strong>{instruction.number}</strong>. {instruction.step}
                   </li>
                 ))}
+              </div>
+              <div className="nutrients">
+                <h2>Nutrients</h2>
+                <ul>
+                  {" "}
+                  {recipeData.nutrition.nutrients.map((nutrient) => (
+                    <li>
+                      <strong>
+                        {nutrient.amount.toFixed(1)} {nutrient.unit}
+                      </strong>{" "}
+                      of {nutrient.name}
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
           </section>

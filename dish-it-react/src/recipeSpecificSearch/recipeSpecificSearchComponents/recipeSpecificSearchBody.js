@@ -54,7 +54,12 @@ export default function RecipeSpecificSearchBody() {
                         <button className="search-button" onClick={setNewRecipe}>
                             <img id="search-icon" src="/images/search-icon.png" alt="search icon"/>
                         </button> 
-                        <h1> Searching for {recipeToFetch}</h1>
+                        {data && data.hits.length > 0&& (
+                            <h1> Searching for {recipeToFetch}</h1>
+                        )}
+                        {data && data.hits.length === 0 && (
+                            <h1> No recipes found for {recipeToFetch}</h1>
+                        )}
                     </div>
                     {data && data.hits.length > 0 && (
                         <div className="recipe-cards-container">

@@ -40,6 +40,12 @@ export default function RecipeSpecificSearchBody() {
         document.getElementById("ingredient-list-input").value = ""
     }
 
+    const enterKeyDown = (event) => {
+        if (event.key === "Enter") {
+            setRecipeToFetch(event.target.value);
+        }
+    };
+
     return (
         <body>
             <section>
@@ -50,6 +56,7 @@ export default function RecipeSpecificSearchBody() {
                             id="ingredient-list-input"
                             type="text"
                             placeholder="Search recipes here!"
+                            onKeyUp={enterKeyDown}
                         ></input>
                         <button className="search-button" onClick={setNewRecipe}>
                             <img id="search-icon" src="/images/search-icon.png" alt="search icon"/>

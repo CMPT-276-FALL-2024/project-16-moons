@@ -61,3 +61,19 @@
 .nutrition-grid--2-cols {
   grid-template-columns: 2fr 0.8fr;
 }
+.section-How-To-Use {
+  padding-left: 9.8rem;
+  padding-bottom: 9.8rem;
+  line-height: 1.6;
+}
+
+.section-How-To-Use h1 {
+  font-size: 5.2rem;
+}
+
+.section-How-To-Use p {
+  font-size: 2.2rem;
+}
+.section-How-To-Use ul {
+  font-size: 1.6rem;
+}

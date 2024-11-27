@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-const apiKey = process.env.REACT_APP_EDAMAM_APP_KEY_INGREDIENT_ANALYZER;
-const apiId = process.env.REACT_APP_EDAMAM_APP_ID_INGREDIENT_ANALYZER;
-// const apiId = process.env.REACT_APP_EDAMAM_APP_ID_BACKUP;
-// const apiKey = process.env.REACT_APP_EDAMAM_API_KEY_BACKUP;
+// const apiKey = process.env.REACT_APP_EDAMAM_APP_KEY_INGREDIENT_ANALYZER;
+// const apiId = process.env.REACT_APP_EDAMAM_APP_ID_INGREDIENT_ANALYZER;
+const apiId = process.env.REACT_APP_EDAMAM_APP_ID_BACKUP;
+const apiKey = process.env.REACT_APP_EDAMAM_API_KEY_BACKUP;
 
 const IngredientAnalyzer = () => {
   const [error, setError] = useState(null);
@@ -16,9 +16,18 @@ const IngredientAnalyzer = () => {
     // Prepare the jsonData with the ingredients
     const jsonData = {
       ingr: ingredient
-        .split(",")
-        .map((item) => item.trim())
-        .filter((item) => item.length > 0), // Remove empty strings
+        .split(",") // Split input by commas into an array of ingredients
+        .map((item) => {
+          // Normalize spaces (to ensure consistency like '1tsp' or '1 tsp')
+          const normalizedItem = item.trim().replace(/\s+/g, " "); // Replace multiple spaces with a single space
+
+          // Check if quantity/unit is missing and normalize the input
+          if (!normalizedItem.match(/^\d+\s+\w+/)) {
+            return `1 ${normalizedItem}`; // Default to 1 unit if missing quantity/unit
+          }
+          return normalizedItem; // Return the normalized input if it's already correct
+        })
+        .filter((item) => item.length > 0), // Filter out any empty strings
     };
 
     try {
@@ -81,24 +90,22 @@ const IngredientAnalyzer = () => {
         <nav className="main-nav">
           <ul className="main-nav-list">
             <li>
+              <a href="#how" className="main-nav-link">
+                How To Use
+              </a>
+            </li>
+            <li>
               <Link to="/" className="main-nav-link">
                 Go back
               </Link>
             </li>
-            <li>
-              <a
-                className="main-nav-link"
-                href="https://docs.google.com/document/d/1JZCWgFncoqhTWbnXguZtalruUfB7CJaEjLOR9sbGqdo/edit?usp=sharing"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Documentation
-              </a>
-            </li>
           </ul>
         </nav>
       </header>
-      <section className="ingredient-analyzer-section grid grid--2-cols">
+      <section
+        className="ingredient-analyzer-section grid grid--2-cols"
+        id="main"
+      >
         <div className="input">
           <h1>Ingredient Analyzer</h1>
           <form onSubmit={handleSubmit}>
@@ -116,19 +123,6 @@ const IngredientAnalyzer = () => {
               <h2>Analyze</h2>
             </button>
           </form>
-          <div class="section-How-To-Use">
-            <h2>How To Use</h2>
-            <p>
-              Just simply type into any food that you'd like for Dish-It to
-              analyze!
-            </p>
-            <p>Our analyzer measures ingredients in Oz & cups!</p>
-            <p>
-              {" "}
-              Example of a correct input (for one ingredient): 1 Oz Chicken{" "}
-            </p>
-            <p></p>
-          </div>
         </div>
         {nutrientsAnalysis && (
           <div className="nutritionFacts">
@@ -301,6 +295,22 @@ const IngredientAnalyzer = () => {
             </div>
           </div>
         )}
+      </section>
+      <section class="section-How-To-Use" id="how">
+        <h1 className="how-to-use-Header">How To Use</h1>
+        <p>Simply type into any food that you'd like for Dish-It to analyze!</p>
+        <p>
+          <strong>Example:</strong> 5 cups of cheese, 0.5 Oz of lettuce and 2/3
+          cups of rice.
+        </p>
+
+        <li>
+          <p>
+            <strong>Accepted Units of Measurements</strong>
+          </p>
+          <ul>Cup/C</ul>
+          <ul>Ounce/Oz</ul>
+        </li>
       </section>
     </div>
   );

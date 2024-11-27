@@ -53,6 +53,8 @@ const IngredientAnalyzer = () => {
       }
 
       const data = await response.json();
+      const errorMessage = error;
+      console.log(errorMessage);
       setNutrientsAnalysis(data);
     } catch (err) {
       setError(err.message);

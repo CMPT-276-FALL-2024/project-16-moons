@@ -73,7 +73,6 @@ const GenerateRandomDish = () => {
                   Go back
                 </Link>
               </li>
-              <li></li>
             </ul>
           </nav>
         </header>

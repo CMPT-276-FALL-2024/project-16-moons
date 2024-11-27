@@ -20,10 +20,7 @@ const IngredientAnalyzer = () => {
 
     try {
       const response = await fetch(
-        "https://api.edamam.com/api/nutrition-details?app_id=" +
-          "cdcaac6b" +
-          "&app_key=" +
-          "090af090e285c5a3f51c901e67299657",
+        `https://api.edamam.com/api/nutrition-details?app_id=${apiId}&app_key=${apiKey}`,
         {
           method: "POST",
           headers: {

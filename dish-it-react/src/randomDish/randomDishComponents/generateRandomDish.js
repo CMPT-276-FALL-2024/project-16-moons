@@ -3,7 +3,9 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import ScrollUp from "../../scrollUp/scrollUp";
 
-// const apiKey = process.env.REACT_APP_SPOONACULAR_API_KEY_RANDOM_DISH;
+const apiKey = process.env.REACT_APP_X_RAPIDAPI_KEY;
+const apiUa = process.env.REACT_APP_X_RAPIDAPI_UA;
+const apiHost = process.env.REACT_APP_X_RAPID_HOST;
 
 const GenerateRandomDish = () => {
   // Recipe Data
@@ -20,11 +22,9 @@ const GenerateRandomDish = () => {
           {
             method: "GET",
             headers: {
-              "x-rapidapi-host":
-                "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
-              "x-rapidapi-key":
-                "9c8d5e865bmshf815406cc9dc192p1bb800jsn4b3bab2cc079",
-              "x-rapidapi-ua": "RapidAPI-Playground",
+              "x-rapidapi-host": apiHost,
+              "x-rapidapi-key": apiKey,
+              "x-rapidapi-ua": apiUa,
             },
           }
         );

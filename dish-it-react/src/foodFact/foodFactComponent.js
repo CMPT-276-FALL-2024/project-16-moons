@@ -3,7 +3,7 @@ const apiKey = process.env.REACT_APP_X_RAPIDAPI_KEY;
 const apiUa = process.env.REACT_APP_X_RAPIDAPI_UA;
 const apiHost = process.env.REACT_APP_X_RAPID_HOST;
 
-const FoodFactComponent = ({}) => {
+const FoodFactComponent = () => {
   // State to store the fun fact
   const [funFact, setFunFact] = React.useState("");
 

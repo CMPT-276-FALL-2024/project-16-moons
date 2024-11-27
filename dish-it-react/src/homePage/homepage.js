@@ -55,7 +55,7 @@ function Homepage() {
         </nav>
       </header>
       <main>
-        <section className="section-search" id="home">
+        <section className="section-search" id="main">
           <div className="search">
             <img
               src="/images/logoBig.png"

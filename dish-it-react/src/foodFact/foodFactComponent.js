@@ -52,8 +52,8 @@ const FoodFactComponent = () => {
   // Return the fun fact
   return (
     <div>
-      <h2>Did you know???</h2>
-      <p>{funFact}</p>
+      <h2>Did you know?</h2>
+      <p>{funFact.replace(/did you know\?/i, "").trim()}</p>
     </div>
   );
 };

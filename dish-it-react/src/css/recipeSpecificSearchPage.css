@@ -1,0 +1,76 @@
+html {
+scroll-behavior: smooth;
+}
+
+.bold {
+font-weight: bold;
+}
+
+.vertical-flex-container { 
+display: flex;
+}
+
+.search-button {
+width: 3rem;
+height: 3rem;
+background-color: #ffbd59;
+border: none;
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+cursor: pointer;
+transition: background-color 0.2s;
+}
+
+.search-button:hover {
+background-color: #ffca7a;
+}
+
+#search-icon {
+width: 2rem;
+height: 2rem;
+}
+
+#ingredient-list-input {
+    padding: 2rem 5rem;
+    border-radius: 1rem;
+    background-color: #e0ba88;
+}
+
+.container {
+width: 500px;
+padding: 20px;
+/* background: #f9f9f9; */
+display: flex;
+justify-content: center;
+}
+
+.search-result {
+background-color: #e0ba88;
+width: 350px;
+height: 220px;
+border-radius: 10px;
+transition: 1s;
+}
+
+.search-result img {
+width: 350px;
+height: 200px;
+border-radius: 10px;
+}
+
+.search-result a {
+text-decoration: none;
+color: black;
+text-align: center;
+font-weight: bold;
+}
+
+.search-result:hover {
+transform: scale(1.1);
+background: #e0ba88;
+box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
+z-index: 2;
+}
+    

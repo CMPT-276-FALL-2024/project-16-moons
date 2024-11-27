@@ -124,20 +124,6 @@ const GenerateRandomDish = () => {
                   ))}
                 </ul>
               </div>
-              <div className="nutrients">
-                <h2>Nutrients</h2>
-                <ul>
-                  {" "}
-                  {recipeData.nutrition.nutrients.map((nutrient) => (
-                    <li>
-                      <strong>
-                        {nutrient.amount} {nutrient.unit}
-                      </strong>{" "}
-                      of {nutrient.name}
-                    </li>
-                  ))}
-                </ul>
-              </div>
               <div className="instructions">
                 <h2>Instructions</h2>
                 {recipeData.analyzedInstructions[0].steps.map((instruction) => (
@@ -145,6 +131,20 @@ const GenerateRandomDish = () => {
                     <strong>{instruction.number}</strong>. {instruction.step}
                   </li>
                 ))}
+              </div>
+              <div className="nutrients">
+                <h2>Nutrients</h2>
+                <ul>
+                  {" "}
+                  {recipeData.nutrition.nutrients.map((nutrient) => (
+                    <li>
+                      <strong>
+                        {nutrient.amount.toFixed(1)} {nutrient.unit}
+                      </strong>{" "}
+                      of {nutrient.name}
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
           </section>

@@ -15,7 +15,19 @@ const IngredientAnalyzer = () => {
 
     // Prepare the jsonData with the ingredients
     const jsonData = {
-      ingr: ingredient.split(",").map((item) => item.trim()),
+      ingr: ingredient
+        .split(",") // Split input by commas into an array of ingredients
+        .map((item) => {
+          // Normalize spaces (to ensure consistency like '1tsp' or '1 tsp')
+          const normalizedItem = item.trim().replace(/\s+/g, " "); // Replace multiple spaces with a single space
+
+          // Check if quantity/unit is missing and normalize the input
+          if (!normalizedItem.match(/^\d+\s+\w+/)) {
+            return `1 ${normalizedItem}`; // Default to 1 unit if missing quantity/unit
+          }
+          return normalizedItem; // Return the normalized input if it's already correct
+        })
+        .filter((item) => item.length > 0), // Filter out any empty strings
     };
 
     try {
@@ -31,13 +43,33 @@ const IngredientAnalyzer = () => {
       );
 
       if (!response.ok) {
+        if (response.status === 401) {
+          throw new Error("Unauthorized: Tokens have run out");
+        }
+        if (response.status === 501) {
+          throw new Error("Incorrect usage: Check your input data");
+        }
         throw new Error("Failed to fetch analysis");
       }
 
       const data = await response.json();
       setNutrientsAnalysis(data);
     } catch (err) {
-      setError(err.message); // Set error state to display to the user
+      setError(err.message);
+
+      // Handle alerts directly in the catch block
+      if (err.message.includes("Tokens have run out")) {
+        alert("Dish-It's has ran out of requests for today sorry!");
+      } else if (err.message.includes("Incorrect usage")) {
+        alert(
+          "The request was incorrectly formatted. Refer to How To Use Section"
+        );
+      } else {
+        alert(
+          "The request was incorrectly formatted. Refer to How To Use Section"
+        );
+      }
+
       console.error("Error:", err.message); // Log the error
     }
   };
@@ -49,32 +81,32 @@ const IngredientAnalyzer = () => {
         <title>Dish-It | Cooking All In One!</title>
       </head>
       <header className="header">
-        <img
-          className="logo"
-          alt="Dish-It Logo"
-          src="images/logoNavBar.png"
-        ></img>
+        <Link to="/">
+          <img
+            className="logo"
+            alt="Dish-It Logo"
+            src="images/logoNavBar.png"
+          ></img>
+        </Link>
         <nav className="main-nav">
           <ul className="main-nav-list">
+            <li>
+              <a href="#how" className="main-nav-link">
+                How To Use
+              </a>
+            </li>
             <li>
               <Link to="/" className="main-nav-link">
                 Go back
               </Link>
             </li>
-            <li>
-              <a
-                className="main-nav-link"
-                href="https://docs.google.com/document/d/1JZCWgFncoqhTWbnXguZtalruUfB7CJaEjLOR9sbGqdo/edit?usp=sharing"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Documentation
-              </a>
-            </li>
           </ul>
         </nav>
       </header>
-      <section className="ingredient-analyzer-section grid grid--2-cols">
+      <section
+        className="ingredient-analyzer-section grid grid--2-cols"
+        id="main"
+      >
         <div className="input">
           <h1>Ingredient Analyzer</h1>
           <form onSubmit={handleSubmit}>
@@ -89,15 +121,9 @@ const IngredientAnalyzer = () => {
               className="user-input"
             />
             <button type="submit" className="btn">
-              <p></p>
-              Analyze
+              <h2>Analyze</h2>
             </button>
           </form>
-          {error && (
-            <div className="error-message">
-              Seems like your input is invalid.
-            </div>
-          )}{" "}
         </div>
         {nutrientsAnalysis && (
           <div className="nutritionFacts">
@@ -122,13 +148,15 @@ const IngredientAnalyzer = () => {
                         )}{" "}
                         {nutrientsAnalysis.totalNutrients.FASAT.unit}
                       </li>
-                      <li className="left-margin-extra">
-                        Trans Fat{" "}
-                        {nutrientsAnalysis.totalNutrients.FATRN.quantity.toFixed(
-                          1
-                        )}{" "}
-                        {nutrientsAnalysis.totalNutrients.FATRN.unit}
-                      </li>
+                      {nutrientsAnalysis.totalNutrients.FATRN && (
+                        <li className="left-margin-extra">
+                          Trans Fat{" "}
+                          {nutrientsAnalysis.totalNutrients.FATRN.quantity.toFixed(
+                            1
+                          )}{" "}
+                          {nutrientsAnalysis.totalNutrients.FATRN.unit}
+                        </li>
+                      )}
                     </ul>
                   </li>
                   <li>
@@ -148,26 +176,31 @@ const IngredientAnalyzer = () => {
                     )}{" "}
                     {nutrientsAnalysis.totalNutrients.CHOCDF.unit}
                     <ul className="subNutrients">
-                      <li className="left-margin-extra">
-                        Dietary Fiber{" "}
-                        {nutrientsAnalysis.totalNutrients.FIBTG.quantity.toFixed(
-                          1
-                        )}{" "}
-                        {nutrientsAnalysis.totalNutrients.FIBTG.unit}
-                      </li>
-                      <li className="left-margin-extra">
-                        Total Sugars{" "}
-                        {nutrientsAnalysis.totalNutrients.SUGAR.quantity.toFixed(
-                          1
-                        )}{" "}
-                        {nutrientsAnalysis.totalNutrients.SUGAR.unit}
-                      </li>
-                      <li className="left-margin-extra">
-                        {nutrientsAnalysis.totalNutrients.SUGAR.label ===
-                        "Sugars, total including NLEA"
-                          ? "Includes - Added Sugars"
-                          : ""}
-                      </li>
+                      {nutrientsAnalysis.totalNutrients.FIBTG && (
+                        <li className="left-margin-extra">
+                          Dietary Fiber{" "}
+                          {nutrientsAnalysis.totalNutrients.FIBTG.quantity.toFixed(
+                            1
+                          )}{" "}
+                          {nutrientsAnalysis.totalNutrients.FIBTG.unit}
+                        </li>
+                      )}
+                      {nutrientsAnalysis.totalNutrients.SUGAR && (
+                        <li className="left-margin-extra">
+                          Total Sugars{" "}
+                          {nutrientsAnalysis.totalNutrients.SUGAR.quantity.toFixed(
+                            1
+                          )}{" "}
+                          {nutrientsAnalysis.totalNutrients.SUGAR.unit}
+                        </li>
+                      )}
+                      {nutrientsAnalysis.totalNutrients.SUGAR && (
+                        <li className="left-margin-extra">
+                          {nutrientsAnalysis.totalNutrients.SUGAR.label ===
+                          "Sugars, total including NLEA"
+                            ? "Includes - Added Sugars"
+                            : ""}
+                        </li>
                     </ul>
                   </li>
                   <li>
@@ -228,13 +261,15 @@ const IngredientAnalyzer = () => {
                     {""}
                     {nutrientsAnalysis.totalDaily.CHOCDF.unit}
                   </li>
-                  <li>
-                    {nutrientsAnalysis.totalDaily.FIBTG.quantity.toFixed(1)}
-                    {""}
-                    {nutrientsAnalysis.totalDaily.FIBTG.unit}
-                  </li>
-                  <li>-</li>
-                  <li>-</li>
+                  {nutrientsAnalysis.totalNutrients.FIBTG && (
+                    <li>
+                      {nutrientsAnalysis.totalDaily.FIBTG.quantity.toFixed(1)}
+                      {""}
+                      {nutrientsAnalysis.totalDaily.FIBTG.unit}
+                    </li>
+                  )}
+                  {nutrientsAnalysis.totalNutrients.SUGAR && <li>-</li>}
+                  {nutrientsAnalysis.totalNutrients.SUGAR && <li>-</li>}
                   <li>
                     {nutrientsAnalysis.totalDaily.PROCNT.quantity.toFixed(1)}{" "}
                     {nutrientsAnalysis.totalDaily.PROCNT.unit}
@@ -260,6 +295,22 @@ const IngredientAnalyzer = () => {
             </div>
           </div>
         )}
+      </section>
+      <section class="section-How-To-Use" id="how">
+        <h1 className="how-to-use-Header">How To Use</h1>
+        <p>Simply type into any food that you'd like for Dish-It to analyze!</p>
+        <p>
+          <strong>Example:</strong> 5 cups of cheese, 0.5 Oz of lettuce and 2/3
+          cups of rice.
+        </p>
+
+        <li>
+          <p>
+            <strong>Accepted Units of Measurements</strong>
+          </p>
+          <ul>Cup/C</ul>
+          <ul>Ounce/Oz</ul>
+        </li>
       </section>
     </div>
   );

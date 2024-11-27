@@ -1,13 +1,13 @@
-import { Link } from "react-router-dom";
+import React from 'react';
+import '../recipeSpecificSearchPage.css';
 
-function RecipeCard({ data, searchInput }) {
+function RecipeCard({ recipeName, recipeImage }) {
   return (
     <div className="search-result">
-      {/* Link to the recipe overview page */}
-      <Link to="/recipeOverview" state={{ recipeData: data, searchInput: searchInput }}>
-        <img src={data.recipe.image} alt={data.recipe.label} />
-        <p>{data.recipe.label}</p>
-      </Link>
+      <a href="./recipe-page.html">
+        <img src={recipeImage} alt={recipeName} />
+        <p>{recipeName}</p>
+      </a>
     </div>
   );
 }

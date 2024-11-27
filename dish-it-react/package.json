@@ -4,7 +4,6 @@
   "private": true,
   "dependencies": {
     "@testing-library/user-event": "^13.5.0",
-    "mathjs": "^14.0.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.28.0",
@@ -15,7 +14,6 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "test:integration": "jest --config=jest.integration.config.js",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -39,6 +37,7 @@
   "devDependencies": {
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.0.1",
-    "jest": "^27.5.1"
+    "jest": "^27.5.1",
+    "jest-fetch-mock": "^3.0.3"
   }
 }

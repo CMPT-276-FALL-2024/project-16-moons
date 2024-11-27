@@ -1,3 +1,6 @@
+import React from "react";
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 function MealPlanner() {
   return (
     <div>
@@ -14,7 +17,7 @@ function MealPlanner() {
         <nav className="main-nav">
           <ul className="main-nav-list">
             <li>
-              <a className="section-How-To-Use" href="#how">
+              <a className="main-nav-link" href="#how">
                 How To Use
               </a>
             </li>

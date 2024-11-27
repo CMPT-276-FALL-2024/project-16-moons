@@ -1,11 +1,11 @@
 import "../css/general.css";
 import "../css/mealPlanner.css";
-import GenerateRandomDish from "./randomDishComponents/generateRandomDish";
+import MealPlanner from "./mealPlannerComponents/mealPlanner";
 
 function MealPlannerPage() {
   return (
     <div>
-      <GenerateRandomDish></GenerateRandomDish>
+      <MealPlanner></MealPlanner>
     </div>
   );
 }

@@ -5,7 +5,6 @@ import Homepage from "./homePage/homepage";
 import RandomDishPage from "./randomDish/randomDishPage";
 import IngredientAnalyzerPage from "./ingredientAnalyzer/ingredientAnalyzerPage";
 import RecipeSpecificSearch from "./recipeSpecificSearch/recipeSpecificSearchPage";
-import RecipeOverview from "./recipeOverview/recipeOverview";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -15,7 +14,6 @@ root.render(
       <Route path="/randomdish" element={<RandomDishPage />} />
       <Route path="/ingredient-analyzer" element={<IngredientAnalyzerPage />} />
       <Route path="/recipeSpecificSearch" element={<RecipeSpecificSearch />} />
-      <Route path="/recipeOverview" element={<RecipeOverview />} />
     </Routes>
   </Router>
 );

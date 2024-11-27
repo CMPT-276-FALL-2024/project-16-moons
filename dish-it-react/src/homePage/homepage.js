@@ -112,7 +112,7 @@ function Homepage() {
             <div className="feature-img">
               <img src="images/food-Images/2.jpg" alt="gif of function"></img>
             </div>
-            <Link to="/random" class="feature-link">
+            <Link to="/random-dish" class="feature-link">
               <p className="feature-name">Random Recipe</p>
               <p className="feature-description">
                 Not sure what to eat? Let Dish-It choose for you with just a

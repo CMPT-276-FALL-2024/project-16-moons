@@ -16,8 +16,9 @@ function RecipeOverviewNavbar() {
             of Dish-It"
         /></Link>
         <nav className="main-nav-list">
-            <Link className="main-nav-link" to="/">BACK TO HOME</Link>
             {/* Spelled out link to home page */}
+            <Link className="main-nav-link" to="/">BACK TO HOME</Link>
+            {/* Return to search recipe with whatever was searched */}
             <Link className="main-nav-link" to="/recipeSpecificSearch" state={{ recipe: searchInput }}>BACK TO SEARCH</Link>
             {/* Link to documentation */}
             <a

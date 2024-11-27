@@ -54,7 +54,6 @@ const IngredientAnalyzer = () => {
 
       const data = await response.json();
       setNutrientsAnalysis(data);
-      console.log(nutrientsAnalysis);
     } catch (err) {
       setError(err.message);
 
@@ -118,7 +117,7 @@ const IngredientAnalyzer = () => {
                 setIngredient(e.target.value);
                 setError(null);
               }}
-              placeholder="Usage Example: 10 oz Chicken, 1 cup rice"
+              placeholder="Usage Example: 10 oz of Chicken"
               className="user-input"
             />
             <button type="submit" className="btn">
@@ -202,7 +201,6 @@ const IngredientAnalyzer = () => {
                             ? "Includes - Added Sugars"
                             : ""}
                         </li>
-                      )}
                     </ul>
                   </li>
                   <li>
@@ -247,7 +245,7 @@ const IngredientAnalyzer = () => {
                     {""}
                     {nutrientsAnalysis.totalDaily.FASAT.unit}
                   </li>
-                  {nutrientsAnalysis.totalNutrients.FATRN && <li>-</li>}
+                  <li>-</li>
                   <li>
                     {nutrientsAnalysis.totalDaily.CHOLE.quantity.toFixed(1)}
                     {""}

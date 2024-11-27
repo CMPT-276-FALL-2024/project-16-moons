@@ -12,10 +12,10 @@ root.render(
   <Router>
     <Routes>
       <Route path="/" element={<Homepage />} />
-      <Route path="/randomdish" element={<RandomDishPage />} />
+      <Route path="/random-dish" element={<RandomDishPage />} />
       <Route path="/ingredient-analyzer" element={<IngredientAnalyzerPage />} />
-      <Route path="/recipeSpecificSearch" element={<RecipeSpecificSearch />} />
-      <Route path="/mealplanner" element={<MealPlannerPage />} />
+      <Route path="/recipe-search" element={<RecipeSpecificSearch />} />
+      <Route path="/meal-planner" element={<MealPlannerPage />} />
     </Routes>
   </Router>
 );

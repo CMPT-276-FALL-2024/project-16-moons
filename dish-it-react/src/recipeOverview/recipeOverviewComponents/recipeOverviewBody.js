@@ -8,16 +8,21 @@ function RecipeOverviewBody() {
     console.log(recipeData);
     return (
         <div>
-            <h1>Recipe Overview</h1>
-            <img src={recipe.image} alt={recipeData.recipe.label} />
-            <h2>{recipe.label}</h2>
-            <p>{recipe.description}</p>
+            <h1>Recipe Overview: {recipe.label}</h1>
+            <img src={recipe.image} alt={recipe.label} />
             <ul className="main-details">
                 <li>Calories: {round(recipe.calories)}</li>
                 <li>Servings: {recipe.yield}</li>
                 {recipe.totalTime !== 0 && (
                     <li>Time: {recipe.totalTime} minutes</li>
                 )}
+            </ul>
+
+            <h2>Ingredients</h2>
+            <ul>
+                {recipe.ingredientLines.map((ingredient) => (
+                    <li>{ingredient}</li>
+                ))}
             </ul>
         </div>
     );

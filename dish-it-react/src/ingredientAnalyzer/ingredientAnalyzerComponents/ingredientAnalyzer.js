@@ -201,6 +201,7 @@ const IngredientAnalyzer = () => {
                             ? "Includes - Added Sugars"
                             : ""}
                         </li>
+                      )}
                     </ul>
                   </li>
                   <li>

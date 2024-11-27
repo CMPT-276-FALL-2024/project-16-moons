@@ -82,11 +82,13 @@ const IngredientAnalyzer = () => {
         <title>Dish-It | Cooking All In One!</title>
       </head>
       <header className="header">
-        <img
-          className="logo"
-          alt="Dish-It Logo"
-          src="images/logoNavBar.png"
-        ></img>
+        <Link to="/">
+          <img
+            className="logo"
+            alt="Dish-It Logo"
+            src="images/logoNavBar.png"
+          ></img>
+        </Link>
         <nav className="main-nav">
           <ul className="main-nav-list">
             <li>

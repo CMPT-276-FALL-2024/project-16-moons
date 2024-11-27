@@ -1,5 +1,4 @@
 import React from "react";
-import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 function MealPlanner() {
   return (
@@ -9,11 +8,14 @@ function MealPlanner() {
         <title>Dish-It | Cooking All In One!</title>
       </div>
       <header className="header">
-        <img
-          className="logo"
-          alt="Dish-It Logo"
-          src="images/logoNavBar.png"
-        ></img>
+        <Link to="/">
+          <img
+            className="logo"
+            alt="Dish-It Logo"
+            src="images/logoNavBar.png"
+          ></img>
+        </Link>
+
         <nav className="main-nav">
           <ul className="main-nav-list">
             <li>

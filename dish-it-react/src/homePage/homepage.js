@@ -14,15 +14,18 @@ function Homepage() {
         <title>Dish-It | Cooking All In One!</title>
       </div>
       <header className="header">
-        <img
-          className="logo"
-          alt="Dish-It Logo"
-          src="images/logoNavBar.png"
-        ></img>
+        <a href="#main">
+          <img
+            className="logo"
+            alt="Dish-It Logo"
+            src="images/logoNavBar.png"
+          ></img>
+        </a>
+
         <nav className="main-nav">
           <ul className="main-nav-list">
             <li>
-              <a className="main-nav-link" href="#home">
+              <a className="main-nav-link" href="#main">
                 Home
               </a>
             </li>

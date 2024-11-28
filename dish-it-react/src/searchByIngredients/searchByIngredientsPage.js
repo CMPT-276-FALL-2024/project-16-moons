@@ -3,7 +3,7 @@ import "../css/searchByIngredients.css";
 import SearchByIngredients from "./components/searchByIngredients.js"
 import SearchByIngredientsNavbar from "./components/searchByIngredientsNavbar.js";
 
-export default function searchByIngredientsPage() {
+export default function SearchByIngredientsPage() {
     return (
         <div>
             <SearchByIngredientsNavbar/>

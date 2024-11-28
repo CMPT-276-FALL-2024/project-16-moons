@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-function MealPlanner() {
+function RecipeIngredientSearch() {
   return (
     <div>
       <div>
@@ -36,4 +36,4 @@ function MealPlanner() {
   );
 }
 
-export default MealPlanner;
+export default RecipeIngredientSearch;

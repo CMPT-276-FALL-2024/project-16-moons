@@ -1,11 +1,11 @@
-import "./randomDishPageStyles.css";
-import NavBar from "./randomDishComponents/navBar";
+import "../css/general.css";
+import "../css/randomDishPage.css";
 import GenerateRandomDish from "./randomDishComponents/generateRandomDish";
+
 
 function RandomDishPage() {
   return (
     <div>
-      <NavBar></NavBar>
       <GenerateRandomDish></GenerateRandomDish>
     </div>
   );

@@ -80,8 +80,8 @@ function Homepage() {
                 <Link to="/random-recipe" className="btn btn--full">
                   Random Recipe
                 </Link>
-                <Link to="/meal-planner" className="btn btn--full">
-                  Meal Planner
+                <Link to="/recipe-ingredient-search" className="btn btn--full">
+                  Ingredient Recipe Search
                 </Link>
               </div>
             </div>
@@ -119,11 +119,11 @@ function Homepage() {
                 click!
               </p>
             </Link>
-            <Link to="/meal-planner" class="feature-link">
-              <p className="feature-name">Meal Planner</p>
+            <Link to="/recipe-ingredient-search" class="feature-link">
+              <p className="feature-name">Ingredient Recipe Search</p>
               <p className="feature-description">
-                Want to create your own personalized diet? Well start creating
-                now today using Dish-It!
+                Let Dish-It know what ingredients you have and allow them to
+                create you a personalized recipe!
               </p>
             </Link>
 

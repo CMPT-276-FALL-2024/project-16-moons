@@ -80,7 +80,7 @@ function Homepage() {
                 <Link to="/random-recipe" className="btn btn--full">
                   Random Recipe
                 </Link>
-                <Link to="/meal-planner" className="btn btn--full">
+                <Link to="/ingredient-search" className="btn btn--full">
                   Search Recipes by Ingredients
                 </Link>
               </div>
@@ -119,7 +119,7 @@ function Homepage() {
                 click!
               </p>
             </Link>
-            <Link to="/meal-planner" class="feature-link">
+            <Link to="/ingredient-search" class="feature-link">
               <p className="feature-name">Meal Planner</p>
               <p className="feature-description">
                 Want to create your own personalized diet? Well start creating

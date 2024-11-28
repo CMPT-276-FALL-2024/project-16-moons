@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import IngredientInput from "./IngredientInput";
-import IngredientList from "./IngredientList";
-import RecipeList from "./RecipeList";
-import SearchButton from "./SearchButton";
+import IngredientInput from "./ingredientsInput";
+import IngredientList from "./ingredientList";
+import RecipeList from "./recipeList";
+import SearchButton from "./searchButton";
 
 const apiKey = process.env.REACT_APP_X_RAPIDAPI_KEY;
 const apiUa = process.env.REACT_APP_X_RAPIDAPI_UA;

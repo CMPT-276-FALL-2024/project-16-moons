@@ -9,6 +9,7 @@ const ChatbotComponent = () => {
   const [question, setQuestion] = useState("");
   const [conversation, setConversation] = useState([]);
   const [isOpen, setIsOpen] = useState(false); // State to handle dialogue visibility
+  const [isFetching, setIsFetching] = useState(false); // State to handle API fetching
 
   const toggleChat = () => {
     setIsOpen(!isOpen); // Toggle the visibility of the chat dialogue
@@ -21,6 +22,9 @@ const ChatbotComponent = () => {
     }
 
     const formattedQuestion = encodeURIComponent(question);
+
+    // True whne API is fetching data and prevents multiple requests
+    setIsFetching(true);
 
     fetch(
       `https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/food/converse?text=${formattedQuestion}`,
@@ -56,11 +60,15 @@ const ChatbotComponent = () => {
       })
       .catch((error) => {
         alert(error.message);
+      })
+      .finally(() => {
+        // Sets isFetching to false once API sends back response
+        setIsFetching(false);
       });
   };
 
   const enterKeyDown = (event) => {
-    if (event.key === "Enter" && question.trim() !== "") {
+    if (event.key === "Enter" && question.trim() !== "" && !isFetching) {
       Conversation();
     }
   };

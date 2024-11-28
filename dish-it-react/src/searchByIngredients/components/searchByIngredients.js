@@ -27,7 +27,10 @@ const SearchByIngredients = () => {
         );
     };
 
-    //* Main logic
+    //* Main logic: work flow is going to look like this:
+    //* 1: search for a bunch of recipes using ingredients
+    //* 2: when user press on one, search for the full detail using that specific ID
+    //* 3: doesn't have instructions, go to external website to get all.
     // When Search is cliced, fetch from API
     const handleSearchClick = async () => {
         if (ingredients.length === 0) {

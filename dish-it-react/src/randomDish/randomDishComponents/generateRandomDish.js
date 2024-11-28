@@ -1,12 +1,16 @@
 import React from "react";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import ScrollUp from "../../scrollUp/scrollUp";
 
-const apiKey = process.env.REACT_APP_SPOONACULAR_API_KEY_RANDOM_DISH;
+const apiKey = process.env.REACT_APP_X_RAPIDAPI_KEY;
+const apiUa = process.env.REACT_APP_X_RAPIDAPI_UA;
+const apiHost = process.env.REACT_APP_X_RAPID_HOST;
 
 const GenerateRandomDish = () => {
   // Recipe Data
   const [recipeData, setRecipeData] = useState(null);
-  // API Verification Proccess
+  // API Verification Process
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -14,8 +18,15 @@ const GenerateRandomDish = () => {
     const fetchRecipeData = async () => {
       try {
         const response = await fetch(
-          "https://api.spoonacular.com/recipes/random?includeNutrition=true&number=1&apiKey=" +
-            apiKey
+          "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/random?includeNutrition=true&number=1",
+          {
+            method: "GET",
+            headers: {
+              "x-rapidapi-host": apiHost,
+              "x-rapidapi-key": apiKey,
+              "x-rapidapi-ua": apiUa,
+            },
+          }
         );
         if (!response.ok) {
           throw new Error("Failed to fetch recipe");
@@ -29,87 +40,108 @@ const GenerateRandomDish = () => {
         setLoading(false);
       }
     };
-
+    console.log("attempt");
     fetchRecipeData();
   }, []);
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error} </p>;
+  const summaryFiltered = recipeData.summary.replace(/<[^>]*>/g, "").trim();
 
   return (
     recipeData && (
-      <div className="recipe">
-        <div className="hero" id="summary">
-          <div>
-            <h1>{recipeData.title}</h1>
-            <h2>Summary</h2>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum
-              consectetur fugiat tempora! Recusandae veniam, distinctio libero
-              aperiam assumenda voluptate vitae quod voluptatibus provident
-              fugit mollitia voluptatem non eaque earum corporis.
-            </p>
-            {/* {recipeData.summary} */}
-            <a href="#recipeinformation">
-              <button>Let's Start Cooking! </button>
-            </a>
-          </div>
-          <img
-            src={recipeData.image}
-            alt={recipeData.title}
-            className="heroImg"
-          />
-        </div>
-        <div className="recipeInformation" id="recipeinformation">
-          <h1>Recipe Information</h1>
-          <div className="gridContainer">
-            {/* Recipe Information Block */}
-            <div className="ingredientList gridBox">
-              <h2>Ingredients</h2>
-              <ul>
-                {recipeData.extendedIngredients.map((ingredient) => (
-                  <li>
-                    {ingredient.amount} {ingredient.unit} {ingredient.name}
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="altInformation gridBox">
-              {/* Cooking Time & Serving Size Block */}
-              <h3>Cooking Time</h3>
-              <h3>{recipeData.readyInMinutes} minutes</h3>
-              <h3>This recipe is for..</h3>
-              <h3>{recipeData.servings} servings</h3>
-            </div>
-            <div className="nutrients gridBox">
-              <h2>Nutrients</h2>
-              <ul>
-                {" "}
-                {recipeData.nutrition.nutrients.map((nutrient) => (
-                  <li>
-                    <strong>
-                      {nutrient.amount} {nutrient.unit}
-                    </strong>{" "}
-                    of {nutrient.name}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </div>
-        {/* Instructions */}
-        <div className="instructionsBackground" id="instructions">
-          <h1>Instructions</h1>
-          <div className="instructionsGrid">
-            {recipeData.analyzedInstructions[0].steps.map((instruction) => (
-              <div className="instructions">
-                <p>
-                  <strong>{instruction.number}</strong>. {instruction.step}
+      <div>
+        <head>
+          <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+          <title>Dish-It | Cooking All In One!</title>
+        </head>
+        <header className="header">
+          <Link to="/">
+            <img
+              className="logo"
+              alt="Dish-It Logo"
+              src="images/logoNavBar.png"
+            ></img>
+          </Link>
+          <nav className="main-nav">
+            <ul className="main-nav-list">
+              <li>
+                <a className="main-nav-link" href="#main">
+                  Summary
+                </a>
+              </li>
+              <li>
+                <Link to="/" className="main-nav-link">
+                  Go back
+                </Link>
+              </li>
+            </ul>
+          </nav>
+        </header>
+        <main>
+          <section className="section-summary" id="main">
+            <h2 className="heading-secondary bottom-less-margin">
+              {recipeData.title}
+            </h2>
+            <div className="grid grid--2-cols grid--center-v">
+              {" "}
+              <div>
+                <img
+                  src={recipeData.image}
+                  alt={recipeData.title}
+                  className="summary-image"
+                />
+              </div>
+              <div>
+                <p className="summary-description summary-margin">
+                  {summaryFiltered}
+                </p>
+                <p className="summary-description">
+                  This recipe will be ready in{" "}
+                  <strong>{recipeData.readyInMinutes} minutes</strong> and is
+                  for <strong>{recipeData.servings} servings</strong>
                 </p>
               </div>
-            ))}
-          </div>
-        </div>
+            </div>
+          </section>
+          <section className="section-extra-information">
+            <div className="grid grid--3-cols">
+              <div className="ingredients">
+                <h2>Ingredients</h2>
+                <ul>
+                  {recipeData.extendedIngredients.map((ingredient) => (
+                    <li>
+                      {ingredient.amount} {ingredient.unit} {ingredient.name}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="instructions">
+                <h2>Instructions</h2>
+                {recipeData.analyzedInstructions[0].steps.map((instruction) => (
+                  <li>
+                    <strong>{instruction.number}</strong>. {instruction.step}
+                  </li>
+                ))}
+              </div>
+              <div className="nutrients">
+                <h2>Nutrients</h2>
+                <ul>
+                  {" "}
+                  {recipeData.nutrition.nutrients.map((nutrient) => (
+                    <li>
+                      <strong>
+                        {nutrient.amount.toFixed(1)} {nutrient.unit}
+                      </strong>{" "}
+                      of {nutrient.name}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </section>
+        </main>
+        <ScrollUp></ScrollUp>
       </div>
     )
   );

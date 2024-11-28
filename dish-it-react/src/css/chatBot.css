@@ -24,8 +24,8 @@
   flex-direction: column;
 
   position: fixed;
-  bottom: 80px;
-  left: 20px;
+  bottom: 10rem;
+  right: 5rem;
   width: 300px;
   max-height: 400px;
   background-color: white;

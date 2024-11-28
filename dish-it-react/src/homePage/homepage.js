@@ -72,7 +72,7 @@ function Homepage() {
             <div className="search-menu">
               <div className="search-menu-content grid grid--2-cols">
                 <Link to="/recipe-search" className="btn btn--full">
-                  Recipe Search
+                  Search Recipes by Name
                 </Link>
                 <Link to="/ingredient-analyzer" className="btn btn--full">
                   Ingredient Analyzer
@@ -81,7 +81,7 @@ function Homepage() {
                   Random Recipe
                 </Link>
                 <Link to="/meal-planner" className="btn btn--full">
-                  Meal Planner
+                  Search Recipes by Ingredients
                 </Link>
               </div>
             </div>

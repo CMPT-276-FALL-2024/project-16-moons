@@ -27,6 +27,7 @@ const SearchByIngredients = () => {
         );
     };
 
+    //* Main logic
     // When Search is cliced, fetch from API
     const handleSearchClick = async () => {
         if (ingredients.length === 0) {
@@ -34,29 +35,29 @@ const SearchByIngredients = () => {
             return;
         }
 
-    try {
-        const query = ingredients.join("%2");   
-        // default: 10 recipes, ignore pantry ingredients, minimize missing ingredients
-        const response = await fetch("https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/findByIngredients?ingredients={query}&number=10&ignorePantry=true%ranking=2",
-            {
-                method: "GET",
-                headers: {
-                    "x-rapidapi-host": apiHost,
-                    "x-rapidapi-key": apiKey,
-                    "x-rapidapi-ua": apiUa,
-                },
+        try {
+            const query = ingredients.join("%2C");   
+            // default: 10 recipes, ignore pantry ingredients, minimize missing ingredients
+            const response = await fetch(`https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/findByIngredients?ingredients=${query}&number=10&ignorePantry=true&ranking=2`,
+                {
+                    method: "GET",
+                    headers: {
+                        "x-rapidapi-host": apiHost,
+                        "x-rapidapi-key": apiKey,
+                        "x-rapidapi-ua": apiUa,
+                    },
+                }
+            )
+
+            if (!response.ok) {
+                throw new Error("Failed to fetch recipes.");
             }
-        )
 
-        if (!response.ok) {
-            throw new Error("Failed to fetch recipes.");
-        }
-
-        const data = await response.json();
-        setRecipes(data.hits);
-        } catch (err) {
-        setError(err.message);
-        }
+            const data = await response.json();
+            setRecipes(data);
+            } catch (err) {
+            setError(err.message);
+            }
 };
 
     return (

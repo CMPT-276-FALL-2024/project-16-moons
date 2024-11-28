@@ -35,8 +35,9 @@ const SearchByIngredients = () => {
         }
 
     try {
-        const query = ingredients.join(",");
-        const response = await fetch( `URLASDSADSADSA`,
+        const query = ingredients.join("%2");   
+        // default: 10 recipes, ignore pantry ingredients, minimize missing ingredients
+        const response = await fetch("https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/findByIngredients?ingredients={query}&number=10&ignorePantry=true%ranking=2",
             {
                 method: "GET",
                 headers: {

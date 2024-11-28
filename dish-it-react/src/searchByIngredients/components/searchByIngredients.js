@@ -4,8 +4,9 @@ import IngredientList from "./IngredientList";
 import RecipeList from "./RecipeList";
 import SearchButton from "./SearchButton";
 
-const app_key = REACT_APP_EDAMAM_API_KEY_SEARCH_BY_INGREDIENTS;
-const app_id = REACT_APP_EDAMAM_APP_ID_SEARCH_BY_INGREDIENTS;
+const apiKey = process.env.REACT_APP_X_RAPIDAPI_KEY;
+const apiUa = process.env.REACT_APP_X_RAPIDAPI_UA;
+const apiHost = process.env.REACT_APP_X_RAPID_HOST;
 
 const SearchByIngredients = () => {
 
@@ -35,9 +36,16 @@ const SearchByIngredients = () => {
 
     try {
         const query = ingredients.join(",");
-        const response = await fetch(
-        `https://api.edamam.com/api/recipes/v2?type=public&q=${query}&app_id=${app_id}&app_key=${app_key}`
-        );
+        const response = await fetch( `URLASDSADSADSA`,
+            {
+                method: "GET",
+                headers: {
+                    "x-rapidapi-host": apiHost,
+                    "x-rapidapi-key": apiKey,
+                    "x-rapidapi-ua": apiUa,
+                },
+            }
+        )
 
         if (!response.ok) {
             throw new Error("Failed to fetch recipes.");

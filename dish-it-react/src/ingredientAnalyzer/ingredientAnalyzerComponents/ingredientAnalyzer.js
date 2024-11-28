@@ -99,7 +99,7 @@ const IngredientAnalyzer = () => {
             </li>
             <li>
               <Link to="/" className="main-nav-link">
-                Go back
+                Back To Home
               </Link>
             </li>
           </ul>

@@ -15,7 +15,7 @@ function RecipeSpecificSearchNavbar() {
       <nav className="main-nav-list">
         {/* Spelled out link to home page */}
         <Link className="main-nav-link" to="/">
-          BACK TO HOME
+          Back To Home
         </Link>
         {/* Link to documentation */}
       </nav>

@@ -13,6 +13,8 @@
 .recipe-image {
   width: 50rem;
   border-radius: 11px;
+  position: relative;
+  display: inline-block;
 }
 
 .section-ingredients,

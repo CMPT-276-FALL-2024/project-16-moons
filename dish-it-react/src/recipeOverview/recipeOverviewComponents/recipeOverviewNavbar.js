@@ -27,7 +27,7 @@ function RecipeOverviewNavbar() {
           to="/recipeSpecificSearch"
           state={{ recipe: searchInput }}
         >
-          BACK TO SEARCH
+          Back To Search
         </Link>
         {/* Link to documentation */}
         <a
@@ -36,7 +36,7 @@ function RecipeOverviewNavbar() {
           rel="noopener noreferrer"
           className="main-nav-link"
         >
-          DOCUMENTATION
+          Documentation
         </a>
       </nav>
     </header>

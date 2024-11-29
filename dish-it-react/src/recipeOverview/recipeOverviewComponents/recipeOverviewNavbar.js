@@ -24,7 +24,7 @@ function RecipeOverviewNavbar() {
         {/* Return to search recipe with whatever was searched */}
         <Link
           className="main-nav-link"
-          to="/recipeSpecificSearch"
+          to="/recipe-search"
           state={{ recipe: searchInput }}
         >
           Back To Search

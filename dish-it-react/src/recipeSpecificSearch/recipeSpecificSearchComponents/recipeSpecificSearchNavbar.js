@@ -13,7 +13,7 @@ function RecipeSpecificSearchNavbar() {
         /></Link>
         <nav className="main-nav-list">
             {/* Spelled out link to home page */}
-            <Link className="main-nav-link" to="/">BACK TO HOME</Link>
+            <Link className="main-nav-link" to="/">Back To Home</Link>
             {/* Link to documentation */}
             <a
               href="https://docs.google.com/document/d/1JZCWgFncoqhTWbnXguZtalruUfB7CJaEjLOR9sbGqdo/edit?usp=sharing"
@@ -21,7 +21,7 @@ function RecipeSpecificSearchNavbar() {
               rel="noopener noreferrer"
               className="main-nav-link"
             >
-              DOCUMENTATION
+              Documentation
             </a>
         </nav>
     </header>

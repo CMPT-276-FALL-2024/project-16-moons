@@ -49,6 +49,19 @@ export default function RecipeSpecificSearchBody() {
     return (
         <body className="recipe-specific-search-body">
             <section>
+                <div className="instruct">
+                    <h1 className="title">Search for a specific recipe!</h1>
+                    {data == null && <p className="subtitle">Enter the name of the recipe you're looking for in the search bar below.</p>}
+                    {/* If a proper search is inputted and results are returned */}
+                    {data && data.hits.length > 0 && (
+                            <p className="subtitle"> Searching for {recipeToFetch}</p>
+                        )}
+                        {/* If no results are returned */}
+                        {data && data.hits.length === 0 && (
+                            <p className="subtitle"> No recipes found for {recipeToFetch}</p>
+                        )}
+                </div>
+
                 {/* Search Bar and Seach Button  */}
                 <div className="search-container">
                     <input
@@ -61,40 +74,17 @@ export default function RecipeSpecificSearchBody() {
                         <img id="search-icon" src="/images/search-icon.png" alt="search icon"/>
                     </button> 
                 </div>
-                <div className="searching-name-container">
-                    {/* If a proper search is inputted and results are returned */}
-                    {data && data.hits.length > 0 && (
-                            <h1> Searching for {recipeToFetch}</h1>
-                        )}
-                        {/* If no results are returned */}
-                        {data && data.hits.length === 0 && (
-                            <h1> No recipes found for {recipeToFetch}</h1>
-                        )}
-                </div>
-
                 
                 {/* If there are recipes to be displayed */}
                 {data && data.hits.length > 0 && (
                     <div className="recipe-cards-container">
-                        {/* Display one row of cards (Adjust the 0, 10 in slice for which indexes to display) */}
-                        <div className="vertical-flex-container">
-                            {data.hits.slice(0, 10).map((hit, index) => (
-                                <RecipeCard
-                                    key={index}
-                                    data={hit}
-                                    searchInput={recipeToFetch}
-                                />
-                            ))}
-                        </div>
-                        {/* Another row of indexes 11-20 of hits */}
-                        <div className="vertical-flex-container">
-                            {data.hits.slice(11, 20).map((hit, index) => (
-                                <RecipeCard
-                                    key={index}
-                                    data={hit}
-                                />
-                            ))}
-                        </div>
+                        {data.hits.slice(0, 50).map((hit, index) => (
+                            <RecipeCard
+                                key={index}
+                                data={hit}
+                                searchInput={recipeToFetch}
+                            />
+                        ))}
                     </div>
                 )}
 

@@ -6,13 +6,38 @@ scroll-behavior: smooth;
 font-weight: bold;
 }
 
-.vertical-flex-container { 
-display: flex;
+.recipe-specific-search-body{
+    text-align: center;
+}
+
+.instruct{
+    margin: 9.8rem 0 3rem 0;
+}
+
+.title {
+    font-size: 4rem;
+    font-weight: bold;
+}
+
+.subtitle {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-top: 1rem;
+}
+
+.search-container {
+    margin-bottom: 3rem;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
 }
 
 .search-button {
-width: 3rem;
-height: 3rem;
+width: 5rem;
+height: 5rem;
+margin-left: 1rem;
 background-color: #ffbd59;
 border: none;
 border-radius: 50%;
@@ -38,12 +63,13 @@ height: 2rem;
     background-color: #e0ba88;
 }
 
-.container {
-width: 500px;
-padding: 20px;
-/* background: #f9f9f9; */
-display: flex;
-justify-content: center;
+.recipe-cards-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6rem;
+    margin-top: 3rem;
+    margin-bottom: 9.8rem;
 }
 
 .search-result {

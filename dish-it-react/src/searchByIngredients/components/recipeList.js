@@ -1,7 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-
 const RecipeList = ({ recipes }) => {
     const navigate = useNavigate();
     if (recipes.length === 0) {
@@ -13,7 +12,7 @@ const RecipeList = ({ recipes }) => {
                 <div
                     key={recipe.id}
                     className="recipe-card"
-                    onClick={() => navigate("/recipe-overview", { state: { recipe } })}
+                    onClick={() => navigate(`/recipe-overview/${recipe.id}`)} // Navigate with ID in the URL
                 >
                     <img
                         className="recipe-image"

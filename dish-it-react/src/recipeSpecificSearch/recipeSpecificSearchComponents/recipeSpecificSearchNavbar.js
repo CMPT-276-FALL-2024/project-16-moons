@@ -3,12 +3,12 @@ import { Link } from "react-router-dom";
 function RecipeSpecificSearchNavbar() {
   return (
     <header className="header">
-        {/* Link to the home page */}
-        <Link to="/">
+      {/* Link to the home page */}
+      <Link to="/">
         <img
-            src="/images/logoNavBar.png"
-            className="logo"
-            alt="logo
+          src="/images/logoNavBar.png"
+          className="logo"
+          alt="logo
             of Dish-It"
         /></Link>
         <nav className="main-nav-list">
@@ -24,8 +24,9 @@ function RecipeSpecificSearchNavbar() {
               Documentation
             </a>
         </nav>
+
     </header>
-  )
+  );
 }
 
 export default RecipeSpecificSearchNavbar;

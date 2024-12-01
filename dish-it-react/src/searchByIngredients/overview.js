@@ -46,8 +46,15 @@ const Overview = () => {
     return (
         <div className="recipe-overview">
             <h1>{recipeDetails.title}</h1>
+
             <img src={recipeDetails.image} alt={recipeDetails.title} />
-            <p><strong>Summary:</strong> {recipeDetails.summary}</p>
+
+            {/*Using dangerous code to render HTML inside response */}
+            <p>
+                <strong>Summary:</strong>
+                <p dangerouslySetInnerHTML={{ __html: recipeDetails.summary }} />
+            </p>
+            
             <a href={recipeDetails.sourceUrl} target="_blank" rel="noopener noreferrer">
                 View Full Recipe
             </a>

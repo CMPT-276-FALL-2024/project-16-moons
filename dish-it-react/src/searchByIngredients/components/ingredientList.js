@@ -1,6 +1,5 @@
 import React from "react";
 
-
 // List of ingredients added, with the functionality of removing them provided in parent
 const IngredientList = ({ ingredients, removeIngredient }) => {
     return (

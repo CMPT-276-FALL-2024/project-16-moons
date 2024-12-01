@@ -120,10 +120,10 @@ function Homepage() {
               </p>
             </Link>
             <Link to="/ingredient-search" class="feature-link">
-              <p className="feature-name">Meal Planner</p>
+              <p className="feature-name">Search By Ingredients</p>
               <p className="feature-description">
-                Want to create your own personalized diet? Well start creating
-                now today using Dish-It!
+                Want to know what dishes you can make with ingredients from your panty?
+                Start exploring recipes using Dish-It!
               </p>
             </Link>
 

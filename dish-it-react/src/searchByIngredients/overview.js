@@ -1,42 +1,46 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
 const Overview = () => {
-    const {id} = useParams(); // Get the recipe ID from the URL
+    const { id } = useParams(); // Extract recipe ID from URL
     const [recipeDetails, setRecipeDetails] = useState(null);
     const [error, setError] = useState(null);
 
+    useEffect(() => {
+        const fetchRecipeDetails = async () => {
+            try {
+                const response = await fetch(
+                    `https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/${id}/information`,
+                    {
+                        method: "GET",
+                        headers: {
+                            "x-rapidapi-host": process.env.REACT_APP_X_RAPID_HOST,
+                            "x-rapidapi-key": process.env.REACT_APP_X_RAPIDAPI_KEY,
+                            "x-rapidapi-ua": process.env.REACT_APP_X_RAPIDAPI_UA,
+                        },
+                    }
+                );
 
-    const fetchRecipeDetails = async () => {
-        try {
-            const response = await fetch(
-                `https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/${id}/information`,
-                {
-                    method: "GET",
-                    headers: {
-                        "x-rapidapi-host": process.env.REACT_APP_X_RAPID_HOST,
-                        "x-rapidapi-key": process.env.REACT_APP_X_RAPIDAPI_KEY,
-                        "x-rapidapi-ua": process.env.REACT_APP_X_RAPIDAPI_UA,
-                    },
+                if (!response.ok) {
+                    throw new Error("Failed to fetch recipe details.");
                 }
-            );
 
-            if (!response.ok) {
-                throw new Error("Failed to fetch recipe details.");
+                const data = await response.json();
+                setRecipeDetails(data); // Store the fetched recipe details
+            } catch (err) {
+                setError(err.message); // Store the error if fetching fails
             }
+        };
 
-            const data = await response.json();
-            setRecipeDetails(data);
-        } catch (err) {
-            setError(err.message);
-        }
-    };
-
-    if (!recipeDetails && !error) {
         fetchRecipeDetails();
-    }
+    }, [id]); // Fetch details whenever `id` changes
+
     if (error) {
         return <p>Error: {error}</p>;
+    }
+
+    if (!recipeDetails) {
+        return <p>Loading...</p>; // Display loading while fetching data
     }
 
     return (

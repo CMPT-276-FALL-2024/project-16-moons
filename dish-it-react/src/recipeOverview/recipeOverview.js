@@ -4,12 +4,12 @@ import RecipeOverViewNavbar from "./recipeOverviewComponents/recipeOverviewNavba
 import RecipeOverviewBody from "./recipeOverviewComponents/recipeOverviewBody";
 
 function RecipeOverview() {
-    return (
-        <div>
-            <RecipeOverViewNavbar />
-            <RecipeOverviewBody />
-        </div>
-    )
+  return (
+    <div>
+      <RecipeOverViewNavbar />
+      <RecipeOverviewBody />
+    </div>
+  );
 }
 
 export default RecipeOverview;

@@ -1,74 +1,70 @@
-import { useLocation } from 'react-router-dom'
-import { round } from 'mathjs';
+import { useLocation } from "react-router-dom";
+import { round } from "mathjs";
 
 function RecipeOverviewBody() {
-    const location = useLocation()
-    const { recipeData } = location.state || {};
-    const recipe = recipeData.recipe;
-    console.log(recipeData);
-    return (
-        <body>
-            <h1>Recipe Overview: {recipe.label}</h1>
-            <img src={recipe.image} alt={recipe.label} />
-            <ul className="main-details">
-                <li>Calories: {round(recipe.calories)}</li>
-                <li>Servings: {recipe.yield}</li>
-                {recipe.totalTime !== 0 && (
-                    <li>Time: {recipe.totalTime} minutes</li>
-                )}
-            </ul>
-            
-            {/* All fetched ingredients for recipe from API*/}
-            <h2>Ingredients</h2>
-            <ul>
-                {recipe.ingredientLines.map((ingredient, index) => (
+  const location = useLocation();
+  const { recipeData } = location.state || {};
+  const recipe = recipeData.recipe;
+  console.log(recipeData);
+  return (
+    <div>
+      <main>
+        <section className="hero" id="main">
+          <h1 className="recipe-title">{recipe.label}</h1>
+          <div className="grid grid--3-cols">
+            <img
+              src={recipe.image}
+              className="recipe-image"
+              alt={recipe.label}
+            />
+            <div className="main-details">
+              <div className="section-ingredients">
+                <h2>Ingredients</h2>
+                <ul className="ingredients-list">
+                  {recipe.ingredientLines.map((ingredient, index) => (
                     <li key={index}>{ingredient}</li>
-                ))}
-            </ul>
-            
-            {/* All health labels associated with recipe */}
-            <h2>Health Labels</h2>
-            <ul>
-                {recipe.healthLabels.map((label, index) => (
-                    <li key={index}>{label}</li>
-                ))}
-            </ul>
-            
-            {/* All caution labels associated with recipe */}
-            <h2>Caution Labels</h2>
-            <ul>
-                {recipe.cautions.map((label, index) => (
-                    <li key={index}>{label}</li>
-                ))}
-            </ul>
-            
-            {/* List of nutrients */}
-            <h2>Nutrient List</h2>
-            <ul>
-                <li>{round(recipe.totalNutrients.ENERC_KCAL.quantity)} {recipe.totalNutrients.ENERC_KCAL.unit} of Calories</li>
-                
-                <h2>Fats</h2>
-                <li>{round(recipe.totalNutrients.FAT.quantity)} {recipe.totalNutrients.FAT.unit} of Fat ({round(recipe.totalDaily.FAT.quantity, 1)}% of daily needs)</li>
-                {recipe.digest[0].sub.map((nutrition, index) => (
-                    <li key={index}>{round(nutrition.total)} {nutrition.unit} of {nutrition.label} ({round(nutrition.daily, 1)}% of daily needs)</li>
-                ))}
-
-                <h2>Carbs</h2>
-                {recipe.digest[1].sub.map((nutrition, index) => (
-                    <li key={index}>{round(nutrition.total)} {nutrition.unit} of {nutrition.label} ({round(nutrition.daily, 1)}% of daily needs)</li>
-                ))}
-
-                <h2>Others</h2>
+                  ))}
+                </ul>
+              </div>
+              <p className="servings-text">
+                <strong>This recipe is good for {recipe.yield} servings</strong>
+              </p>
+              <a
+                href={recipe.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="recipe-link btn"
+              >
+                <span class="recipe-link-name">
+                  <strong>View Full Recipe</strong>
+                </span>
+              </a>
+              {recipe.cautions && recipe.cautions.length > 0 && (
+                <p className="caution-text">
+                  <strong>CAUTION</strong> this dish includes:{" "}
+                  {recipe.cautions.join(", ")}
+                </p>
+              )}
+            </div>
+            <div class="nutrition-facts">
+              <h1>Nutrition Facts</h1>
+              <div>
+                <p>
+                  {round(recipe.calories)} of <strong>Calories</strong>
+                </p>
                 {recipe.digest.map((nutrition, index) => (
-                    <li key={index}>{round(nutrition.total)} {nutrition.unit} of {nutrition.label} ({round(nutrition.daily, 1)}% of daily needs)</li>
+                  <p key={index}>
+                    {round(nutrition.total)} {nutrition.unit} of{" "}
+                    <strong>{nutrition.label}</strong>
+                  </p>
                 ))}
-            </ul>
-            
-            {/* Link to full recipe */}
-            <a href={recipe.url} target="_blank" rel="noopener noreferrer">Click here to see the full recipe</a>
-            
-        </body>
-    );
-    }
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  );
+}
 
 export default RecipeOverviewBody;

@@ -66,14 +66,34 @@ const GenerateRandomDish = () => {
           <nav className="main-nav">
             <ul className="main-nav-list">
               <li>
-                <a className="main-nav-link" href="#main">
-                  Summary
-                </a>
+                {/* Back Home */}
+                <Link to="/" className="main-nav-link">
+                  Back To Home
+                </Link>
               </li>
               <li>
-                <Link to="/" className="main-nav-link">
-                  Go back
+                {/* Generate another dish */}
+                <Link
+                  to="#"
+                  className="main-nav-link"
+                  onClick={(event) => {
+                    event.preventDefault();
+                    window.location.reload();
+                  }}
+                >
+                  Give Me Another Dish
                 </Link>
+              </li>
+              <li>
+                {/* Link to documentation */}
+                <a
+                  href="https://docs.google.com/document/d/1JZCWgFncoqhTWbnXguZtalruUfB7CJaEjLOR9sbGqdo/edit?usp=sharing"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="main-nav-link"
+                >
+                  Documentation
+                </a>
               </li>
             </ul>
           </nav>

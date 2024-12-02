@@ -36,15 +36,32 @@ export default function RecipeSpecificSearchBody() {
     }, [recipeToFetch])
   
     function setNewRecipe() {
+        const validInput = checkInput(document.getElementById("ingredient-list-input").value)
+        if (!validInput) {
+            return
+        }
         setRecipeToFetch(document.getElementById("ingredient-list-input").value)
         document.getElementById("ingredient-list-input").value = ""
     }
 
     const enterKeyDown = (event) => {
         if (event.key === "Enter") {
-            setRecipeToFetch(event.target.value);
+            setNewRecipe()
         }
     };
+
+    const checkInput = (input) => {
+        const regex = /^[a-zA-Z\s]*$/
+        if (input === "") {
+            alert("Recipe Search Bar must not be empty!")
+            return false
+        } if (!regex.test(input)) {
+            alert("Recipe Search Bar can only contain letters!")
+            return false
+        }
+        return true
+    }
+
 
     return (
         <body className="recipe-specific-search-body">

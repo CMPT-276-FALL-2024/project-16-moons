@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 
+// RecipeCard component that displays the recipe image and name
 function RecipeCard({ data, searchInput }) {
   return (
     <div className="search-result">

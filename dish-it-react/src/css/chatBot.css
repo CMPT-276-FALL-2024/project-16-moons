@@ -1,12 +1,16 @@
 /* Chatbot Button */
 .chat-button {
   position: fixed;
-  bottom: 20px;
-  left: 20px;
+  bottom: 5rem;
   background: none;
   border: none;
   cursor: pointer;
+  float: right;
   z-index: 1000;
+
+  display: flex;
+  justify-content: end;
+  right: 5rem;
 }
 
 .chat-button img {
@@ -20,8 +24,8 @@
   flex-direction: column;
 
   position: fixed;
-  bottom: 80px;
-  left: 20px;
+  bottom: 10rem;
+  right: 5rem;
   width: 300px;
   max-height: 400px;
   background-color: white;

@@ -82,7 +82,7 @@ const SearchByIngredients = () => {
                 </div>
             </div>
 
-            <div>
+            <div className="main-content">
                 <RecipeList recipes={recipes} />
             </div>
         </div>

@@ -40,8 +40,8 @@ const SearchByIngredients = () => {
 
         try {
             const query = ingredients.join("%2C");   
-            // default: 10 recipes, ignore pantry ingredients, minimize missing ingredients
-            const response = await fetch(`https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/findByIngredients?ingredients=${query}&number=10&ignorePantry=true&ranking=2`,
+            // default: 21 recipes, ignore pantry ingredients, minimize missing ingredients
+            const response = await fetch(`https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/findByIngredients?ingredients=${query}&number=21&ignorePantry=true&ranking=2`,
                 {
                     method: "GET",
                     headers: {
@@ -77,14 +77,9 @@ const SearchByIngredients = () => {
                         removeIngredient={removeIngredient}
                     />
                 </div>
-                <div className="button">
-                    <SearchButton onSearchClick={handleSearchClick} />
-                </div>
+                <SearchButton onSearchClick={handleSearchClick} />
             </div>
-
-            <div className="main-content">
-                <RecipeList recipes={recipes} />
-            </div>
+            <RecipeList recipes={recipes} />
         </div>
     );
 };

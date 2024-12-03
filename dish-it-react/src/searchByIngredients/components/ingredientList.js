@@ -12,7 +12,7 @@ const IngredientList = ({ ingredients, removeIngredient }) => {
                             className="remove-button"
                             onClick={() => removeIngredient(ingredient)}
                         >
-                            x
+                            &#10006;
                         </button>
                     </li>
                 ))}

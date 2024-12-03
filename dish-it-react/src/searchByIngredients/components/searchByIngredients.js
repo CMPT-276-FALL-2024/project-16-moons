@@ -64,17 +64,25 @@ const SearchByIngredients = () => {
 };
 
     return (
-        <div>   {/*classNames to be set later*/}
-            <IngredientInput addIngredient={addIngredient} />
+        <div className="page">
+            <div className="sidebar">
+                {/* Most field name are in their own files */}
+                <div>
+                    <IngredientInput addIngredient={addIngredient} />
+                </div>
 
-            <IngredientList
-                ingredients={ingredients}
-                removeIngredient={removeIngredient}
-            />
+                <div>
+                    <IngredientList
+                        ingredients={ingredients}
+                        removeIngredient={removeIngredient}
+                    />
+                </div>
+                <div className="button">
+                    <SearchButton onSearchClick={handleSearchClick} />
+                </div>
+            </div>
 
-            <SearchButton onSearchClick={handleSearchClick} />
-
-            <div className="recipe-list-container">
+            <div>
                 <RecipeList recipes={recipes} />
             </div>
         </div>

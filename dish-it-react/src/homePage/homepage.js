@@ -72,7 +72,7 @@ function Homepage() {
             <div className="search-menu">
               <div className="search-menu-content grid grid--2-cols">
                 <Link to="/recipe-search" className="btn btn--full">
-                  Recipe Search
+                  Search Recipes by Name
                 </Link>
                 <Link to="/ingredient-analyzer" className="btn btn--full">
                   Ingredient Analyzer
@@ -80,8 +80,8 @@ function Homepage() {
                 <Link to="/random-recipe" className="btn btn--full">
                   Random Recipe
                 </Link>
-                <Link to="/recipe-ingredient-search" className="btn btn--full">
-                  Ingredient Recipe Search
+                <Link to="/ingredient-search" className="btn btn--full">
+                  Search Recipes by Ingredients
                 </Link>
               </div>
             </div>
@@ -119,11 +119,11 @@ function Homepage() {
                 click!
               </p>
             </Link>
-            <Link to="/recipe-ingredient-search" class="feature-link">
-              <p className="feature-name">Ingredient Recipe Search</p>
+            <Link to="/ingredient-search" class="feature-link">
+              <p className="feature-name">Search By Ingredients</p>
               <p className="feature-description">
-                Let Dish-It know what ingredients you have and allow them to
-                create you a personalized recipe!
+                Want to know what dishes you can make with ingredients from your pantry?
+                Start exploring recipes using Dish-It!
               </p>
             </Link>
 

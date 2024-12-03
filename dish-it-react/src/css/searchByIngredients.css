@@ -6,6 +6,10 @@
     padding: 0;
 }
 
+/*******************************/
+/* Sidebar */
+/*******************************/
+
 .sidebar {
     display: flex;
     flex-direction: column;
@@ -113,14 +117,16 @@
     background-color: #ffca7a;
 }
 
+/*******************************/
+/* Main content */
+/*******************************/
+
 .recipe-list {
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
     gap: 4rem;
-    margin-top: 5rem;
-    margin-left: 35rem;
-    margin-right: 5rem;
+    margin: 5rem 4rem 4rem 35rem;
     padding: 0;
     flex-grow: 1;
     width: calc(100% - 40rem);

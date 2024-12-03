@@ -69,6 +69,10 @@
   font-weight: 500;
 }
 
+.recipe-title {
+  font-size: 6.2rem;
+}
+
 .caution-text {
   padding-top: 2.4rem;
   font-size: 1.8rem;

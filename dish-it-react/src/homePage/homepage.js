@@ -122,7 +122,7 @@ function Homepage() {
             <Link to="/ingredient-search" class="feature-link">
               <p className="feature-name">Search By Ingredients</p>
               <p className="feature-description">
-                Want to know what dishes you can make with ingredients from your panty?
+                Want to know what dishes you can make with ingredients from your pantry?
                 Start exploring recipes using Dish-It!
               </p>
             </Link>

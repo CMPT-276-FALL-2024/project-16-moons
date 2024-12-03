@@ -99,8 +99,19 @@ const IngredientAnalyzer = () => {
             </li>
             <li>
               <Link to="/" className="main-nav-link">
-                Go back
+                Back To Home
               </Link>
+            </li>
+            <li>
+              {/* Link to documentation */}
+              <a
+                href="https://docs.google.com/document/d/1JZCWgFncoqhTWbnXguZtalruUfB7CJaEjLOR9sbGqdo/edit?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="main-nav-link"
+              >
+                Documentation
+              </a>
             </li>
           </ul>
         </nav>
@@ -306,14 +317,11 @@ const IngredientAnalyzer = () => {
           <strong>Example:</strong> 5 cups of cheese, 0.5 Oz of lettuce and 2/3
           cups of rice.
         </p>
-
-        <li>
-          <p>
-            <strong>Accepted Units of Measurements</strong>
-          </p>
-          <ul>Cup/C</ul>
-          <ul>Ounce/Oz</ul>
-        </li>
+        <p>
+          <strong>Accepted Units of Measurements</strong>
+        </p>
+        <ul>Cup/C</ul>
+        <ul>Ounce/Oz</ul>
       </section>
     </div>
   );

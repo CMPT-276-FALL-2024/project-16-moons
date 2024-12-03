@@ -30,7 +30,7 @@ const IngredientInput = ({addIngredient}) => {
             onKeyDown={pressedEnter}
             placeholder="Add an ingredient..."
             />
-            <button onClick={handleAdd}>Add</button>
+            <button onClick={handleAdd}>&#43;</button>
         </div>
     );
 };

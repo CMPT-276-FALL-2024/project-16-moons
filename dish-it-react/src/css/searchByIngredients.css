@@ -1,0 +1,80 @@
+.page {
+    display: flex;
+    flex-direction: row;
+}
+
+.sidebar {
+    padding-left: 6rem;
+    padding-top: 5rem;
+    margin-right: 2rem;
+    background-color: #ddd;
+    width: 25%;
+    
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+/*Inputs*/
+.input-field {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 0px;
+    align-self: center;
+}
+
+.ingredient-input input[type="text"] {
+    padding: 1.5rem;
+    margin-right: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.ingredient-input button {
+    background-color: #ffbd59;
+    color: black;
+    padding: 1.5rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+.ingredient-input button:hover {
+    background-color: #ffca7a;
+}
+
+/*Ingredients list*/
+.ingredient-list {
+    list-style-type: none;
+    background-color: yellow;
+
+}
+
+.ingredient-item {
+    font-size: 14px;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.remove-button {
+    margin-left: 5%;
+    border-radius: 50%;
+    background: none;
+    font-size: 16px;
+    cursor: pointer;
+    width: 2.4rem;
+    height: 2.4rem;
+    border: 2px solid black;
+
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+.recipe-list {
+    background-color: red;
+    width: 1fr;
+}

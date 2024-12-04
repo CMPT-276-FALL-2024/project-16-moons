@@ -2,6 +2,7 @@ import React from "react";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import ScrollUp from "../../scrollUp/scrollUp";
+import ChatbotComponent from "../../chatBot/chatbot-component";
 
 const apiKey = process.env.REACT_APP_X_RAPIDAPI_KEY;
 const apiUa = process.env.REACT_APP_X_RAPIDAPI_UA;
@@ -161,7 +162,8 @@ const GenerateRandomDish = () => {
             </div>
           </section>
         </main>
-        <ScrollUp></ScrollUp>
+        <ChatbotComponent />
+        <ScrollUp />
       </div>
     )
   );

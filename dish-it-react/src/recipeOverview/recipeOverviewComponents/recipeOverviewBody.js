@@ -1,5 +1,6 @@
 import { useLocation } from "react-router-dom";
 import { round } from "mathjs";
+import ChatbotComponent from "../../chatBot/chatbot-component";
 
 function RecipeOverviewBody() {
   const location = useLocation();
@@ -62,6 +63,7 @@ function RecipeOverviewBody() {
             </div>
           </div>
         </section>
+        <ChatbotComponent />
       </main>
     </div>
   );

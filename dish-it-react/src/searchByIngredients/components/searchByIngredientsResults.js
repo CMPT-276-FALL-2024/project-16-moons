@@ -22,6 +22,7 @@ const SearchByIngredientsResults = () => {
     const [ingredients, setIngredients] = useState(initialIngredients);
     const [recipes, setRecipes] = useState([]);
     const [error, setError] = useState(null);
+    const [isSearched, setIsSearched] = useState(false);
 
     const addIngredient = (ingredient) => {
         if (ingredient && !ingredients.includes(ingredient)) {
@@ -54,7 +55,7 @@ const SearchByIngredientsResults = () => {
                 if (!response.ok) {
                     throw new Error("Failed to fetch recipes.");
                 }
-
+                setIsSearched(true);
                 const data = await response.json();
                 const errorMessage = error;
                 console.log(errorMessage);
@@ -78,7 +79,7 @@ const SearchByIngredientsResults = () => {
                     <IngredientList ingredients={ingredients} removeIngredient={removeIngredient} />
                     <SearchButton ingredients={ingredients} />
                 </div>
-                <RecipeList recipes={recipes} />
+                <RecipeList recipes={recipes} isSearched={isSearched}/>
             </div>
         </div>
 

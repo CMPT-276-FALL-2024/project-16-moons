@@ -13,9 +13,10 @@
 .sidebar {
     display: flex;
     flex-direction: column;
-    padding-left: 5rem;
-    padding-right: 2rem;
+    top: 9.6rem;    /*equal nav bar height*/
+    padding-left: 4rem;
     padding-top: 3rem;
+    padding-right: 2rem;
     margin-right: 2rem;
     background-color: #fdf2e9;
     width: 25rem;
@@ -71,8 +72,8 @@
     flex-direction: column;
     list-style-type: none;
     margin-top: 1.5rem;
-    max-height: 40rem;
-    overflow-y: auto ;
+    max-height: 37rem;
+    overflow-y: auto;
 }
 
 .ingredient-item {
@@ -126,16 +127,16 @@
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
-    gap: 4rem;
-    margin: 3rem 4rem 4rem 35rem;
     padding: 0;
+    gap: 4rem;
+    margin: 3rem 10rem 4rem 35rem;
     flex-grow: 1;
-    width: calc(100% - 40rem);
+    width: calc(100% - 45rem);
     transition: width 0.3s ease;
 }
 
 .recipe-card-1 {
-    width: 35rem;
+    width: 33rem;
     height: 29rem;
     background-color: #e0ba88;
     border-radius: 10px;
@@ -146,7 +147,7 @@
 
 .recipe-image-1 {
     align-self: center;
-    width: 35rem;
+    width: 33rem;
     height: 25rem;
     border-radius: 10px;
 }

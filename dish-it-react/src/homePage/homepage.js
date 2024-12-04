@@ -270,7 +270,7 @@ function Homepage() {
             <div className="profile-container">
               <div>
                 <a
-                  href="https://www.linkedin.com/in/kevin-tan-614914335/"
+                  href="https://www.linkedin.com/in/tylerho1999/"
                   target="_blank"
                   without
                   rel="noreferrer"
@@ -290,7 +290,12 @@ function Homepage() {
             </div>
             <div className="profile-container">
               <div>
-                <a href="/">
+                <a
+                  href="https://www.linkedin.com/in/quang-anh-p-47ab472a7/"
+                  target="_blank"
+                  without
+                  rel="noreferrer"
+                >
                   <img
                     className="creator-image"
                     src="images/Creators/Quang.jpg"

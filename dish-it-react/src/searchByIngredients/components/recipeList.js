@@ -7,19 +7,19 @@ const RecipeList = ({ recipes }) => {
         return <p>No recipes found. Try different ingredients.</p>;
     }
     return (
-        <div className="recipe-list">
+        <div className="recipe-list-1">
             {recipes.map((recipe) => (
                 <div
                     key={recipe.id}
-                    className="recipe-card"
+                    className="recipe-card-1"
                     onClick={() => navigate(`/recipe-overview/${recipe.id}`)} // Navigate with ID in the URL
                 >
                     <img
-                        className="recipe-image"
+                        className="recipe-image-1"
                         src={recipe.image}
                         alt={recipe.title}
                     />
-                    <h3 className="recipe-title">{recipe.title}</h3>
+                    <h3 className="recipe-title-1">{recipe.title}</h3>
                 </div>
             ))}
         </div>

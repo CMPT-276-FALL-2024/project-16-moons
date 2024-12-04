@@ -6,6 +6,13 @@
     padding: 0;
 }
 
+.error-message-SBI {
+    padding: 0;
+    margin-left: 35rem;
+    margin-top: 3rem;
+    font-size: 1.6rem;
+}
+
 /*******************************/
 /* Sidebar */
 /*******************************/

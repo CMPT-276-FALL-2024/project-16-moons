@@ -66,27 +66,21 @@ const SearchByIngredients = () => {
 };
 
     return (
-        <main>
-            <div className="page">
-                <div className="sidebar">
-                    {/* Most field name are in their own files */}
-                    <div>
-                        <IngredientInput addIngredient={addIngredient} />
-                    </div>
-
-                    <div>
-                        <IngredientList
-                            ingredients={ingredients}
-                            removeIngredient={removeIngredient}
-                        />
-                    </div>
-                    <SearchButton onSearchClick={handleSearchClick} />
-                </div>
-                <RecipeList recipes={recipes} />
-                <ChatbotComponent />
-                <ScrollUp />
+        <div className="page">
+            <div id="main"></div>
+            <div className="sidebar">
+                {/* Most field name are in their own files */}
+                <IngredientInput addIngredient={addIngredient} />
+                <IngredientList
+                    ingredients={ingredients}
+                    removeIngredient={removeIngredient}
+                />
+                <SearchButton onSearchClick={handleSearchClick} />
             </div>
-        </main>
+            <RecipeList recipes={recipes} />
+            <ChatbotComponent />
+            <ScrollUp />
+        </div>
     );
 };
 

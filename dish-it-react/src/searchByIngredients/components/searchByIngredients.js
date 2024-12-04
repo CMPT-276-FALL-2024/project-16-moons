@@ -3,6 +3,8 @@ import IngredientInput from "./ingredientsInput";
 import IngredientList from "./ingredientList";
 import RecipeList from "./recipeList";
 import SearchButton from "./searchButton";
+import ChatbotComponent from "../../chatBot/chatbot-component";
+import ScrollUp from "../../scrollUp/scrollUp";
 
 const apiKey = process.env.REACT_APP_X_RAPIDAPI_KEY;
 const apiUa = process.env.REACT_APP_X_RAPIDAPI_UA;
@@ -64,23 +66,27 @@ const SearchByIngredients = () => {
 };
 
     return (
-        <div className="page">
-            <div className="sidebar">
-                {/* Most field name are in their own files */}
-                <div>
-                    <IngredientInput addIngredient={addIngredient} />
-                </div>
+        <main>
+            <div className="page">
+                <div className="sidebar">
+                    {/* Most field name are in their own files */}
+                    <div>
+                        <IngredientInput addIngredient={addIngredient} />
+                    </div>
 
-                <div>
-                    <IngredientList
-                        ingredients={ingredients}
-                        removeIngredient={removeIngredient}
-                    />
+                    <div>
+                        <IngredientList
+                            ingredients={ingredients}
+                            removeIngredient={removeIngredient}
+                        />
+                    </div>
+                    <SearchButton onSearchClick={handleSearchClick} />
                 </div>
-                <SearchButton onSearchClick={handleSearchClick} />
+                <RecipeList recipes={recipes} />
+                <ChatbotComponent />
+                <ScrollUp />
             </div>
-            <RecipeList recipes={recipes} />
-        </div>
+        </main>
     );
 };
 

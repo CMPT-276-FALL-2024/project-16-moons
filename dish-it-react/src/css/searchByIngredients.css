@@ -127,7 +127,7 @@
     justify-content: space-evenly;
     flex-wrap: wrap;
     gap: 4rem;
-    margin: 5rem 4rem 4rem 35rem;
+    margin: 3rem 4rem 4rem 35rem;
     padding: 0;
     flex-grow: 1;
     width: calc(100% - 40rem);

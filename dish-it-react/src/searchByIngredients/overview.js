@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import "../css/general.css";
 import "../css/recipeOverview.css"
-import "../css/randomDishPage.css"
 import SearchByIngredientsNavbar from "./components/searchByIngredientsNavbar.js";
 import ChatbotComponent from "../chatBot/chatbot-component";
 import ScrollUp from "../scrollUp/scrollUp.js";
@@ -59,16 +58,17 @@ const Overview = () => {
             <ChatbotComponent></ChatbotComponent>
             <ScrollUp></ScrollUp>
             <main>
-                <section className = 'hero' id = 'main'>
+                <section className="recipeResults" id = 'main'>
                     <div className="grid grid--3-cols">
-                        <h1 className = 'recipe-title'>{recipeDetails.title}</h1>
-
-                        <img
-                        src={recipeDetails.image}
-                        className="recipe-image"
-                        alt={recipeDetails.title}
-                        />
-
+                        <div className="results-image-container">
+                            <h1 className = 'results-title'>{recipeDetails.title}</h1>
+                            <img
+                            src={recipeDetails.image}
+                            className="results-image"
+                            alt={recipeDetails.title}
+                            />
+                        </div>
+                    
                         <div className="main-details">
 
                             <div className="section-ingredients">
@@ -93,21 +93,6 @@ const Overview = () => {
                                 </li>
                             </div>
 
-                            <div className="instructions">
-                                <h2>How to Cook:</h2>
-                                {recipeDetails.analyzedInstructions.map((instruction, index) => (
-                                    <div key={index}>
-                                        <ol>
-                                            {instruction.steps.map((step) => (
-                                                <li key={step.number}>
-                                                    <b>Step {step.number}:</b> {step.step}
-                                                </li>
-                                            ))}
-                                        </ol>
-                                    </div>
-                                ))}
-                            </div>
-
                             <p className="servings-text">
                                 <strong>This recipe is good for <b>{recipeDetails.servings}</b> servings</strong>
                             </p>
@@ -120,8 +105,22 @@ const Overview = () => {
                                 <span class="recipe-link-name">
                                 <strong>View Full Recipe</strong>
                                 </span>
-                            </a>
+                            </a>                          
                         </div>
+                        <div className="section-instructions">
+                                <h2>Instructions:</h2>
+                                {recipeDetails.analyzedInstructions.map((instruction, index) => (
+                                <div key={index}>
+                                    <ol>
+                                        {instruction.steps.map((step) => (
+                                            <li key={step.number}>
+                                                <b>Step {step.number}:</b> {step.step}
+                                            </li>
+                                        ))}
+                                    </ol>
+                                </div>
+                                ))}
+                        </div>  
                     </div>                    
                 </section>
             </main>

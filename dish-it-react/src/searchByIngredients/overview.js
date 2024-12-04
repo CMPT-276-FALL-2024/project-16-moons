@@ -96,6 +96,11 @@ const Overview = () => {
                             <p className="servings-text">
                                 <strong>This recipe is good for <b>{recipeDetails.servings}</b> servings</strong>
                             </p>
+                            <p></p>
+                            <p className="cooking-time">
+                                <strong><b>{recipeDetails.title}</b> will take <b>{recipeDetails.preparationMinutes}</b> minutes to prepare and <b>{recipeDetails.cookingMinutes}</b> minutes to cook.</strong>
+                            </p>
+
                             <a
                                 href={recipeDetails.sourceUrl}
                                 target="_blank"

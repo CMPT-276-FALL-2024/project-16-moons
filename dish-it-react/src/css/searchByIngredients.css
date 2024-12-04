@@ -13,9 +13,10 @@
 .sidebar {
     display: flex;
     flex-direction: column;
-    padding-left: 5rem;
-    padding-right: 2rem;
+    top: 9.6rem;    /*equal nav bar height*/
+    padding-left: 4rem;
     padding-top: 3rem;
+    padding-right: 2rem;
     margin-right: 2rem;
     background-color: #fdf2e9;
     width: 25rem;
@@ -71,8 +72,8 @@
     flex-direction: column;
     list-style-type: none;
     margin-top: 1.5rem;
-    max-height: 40rem;
-    overflow-y: auto ;
+    max-height: 37rem;
+    overflow-y: auto;
 }
 
 .ingredient-item {
@@ -101,7 +102,8 @@
     box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.1);
 }
 
-.search-button {
+.search-button-1 {
+    background-color: #ffbd59;
     color: black;
     font-size: 1.8rem;
     padding: 2rem 2.5rem;
@@ -113,7 +115,7 @@
     box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.1);
 }
 
-.search-button :hover {
+.search-button-1:hover {
     background-color: #ffca7a;
 }
 
@@ -121,37 +123,45 @@
 /* Main content */
 /*******************************/
 
-.recipe-list {
+.recipe-list-1 {
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
-    gap: 4rem;
-    margin: 5rem 4rem 4rem 35rem;
     padding: 0;
+    gap: 4rem;
+    margin: 3rem 10rem 4rem 35rem;
     flex-grow: 1;
-    width: calc(100% - 40rem);
+    width: calc(100% - 45rem);
     transition: width 0.3s ease;
 }
 
-.recipe-card {
-    width: 35rem;
-    height: 28rem;
+.recipe-card-1 {
+    width: 33rem;
+    height: 29rem;
     background-color: #e0ba88;
     border-radius: 10px;
     box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
     cursor: pointer;
+    transition: 0.75s;
 }
 
-.recipe-image {
+.recipe-image-1 {
     align-self: center;
-    width: 35rem;
+    width: 33rem;
     height: 25rem;
     border-radius: 10px;
 }
 
-.recipe-title {
+.recipe-title-1 {
+    padding-top: 0.5rem;
     text-decoration: none;
     color: black;
     text-align: center;
     font-size: 1.6rem;
+}
+
+.recipe-card-1:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
+    z-index: 2;
 }

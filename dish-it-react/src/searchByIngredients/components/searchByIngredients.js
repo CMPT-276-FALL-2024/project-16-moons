@@ -15,6 +15,7 @@ const SearchByIngredients = () => {
     const [ingredients, setIngredients] = useState([]);
     const [recipes, setRecipes] = useState([]);
     const [error, setError] = useState(null);
+    const [isSearched, setIsSearched] = useState(false);
 
     // add into list if not blank/already existed
     const addIngredient = (ingredient) => {
@@ -39,6 +40,7 @@ const SearchByIngredients = () => {
             setError("Please add some ingredients");
             return;
         }
+        setIsSearched(true);
 
         try {
             const query = ingredients.join("%2C");   
@@ -77,7 +79,7 @@ const SearchByIngredients = () => {
                 />
                 <SearchButton onSearchClick={handleSearchClick} />
             </div>
-            <RecipeList recipes={recipes} />
+            <RecipeList recipes={recipes} isSearched={isSearched}/>
             <ChatbotComponent />
             <ScrollUp />
         </div>

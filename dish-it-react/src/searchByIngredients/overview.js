@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import "../css/general.css";
 import "../css/recipeOverview.css";
-import SearchByIngredientsNavbar from "./components/searchByIngredientsNavbar.js";
+import OverviewNavbar from "./components/overviewNavbar.js";
 import ChatbotComponent from "../chatBot/chatbot-component";
 
 const Overview = () => {
@@ -55,8 +55,8 @@ const Overview = () => {
 
   return (
     <div>
-      <SearchByIngredientsNavbar></SearchByIngredientsNavbar>
-      <ChatbotComponent></ChatbotComponent>
+      <OverviewNavbar />
+      <ChatbotComponent />
       <main>
         <section className="recipeResults">
           <div className="grid grid--3-cols">

@@ -20,7 +20,10 @@ const SearchByIngredients = () => {
 
     return (
         <div className="page">
-            <div id="main"></div>
+            <div id="main">
+                <ChatbotComponent></ChatbotComponent>
+                <ScrollUp></ScrollUp>
+            </div>
             <div className="sidebar">
                 <IngredientInput addIngredient={addIngredient} />
                 <IngredientList ingredients={ingredients} removeIngredient={removeIngredient} />

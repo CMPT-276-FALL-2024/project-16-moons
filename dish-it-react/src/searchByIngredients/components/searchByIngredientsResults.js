@@ -56,6 +56,8 @@ const SearchByIngredientsResults = () => {
                 }
 
                 const data = await response.json();
+                const errorMessage = error;
+                console.log(errorMessage);
                 setRecipes(data);
             } catch (err) {
                 setError(err.message);

@@ -82,8 +82,7 @@
 }
 
 .section-instructions {
-  padding-right: 3rem;
-  padding-left: 0rem;
+  padding-right: 2rem;
   width: 60rem;
 }
 
@@ -113,4 +112,8 @@
 .results-image-cointainer {
   position: relative;
   display: inline-block;
+}
+
+.cooking-time {
+  font-size: 2rem;
 }

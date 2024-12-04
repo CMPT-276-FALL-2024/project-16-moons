@@ -9,8 +9,6 @@ const IngredientInput = ({addIngredient}) => {
         if (input.trim()) {
             addIngredient(input.trim());
             setInput("");
-        } else {
-            alert("Please enter a valid ingredients!");
         }
     };
 

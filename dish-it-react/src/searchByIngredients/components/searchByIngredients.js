@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import IngredientInput from "./ingredientsInput";
 import IngredientList from "./ingredientList";
 import SearchButton from "./searchButton";
+import ChatbotComponent from "../../chatBot/chatbot-component";
+import ScrollUp from "../../scrollUp/scrollUp";
 
 const SearchByIngredients = () => {
     const [ingredients, setIngredients] = useState([]);
@@ -18,6 +20,7 @@ const SearchByIngredients = () => {
 
     return (
         <div className="page">
+            <div id="main"></div>
             <div className="sidebar">
                 <IngredientInput addIngredient={addIngredient} />
                 <IngredientList ingredients={ingredients} removeIngredient={removeIngredient} />

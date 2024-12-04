@@ -4,6 +4,8 @@ import "../css/general.css";
 import "../css/recipeOverview.css"
 import "../css/randomDishPage.css"
 import SearchByIngredientsNavbar from "./components/searchByIngredientsNavbar.js";
+import ChatbotComponent from "../chatBot/chatbot-component";
+import ScrollUp from "../scrollUp/scrollUp.js";
 
 const Overview = () => {
     const { id } = useParams(); // Extract recipe ID from URL
@@ -47,13 +49,15 @@ const Overview = () => {
         return <p>Loading...</p>; // Display loading while fetching data
     }
 
-    const protein = recipeDetails.summary.match(/(\d+g of protein)/)?.[1];
-    const fat = recipeDetails.summary.match(/(\d+g of fat)/)?.[1];
-    const calories = recipeDetails.summary.match(/(\d+ calories)/)?.[1];
+    const protein = recipeDetails?.summary?.match(/(\d+g of protein)/)?.[1] || "N/A";
+    const fat = recipeDetails?.summary?.match(/(\d+g of fat)/)?.[1] || "N/A";
+    const calories = recipeDetails?.summary?.match(/(\d+ calories)/)?.[1] || "N/A";
 
     return (
         <div>
             <SearchByIngredientsNavbar></SearchByIngredientsNavbar>
+            <ChatbotComponent></ChatbotComponent>
+            <ScrollUp></ScrollUp>
             <main>
                 <section className = 'hero' id = 'main'>
                     <div className="grid grid--3-cols">

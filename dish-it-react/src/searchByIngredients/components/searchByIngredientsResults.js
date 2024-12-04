@@ -5,6 +5,8 @@ import IngredientList from "./ingredientList";
 import RecipeList from "./recipeList";
 import SearchButton from "./searchButton";
 import SearchByIngredientsNavbar from "../components/searchByIngredientsNavbar.js";
+import ChatbotComponent from "../../chatBot/chatbot-component";
+import ScrollUp from "../../scrollUp/scrollUp";
 
 const apiKey = process.env.REACT_APP_X_RAPIDAPI_KEY;
 const apiUa = process.env.REACT_APP_X_RAPIDAPI_UA;
@@ -66,6 +68,8 @@ const SearchByIngredientsResults = () => {
     return (
         <div>
             <SearchByIngredientsNavbar></SearchByIngredientsNavbar>
+            <ChatbotComponent></ChatbotComponent>
+            <ScrollUp></ScrollUp>
             <div className="page">
                 <div className="sidebar">
                     <IngredientInput addIngredient={addIngredient} />

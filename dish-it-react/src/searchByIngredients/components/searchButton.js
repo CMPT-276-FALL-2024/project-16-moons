@@ -17,8 +17,8 @@ const SearchButton = ({ ingredients }) => {
   };
 
   return (
-    <button className="search-button" onClick={handleSearchClick}>
-      <img id="search-icon" src="/images/search-icon.png" alt="search icon" />
+    <button className="search-by-ingredient-search-button" onClick={handleSearchClick}>
+      <img id="search-by-ingredient-search-icon" src="/images/search-icon.png" alt="search icon" />
     </button>
   );
 };

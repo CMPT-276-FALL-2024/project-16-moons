@@ -66,7 +66,7 @@ const SearchByIngredientsResults = () => {
         };
 
         fetchRecipes();
-    }, [ingredients]);
+    }, [ingredients, error]);
 
     return (
         <div>

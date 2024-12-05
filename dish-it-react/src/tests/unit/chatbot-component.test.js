@@ -34,4 +34,7 @@ describe('ChatbotComponent', () => {
 
         global.fetch.mockRestore();
     });
+    afterEach(() => {
+        jest.clearAllTimers();
+      });
 });

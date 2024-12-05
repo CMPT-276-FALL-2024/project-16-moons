@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, fireEvent, screen, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import FoodFactComponent from '../../homepageComponents/foodFactComponent';
+import FoodFactComponent from "../../foodFact/foodFactComponent"
 
 global.fetch = jest.fn();
 

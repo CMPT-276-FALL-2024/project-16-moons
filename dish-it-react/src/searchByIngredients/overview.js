@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import "../css/general.css";
-import "../css/ingredientOverview.css";
 import OverviewNavbar from "./components/overviewNavbar.js";
 import ChatbotComponent from "../chatBot/chatbot-component";
 
@@ -58,19 +57,19 @@ const Overview = () => {
       <OverviewNavbar />
       <ChatbotComponent />
       <main>
-        <section className="recipeResults">
+        <section className="recipe-results-SBI">
           <div className="grid grid--3-cols">
             <div className="results-image-container">
-              <h1 className="results-title">{recipeDetails.title}</h1>
+              <h1 className="results-title-SBI">{recipeDetails.title}</h1>
               <img
                 src={recipeDetails.image}
-                className="results-image"
+                className="results-image-SBI"
                 alt={recipeDetails.title}
               />
             </div>
 
             <div className="main-details">
-              <div className="section-ingredients">
+              <div className="section-ingredients-SBI">
                 <h2>Ingredients</h2>
                 <ul className="ingredients-list">
                   {recipeDetails.extendedIngredients.map(
@@ -86,7 +85,7 @@ const Overview = () => {
                 </ul>
               </div>
 
-              <div className="section-ingredients">
+              <div className="section-ingredients-SBI">
                 <h2>Nutrition Facts</h2>
                 <li>
                   <b>
@@ -97,14 +96,14 @@ const Overview = () => {
                 </li>
               </div>
 
-              <p className="servings-text">
+              <p className="servings-text-SBI">
                 <strong>
                   This recipe is good for <b>{recipeDetails.servings}</b>{" "}
                   servings
                 </strong>
               </p>
               <p></p>
-              <p className="cooking-time">
+              <p className="cooking-time-SBI">
                 <strong>
                   <b>{recipeDetails.title}</b> will take{" "}
                   <b>{recipeDetails.preparationMinutes}</b> minutes to prepare
@@ -116,14 +115,14 @@ const Overview = () => {
                 href={recipeDetails.sourceUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="recipe-link btn"
+                className="recipe-link-SBI btn"
               >
                 <span class="recipe-link-name">
                   <strong>View Full Recipe</strong>
                 </span>
               </a>
             </div>
-            <div className="section-instructions">
+            <div className="section-instructions-SBI">
               <h2>Instructions:</h2>
               {recipeDetails.analyzedInstructions.map((instruction, index) => (
                 <div key={index}>

@@ -61,5 +61,8 @@ describe('ChatbotComponent Integration Tests', () => {
     
         // Clean up mock
         alertMock.mockRestore();
-    });    
+    });
+    afterEach(() => {
+        jest.clearAllTimers();
+      });    
 });

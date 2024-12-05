@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import FoodFactComponent from '../../homepageComponents/foodFactComponent';
+import FoodFactComponent from '../../foodFact/foodFactComponent';
 
 // Tests for the FoodFactComponent rendering given a good or bad API key
 describe("FoodFactComponent", () => {
@@ -47,4 +47,7 @@ describe("FoodFactComponent", () => {
         // Check if the error message is in the DOM
         expect(errorElement).toBeInTheDocument();
     });
+    afterEach(() => {
+        jest.clearAllTimers();
+      });
 });

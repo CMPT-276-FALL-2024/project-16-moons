@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-// const apiKey = process.env.REACT_APP_EDAMAM_APP_KEY_INGREDIENT_ANALYZER;
-// const apiId = process.env.REACT_APP_EDAMAM_APP_ID_INGREDIENT_ANALYZER;
+import ChatbotComponent from "../../chatBot/chatbot-component";
+
 const apiId = process.env.REACT_APP_EDAMAM_APP_ID_BACKUP;
 const apiKey = process.env.REACT_APP_EDAMAM_API_KEY_BACKUP;
 
@@ -323,6 +323,7 @@ const IngredientAnalyzer = () => {
         <ul>Cup/C</ul>
         <ul>Ounce/Oz</ul>
       </section>
+      <ChatbotComponent />
     </div>
   );
 };

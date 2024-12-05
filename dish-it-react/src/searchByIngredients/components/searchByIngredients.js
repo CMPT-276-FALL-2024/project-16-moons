@@ -27,7 +27,7 @@ const SearchByIngredients = () => {
             <div className="sidebar">
                 <IngredientInput addIngredient={addIngredient} />
                 <IngredientList ingredients={ingredients} removeIngredient={removeIngredient} />
-                <SearchButton ingredients={ingredients} />
+                <SearchButton className="search-button-SBI" ingredients={ingredients} />
             </div>
         </div>
     );

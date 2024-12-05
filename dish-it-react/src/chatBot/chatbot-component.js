@@ -16,11 +16,6 @@ const ChatbotComponent = () => {
   };
 
   const Conversation = () => {
-    if (question.trim() === "") {
-      alert("Welcome! What would you like to know?");
-      return;
-    }
-
     const formattedQuestion = encodeURIComponent(question);
 
     // True whne API is fetching data and prevents multiple requests

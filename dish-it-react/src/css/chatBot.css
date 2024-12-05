@@ -1,16 +1,16 @@
 /* Chatbot Button */
 .chat-button {
   position: fixed;
-  bottom: 5rem;
   background: none;
   border: none;
   cursor: pointer;
   float: right;
   z-index: 1000;
-
+  
   display: flex;
   justify-content: end;
-  right: 5rem;
+  right: 4rem;
+  bottom: 4rem;
 }
 
 .chat-button img {

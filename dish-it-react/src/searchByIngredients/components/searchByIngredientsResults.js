@@ -56,7 +56,6 @@ const SearchByIngredientsResults = () => {
         if (!response.ok) {
           throw new Error("Failed to fetch recipes.");
         }
-
         const data = await response.json();
         setRecipes(data);
       } catch (err) {
@@ -64,8 +63,9 @@ const SearchByIngredientsResults = () => {
       }
     };
 
+
     fetchRecipes();
-  }, [ingredients]);
+  }, [ingredients, error]);
 
   return (
     <div id="main">

@@ -19,10 +19,9 @@ const SearchByIngredientsResults = () => {
     ? queryParams.get("ingredients").split(",")
     : [];
 
-    const [ingredients, setIngredients] = useState(initialIngredients);
-    const [recipes, setRecipes] = useState([]);
-    const [error, setError] = useState(null);
-    const [isSearched, setIsSearched] = useState(false);
+  const [ingredients, setIngredients] = useState(initialIngredients);
+  const [recipes, setRecipes] = useState([]);
+  const [error, setError] = useState(null);
 
   const addIngredient = (ingredient) => {
     if (ingredient && !ingredients.includes(ingredient)) {
@@ -54,35 +53,33 @@ const SearchByIngredientsResults = () => {
           }
         );
 
-                if (!response.ok) {
-                    throw new Error("Failed to fetch recipes.");
-                }
-                setIsSearched(true);
-                const data = await response.json();
-                const errorMessage = error;
-                console.log(errorMessage);
-                setRecipes(data);
-            } catch (err) {
-                setError(err.message);
-            }
-        };
+        if (!response.ok) {
+          throw new Error("Failed to fetch recipes.");
+        }
+
+        const data = await response.json();
+        setRecipes(data);
+      } catch (err) {
+        setError(err.message);
+      }
+    };
 
     fetchRecipes();
   }, [ingredients]);
 
-    return (
-        <div>
-            <SearchByIngredientsNavbar></SearchByIngredientsNavbar>
-            <ChatbotComponent></ChatbotComponent>
-            <ScrollUp></ScrollUp>
-            <div className="page">
-                <div className="sidebar">
-                    <IngredientInput addIngredient={addIngredient} />
-                    <IngredientList ingredients={ingredients} removeIngredient={removeIngredient} />
-                    <SearchButton ingredients={ingredients} />
-                </div>
-                <RecipeList recipes={recipes} isSearched={isSearched}/>
-            </div>
+  return (
+    <div id="main">
+      <SearchByIngredientsNavbar></SearchByIngredientsNavbar>
+      <ChatbotComponent></ChatbotComponent>
+      <ScrollUp></ScrollUp>
+      <div className="page">
+        <div className="sidebar">
+          <IngredientInput addIngredient={addIngredient} />
+          <IngredientList
+            ingredients={ingredients}
+            removeIngredient={removeIngredient}
+          />
+          <SearchButton ingredients={ingredients} />
         </div>
         <RecipeList recipes={recipes} />
       </div>

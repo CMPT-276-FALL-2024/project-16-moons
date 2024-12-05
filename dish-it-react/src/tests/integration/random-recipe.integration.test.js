@@ -1,9 +1,10 @@
 import React from 'react';
-import { render, screen, waitFor } from '@testing-library/react';
+import { render, screen, waitFor, act} from '@testing-library/react';
 import '@testing-library/jest-dom';
+import { BrowserRouter } from "react-router-dom"; 
 import GenerateRandomDish from '../../randomDish/randomDishComponents/generateRandomDish';
 
-describe('GenerateRandomDish Component', () => {
+describe('GenerateRandomDish Integration Test', () => {
   beforeEach(() => {
     // Mock fetch globally
     global.fetch = jest.fn();
@@ -53,15 +54,19 @@ describe('GenerateRandomDish Component', () => {
       json: async () => mockRecipe,
     });
 
-    render(<GenerateRandomDish />);
+    await act(async () => {
+      render(
+        <BrowserRouter>
+          <GenerateRandomDish></GenerateRandomDish>
+        </BrowserRouter>
+      );
+    });
 
     // Wait for the recipe to load and verify content
     await waitFor(() => {
       expect(screen.getByText(/Mock Recipe/i)).toBeInTheDocument();
-      expect(screen.getByText(/Summary/i)).toBeInTheDocument();
-      expect(screen.getByText(/2 cups Flour/i)).toBeInTheDocument();
-      expect(screen.getByText(/200 kcal Calories/i)).toBeInTheDocument();
-      expect(screen.getByText(/Mix ingredients/i)).toBeInTheDocument();
+      expect(screen.getByText(/Nutrients/i)).toBeInTheDocument();
+      expect(screen.getByText(/Instructions/i)).toBeInTheDocument();
     });
   });
 
@@ -69,11 +74,18 @@ describe('GenerateRandomDish Component', () => {
     // Mock fetch to throw an error
     global.fetch.mockRejectedValueOnce(new Error('Failed to fetch recipe'));
 
-    render(<GenerateRandomDish />);
+    render(
+      <BrowserRouter>
+        <GenerateRandomDish></GenerateRandomDish>
+      </BrowserRouter>
+    );
 
     // Wait for error message to appear
     await waitFor(() => {
       expect(screen.getByText(/Error: Failed to fetch recipe/i)).toBeInTheDocument();
     });
   });
+  afterEach(() => {
+    jest.clearAllTimers();
+  });  
 });

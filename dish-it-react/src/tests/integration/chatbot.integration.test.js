@@ -2,6 +2,7 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import ChatbotComponent from '../../chatBot/chatbot-component';
 
+// Mock Fetch
 global.fetch = jest.fn();
 
 describe('ChatbotComponent Integration Tests', () => {
@@ -61,5 +62,8 @@ describe('ChatbotComponent Integration Tests', () => {
     
         // Clean up mock
         alertMock.mockRestore();
-    });    
+    });
+    afterEach(() => {
+        jest.clearAllTimers();
+      });    
 });

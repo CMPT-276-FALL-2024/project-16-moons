@@ -47,8 +47,9 @@ const GenerateRandomDish = () => {
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error} </p>;
-  const summaryFiltered = recipeData.summary.replace(/<[^>]*>/g, "").trim();
-
+  const summaryFiltered = recipeData?.summary
+  ? recipeData.summary.replace(/<[^>]*>/g, "").trim()
+  : "Summary not available.";
   return (
     recipeData && (
       <div>
@@ -130,32 +131,32 @@ const GenerateRandomDish = () => {
               <div className="ingredients">
                 <h2>Ingredients</h2>
                 <ul>
-                  {recipeData.extendedIngredients.map((ingredient) => (
-                    <li>
+                {recipeData.extendedIngredients.map((ingredient, index) => (
+                    <li key={index}>
                       {ingredient.amount} {ingredient.unit} {ingredient.name}
                     </li>
-                  ))}
+                ))}
                 </ul>
               </div>
               <div className="instructions">
                 <h2>Instructions</h2>
                 {recipeData.analyzedInstructions[0].steps.map((instruction) => (
-                  <li>
-                    <strong>{instruction.number}</strong>. {instruction.step}
-                  </li>
+                    <li key={instruction.number}>
+                      <strong>{instruction.number}</strong>. {instruction.step}
+                    </li>
                 ))}
               </div>
               <div className="nutrients">
                 <h2>Nutrients</h2>
                 <ul>
                   {" "}
-                  {recipeData.nutrition.nutrients.map((nutrient) => (
-                    <li>
-                      <strong>
-                        {nutrient.amount.toFixed(1)} {nutrient.unit}
-                      </strong>{" "}
-                      of {nutrient.name}
-                    </li>
+                  {recipeData.nutrition.nutrients.map((nutrient, index) => (
+                      <li key={index}>
+                        <strong>
+                          {nutrient.amount.toFixed(1)} {nutrient.unit}
+                        </strong>{" "}
+                        of {nutrient.name}
+                      </li>
                   ))}
                 </ul>
               </div>

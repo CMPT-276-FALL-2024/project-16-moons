@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, fireEvent, screen, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import FoodFactComponent from '../../homepageComponents/foodFactComponent';
+import FoodFactComponent from "../../foodFact/foodFactComponent"
 
 global.fetch = jest.fn();
 
@@ -10,7 +10,7 @@ describe('FoodFactComponent Integration Tests', () => {
         jest.clearAllMocks();
     });
 
-    test('should fetch and display a food trivia', async () => {
+    test('should fetch and display a food fact', async () => {
         fetch.mockResolvedValueOnce({
             ok: true,
             json: async () => ({ text: 'This is a fun food fact' }),

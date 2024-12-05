@@ -32,6 +32,17 @@
     left: 0;
     overflow-y: auto;
 }
+
+#title-SBI {
+    font-size: 3.5rem;
+    padding-bottom: 2.4rem;
+}
+
+#instruct-SBI {
+  font-size: 1.5rem;
+  padding-bottom: .5rem;
+}
+
 .search-by-ingredient-search-button {
     width: 5rem;
     height: 5rem;
@@ -97,6 +108,17 @@
 }
 
 /*Ingredients list*/
+#ingredient-list-title {
+    font-size: 2rem;
+    margin-top: 3rem;
+    padding-bottom: 1.5rem;
+    text-align: center;
+}
+
+.ingredient-list-container {
+  text-align: center
+};
+
 .ingredient-list {
     display: flex;
     flex-direction: column;
@@ -104,6 +126,8 @@
     margin-top: 1.5rem;
     max-height: 37rem;
     overflow-y: auto;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
 
 .ingredient-item {

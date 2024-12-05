@@ -20,15 +20,19 @@ const IngredientInput = ({addIngredient}) => {
     };
 
     return (
-        <div className="ingredient-input">
-            <input
-            type="text"
-            value={input}
-            onChange={(e) => setInput(e.target.value)}
-            onKeyDown={pressedEnter}
-            placeholder="Add an ingredient..."
-            />
-            <button onClick={handleAdd}>&#43;</button>
+        <div>
+            <h3 id="title-SBI">Search by Ingredients</h3>
+            <p id="instruct-SBI">Add Your Ingredients Below (Example: Chicken)</p>
+            <div className="ingredient-input">
+                <input
+                type="text"
+                value={input}
+                onChange={(e) => setInput(e.target.value)}
+                onKeyDown={pressedEnter}
+                placeholder="Add an ingredient..."
+                />
+                <button onClick={handleAdd}>&#43;</button>
+            </div>
         </div>
     );
 };

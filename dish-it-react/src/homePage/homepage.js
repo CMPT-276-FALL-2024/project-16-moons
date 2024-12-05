@@ -122,8 +122,8 @@ function Homepage() {
             <Link to="/ingredient-search" class="feature-link">
               <p className="feature-name">Search By Ingredients</p>
               <p className="feature-description">
-                Want to know what dishes you can make with ingredients from your pantry?
-                Start exploring recipes using Dish-It!
+                Want to know what dishes you can make with ingredients from your
+                pantry? Start exploring recipes using Dish-It!
               </p>
             </Link>
 
@@ -247,36 +247,88 @@ function Homepage() {
           <h2 className="heading-secondary">Creators of Dish-It</h2>
           <div className="grid grid--4-cols grid--center-v">
             <div className="profile-container">
-              <img
-                className="creator-image"
-                src="images/faceless.jpg"
-                alt="headshot of Gabriel Bello"
-              ></img>
-              <h3>Gabriel Bello</h3>
+              <div>
+                <a
+                  href="https://www.linkedin.com/in/gabriel-bello-65aa94285/"
+                  target="_blank"
+                  without
+                  rel="noreferrer"
+                >
+                  <img
+                    className="creator-image"
+                    src="images/Creators/Gabriel.jpg"
+                    alt="headshot of Gabriel Bello"
+                  ></img>
+                </a>
+
+                <h3 className="creator-name">Gabriel Bello</h3>
+                <p className="creator-role">
+                  Graphic Designer & Software Developer
+                </p>
+              </div>
             </div>
             <div className="profile-container">
-              <img
-                className="creator-image"
-                src="images/faceless.jpg"
-                alt="headshot of Gabriel Bello"
-              ></img>
-              <h3>Tyler Ho</h3>
+              <div>
+                <a
+                  href="https://www.linkedin.com/in/tylerho1999/"
+                  target="_blank"
+                  without
+                  rel="noreferrer"
+                >
+                  <img
+                    className="creator-image"
+                    src="images/Creators/Tyler.jpg"
+                    alt="headshot of Tyler Ho"
+                  ></img>
+                </a>
+
+                <h3 className="creator-name">Tyler Ho</h3>
+                <p className="creator-role">
+                  Project Manager & Software Developer
+                </p>
+              </div>
             </div>
             <div className="profile-container">
-              <img
-                className="creator-image"
-                src="images/faceless.jpg"
-                alt="headshot of Gabriel Bello"
-              ></img>
-              <h3>Quang Anh Pham</h3>
+              <div>
+                <a
+                  href="https://www.linkedin.com/in/quang-anh-p-47ab472a7/"
+                  target="_blank"
+                  without
+                  rel="noreferrer"
+                >
+                  <img
+                    className="creator-image"
+                    src="images/Creators/Quang.jpg"
+                    alt="headshot of Quang Anh Pham"
+                  ></img>
+                </a>
+
+                <h3 className="creator-name">Quang Anh Pham</h3>
+                <p className="creator-role">
+                  Technical Writer & Software Developer
+                </p>
+              </div>
             </div>
             <div className="profile-container">
-              <img
-                className="creator-image"
-                src="images/faceless.jpg"
-                alt="headshot of Gabriel Bello"
-              ></img>
-              <h3>Kevin Tan</h3>
+              <div>
+                <a
+                  href="https://www.linkedin.com/in/kevin-tan-614914335/"
+                  target="_blank"
+                  without
+                  rel="noreferrer"
+                >
+                  <img
+                    className="creator-image"
+                    src="images/Creators/Kevin.jpg"
+                    alt="headshot of Kevin Tan"
+                  ></img>
+                </a>
+
+                <h3 className="creator-name">Kevin Tan</h3>
+                <p className="creator-role">
+                  Quality Assurance & Software Developer
+                </p>
+              </div>
             </div>
           </div>
         </section>

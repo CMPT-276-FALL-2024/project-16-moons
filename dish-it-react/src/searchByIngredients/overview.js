@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import "../css/general.css";
-import "../css/recipeOverview.css";
+import "../css/ingredientOverview.css";
 import OverviewNavbar from "./components/overviewNavbar.js";
 import ChatbotComponent from "../chatBot/chatbot-component";
 

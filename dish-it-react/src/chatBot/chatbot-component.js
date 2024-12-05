@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import "../css/general.css";
 import "../css/chatBot.css";
 const apiKey = process.env.REACT_APP_X_RAPIDAPI_KEY;
@@ -8,8 +8,9 @@ const apiHost = process.env.REACT_APP_X_RAPID_HOST;
 const ChatbotComponent = () => {
   const [question, setQuestion] = useState("");
   const [conversation, setConversation] = useState([]);
-  const [isOpen, setIsOpen] = useState(false); // State to handle dialogue visibility
-  const [isFetching, setIsFetching] = useState(false); // State to handle API fetching
+  const [isOpen, setIsOpen] = useState(false);          // State to handle dialogue visibility
+  const [isFetching, setIsFetching] = useState(false);  // State to handle API fetching
+  const chatRef = useRef(null)                          // ref for auto-scroll
 
   const toggleChat = () => {
     setIsOpen(!isOpen); // Toggle the visibility of the chat dialogue
@@ -68,6 +69,12 @@ const ChatbotComponent = () => {
     }
   };
 
+  useEffect(() => {
+    if (chatRef.current) {
+      chatRef.current.scrollTop = chatRef.current.scrollHeight;
+    }
+  })
+
   return (
     <div>
       {/* Chatbot Button */}
@@ -84,7 +91,7 @@ const ChatbotComponent = () => {
         <div className="chat-box">
           <h1>Chatbot</h1>
 
-          <div className="chat-history">
+          <div className="chat-history" ref={chatRef}>
             {conversation.map((entry, index) => (
               <div key={index} className="chat-entry">
                 <p>

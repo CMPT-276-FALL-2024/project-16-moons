@@ -32,6 +32,29 @@
     left: 0;
     overflow-y: auto;
 }
+.search-by-ingredient-search-button {
+    width: 5rem;
+    height: 5rem;
+    margin-left: 1rem;
+    background-color: #ffbd59;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+.search-by-ingredient-search-button:hover {
+    background-color: #ffca7a;
+}
+
+#search-by-ingredient-search-icon {
+    width: 2rem;
+    height: 2rem;
+}
 
 /*Inputs*/
 .input-field {
@@ -171,4 +194,72 @@
     transform: scale(1.05);
     box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
     z-index: 2;
+}
+
+/*******************************/
+/* Recipe Overview SBI */
+/*******************************/
+
+.section-ingredients-SBI,
+.servings-text-SBI {
+  padding-bottom: 2.4rem;
+}
+
+.section-ingredients-SBI li {
+  list-style: none;
+  font-size: 2.4rem;
+  line-height: 4rem;
+}
+
+.servings-text-SBI {
+  font-size: 2.2rem;
+}
+
+.recipe-link-SBI {
+  background-color: #ffbd59;
+  border-radius: 11px;
+  padding: 2.4rem 2.4rem;
+  text-decoration: none;
+  color: #333;
+  transition: all 0.3s;
+  display: block;
+  width: 30rem;
+  text-align: center;
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+.recipe-link-SBI:hover {
+  background-color: #ffca7a;
+}
+
+.section-instructions-SBI {
+  padding-right: 2rem;
+
+}
+
+.section-instructions-SBI li {
+  font-size: 2.4rem;
+  list-style: none;
+  line-height: 1.6;
+}
+
+.recipe-results-SBI {
+  padding: 4.8rem 4.8rem;
+  padding-bottom: 2rem;
+}
+
+.results-image-SBI {
+  width: 70rem;
+  border-radius: 11px;
+  position: relative;
+  z-index: 2;
+}
+
+.results-title-SBI {
+  padding-bottom: 4.2rem;
+  text-align: center;
+}
+
+.cooking-time-SBI {
+  font-size: 2rem;
 }

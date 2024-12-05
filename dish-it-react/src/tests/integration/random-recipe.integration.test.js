@@ -4,7 +4,7 @@ import '@testing-library/jest-dom';
 import { BrowserRouter } from "react-router-dom"; 
 import GenerateRandomDish from '../../randomDish/randomDishComponents/generateRandomDish';
 
-describe('GenerateRandomDish Component', () => {
+describe('GenerateRandomDish Integration Test', () => {
   beforeEach(() => {
     // Mock fetch globally
     global.fetch = jest.fn();

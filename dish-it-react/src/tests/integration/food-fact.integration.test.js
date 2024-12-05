@@ -10,7 +10,7 @@ describe('FoodFactComponent Integration Tests', () => {
         jest.clearAllMocks();
     });
 
-    test('should fetch and display a food trivia', async () => {
+    test('should fetch and display a food fact', async () => {
         fetch.mockResolvedValueOnce({
             ok: true,
             json: async () => ({ text: 'This is a fun food fact' }),

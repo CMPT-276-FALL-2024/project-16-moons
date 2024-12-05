@@ -6,22 +6,20 @@ import RecipeSpecificSearchPage from '../../recipeSpecificSearch/recipeSpecificS
 
 global.fetch = jest.fn();
 
-describe("RecipeSpecificSearch Feature (using fetch mock)", () => {
+describe("RecipeSpecificSearch Integration Test", () => {
     beforeEach(() => {
       // Clear mocks before each test
       fetch.mockClear();
       jest.spyOn(window, "alert").mockClear();
     });
-    test("Renders component correctly ", async () => {
-      // Mock the fetch API
-  
+    test("Renders component correctly", async () => {  
       render(<BrowserRouter><RecipeSpecificSearchPage />
       </BrowserRouter>);
       expect(screen.getByText("Search for a specific recipe!")).toBeInTheDocument();
       expect(screen.getByPlaceholderText("Search recipes here!")).toBeInTheDocument();
     });
 
-    test("fetches recipes on valid search", async () => {
+    test("Gets recipe results on a valid search", async () => {
       // Mock API response
       fetch.mockResolvedValueOnce({
         ok: true,
@@ -75,7 +73,7 @@ describe("RecipeSpecificSearch Feature (using fetch mock)", () => {
       });
     });
 
-    test("validates input and prevents invalid searches", () => {
+    test("Testing for incorrect input type", () => {
       render(<BrowserRouter><RecipeSpecificSearchPage />
       </BrowserRouter>);
       const input = screen.getByPlaceholderText("Search recipes here!");

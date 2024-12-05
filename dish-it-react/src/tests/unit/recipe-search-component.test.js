@@ -7,7 +7,7 @@ import RecipeSpecificSearchBody from "../../recipeSpecificSearch/recipeSpecificS
 const mockAppId = process.env.REACT_APP_EDAMAM_APP_ID
 const mockApiKey = process.env.REACT_APP_EDAMAM_API_KEY
 
-describe("RecipeSpecificSearchBody Component", () => {
+describe("RecipeSpecificSearchBody Unit testing", () => {
   beforeEach(() => {
     global.fetch = jest.fn(() =>
       Promise.resolve({

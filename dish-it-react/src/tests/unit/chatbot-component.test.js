@@ -3,9 +3,10 @@ import { render, fireEvent, screen, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import ChatbotComponent from '../../chatBot/chatbot-component';
 
-describe('ChatbotComponent', () => {
+describe('Chatbot Unit testing', () => {
     test('toggles chat dialogue on button click', () => {
         render(<ChatbotComponent />);
+        //checks toggling on/off chatbot UI
         const chatButton = screen.getByRole('button');
         fireEvent.click(chatButton);
         expect(screen.getByText('Chatbot')).toBeInTheDocument();

@@ -9,8 +9,8 @@ import Overview from "../../searchByIngredients/overview";
 // Mock global fetch for API calls
 global.fetch = jest.fn();
 
-describe("Integration Tests", () => {
-  test("Adding an ingredient, searching, and clicking a recipe takes you to the overview page with appropriate info", async () => {
+describe("Search By Ingredients Integration Test", () => {
+  test("Adding an ingredient -> click search -> displays recipeResults page -> click on a recipe -> individual recipe overview page", async () => {
     // Mock API responses
     const mockRecipes = [
       { id: 1, title: "Tomato Soup", image: "tomato-soup.jpg" },
@@ -92,7 +92,7 @@ describe("Integration Tests", () => {
         expect.anything()
       );
 
-      // Assertions for recipe details
+      // Verify recipe details
       expect(screen.getByAltText("Tomato Soup")).toBeInTheDocument();
       expect(screen.getByText("Ingredients")).toBeInTheDocument();
       expect(screen.getByText("Nutrition Facts")).toBeInTheDocument();

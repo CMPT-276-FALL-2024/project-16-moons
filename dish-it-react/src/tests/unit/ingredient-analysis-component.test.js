@@ -7,7 +7,7 @@ import IngredientAnalyzer from "../../ingredientAnalyzer/ingredientAnalyzerCompo
 // Mock the fetch API
 global.fetch = jest.fn();
 
-describe("IngredientAnalyzer Component", () => {
+describe("Ingredient Analyzer Unit test", () => {
   beforeEach(() => {
     fetch.mockClear();
   });

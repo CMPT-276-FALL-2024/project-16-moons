@@ -12,7 +12,6 @@ describe("SearchByIngredients Component", () => {
         </BrowserRouter>
       );
   
-      // Check if the input field, search button, and chatbot component are rendered
       expect(screen.getByPlaceholderText(/Add an ingredient.../i)).toBeInTheDocument();
       expect(screen.getByRole("button", { name: /search/i })).toBeInTheDocument();
     });

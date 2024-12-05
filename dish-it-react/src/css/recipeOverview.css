@@ -87,7 +87,7 @@
 
 .section-instructions {
   padding-right: 2rem;
-  width: 60rem;
+  text-align: left;
 }
 
 .section-instructions li {

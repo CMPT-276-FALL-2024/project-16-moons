@@ -5,7 +5,7 @@ import { BrowserRouter } from "react-router-dom";
 import GenerateRandomDish from "../../randomDish/randomDishComponents/generateRandomDish";
 
 // Basic Key Testing!
-describe("GenerateRandomDish", () => {
+describe("GenerateRandomDish Unit Tests", () => {
   test("Correct API -> Load the dish details", async () => {
     // Fake Data
     const testMeal = {

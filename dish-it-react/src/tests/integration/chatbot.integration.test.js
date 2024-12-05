@@ -2,6 +2,7 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import ChatbotComponent from '../../chatBot/chatbot-component';
 
+// Mock Fetch
 global.fetch = jest.fn();
 
 describe('ChatbotComponent Integration Tests', () => {

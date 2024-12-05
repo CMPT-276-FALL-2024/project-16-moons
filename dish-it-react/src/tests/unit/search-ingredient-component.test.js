@@ -4,7 +4,7 @@ import "@testing-library/jest-dom";
 import { BrowserRouter } from "react-router-dom"; 
 import SearchByIngredients from "../../searchByIngredients/components/searchByIngredients";
 
-describe("SearchByIngredients Component", () => {
+describe("SearchByIngredients Unit testing", () => {
     it("renders the initial UI correctly", () => {
       render(
         <BrowserRouter>

@@ -4,9 +4,8 @@ import '@testing-library/jest-dom';
 import FoodFactComponent from '../../foodFact/foodFactComponent';
 
 // Tests for the FoodFactComponent rendering given a good or bad API key
-describe("FoodFactComponent", () => {
-    // Test 1: If a correct API key is given, the component should render the fact
-    test("If given correct API key everything renders", async () => {
+describe("FoodFact Unit testing", () => {
+    test("If given correct API key, everything renders", async () => {
         const mockFact = "There are 2 pounds of vitimin C in 10 apples";
 
         // Mock a successful API call
@@ -26,7 +25,6 @@ describe("FoodFactComponent", () => {
         expect(foodFactElement).toBeInTheDocument();
     });
 
-    // Test 2: If an invalid API key is given, the component should render an error message
     test("shows an error message with an invalid API key", async () => {
         // Error message to be displayed with a bad API key
         const errorMessage = "Unauthorized request";

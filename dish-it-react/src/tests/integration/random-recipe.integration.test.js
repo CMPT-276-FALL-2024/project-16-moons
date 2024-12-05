@@ -1,8 +1,8 @@
 import React from 'react';
 import { render, screen, waitFor, act} from '@testing-library/react';
 import '@testing-library/jest-dom';
+import { BrowserRouter } from "react-router-dom"; 
 import GenerateRandomDish from '../../randomDish/randomDishComponents/generateRandomDish';
-import { BrowserRouter } from "react-router-dom"; // Import BrowserRouter
 
 describe('GenerateRandomDish Component', () => {
   beforeEach(() => {

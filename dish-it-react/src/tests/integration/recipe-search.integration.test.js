@@ -4,43 +4,90 @@ import '@testing-library/jest-dom';
 import { BrowserRouter } from "react-router-dom"; 
 import RecipeSpecificSearchPage from '../../recipeSpecificSearch/recipeSpecificSearchPage';
 
-const mockAppId = process.env.REACT_APP_EDAMAM_APP_ID
-const mockApiKey = process.env.REACT_APP_EDAMAM_API_KEY
+global.fetch = jest.fn();
 
 describe("RecipeSpecificSearch Feature (using fetch mock)", () => {
     beforeEach(() => {
-      jest.restoreAllMocks(); // Reset any previously mocked functions
+      // Clear mocks before each test
+      fetch.mockClear();
+      jest.spyOn(window, "alert").mockClear();
     });
-  
-    test("fetches and displays recipes on successful search", async () => {
+    test("Renders component correctly ", async () => {
       // Mock the fetch API
-      global.fetch = jest.fn(() =>
-        Promise.resolve({
-            hits: [
-              { recipe: { label: "Recipe 1" } },
-              { recipe: { label: "Recipe 2" } },
-            ],
-          }),
-      );
   
       render(<BrowserRouter><RecipeSpecificSearchPage />
       </BrowserRouter>);
-      const input = screen.getByPlaceholderText(/Search recipes here!/i);
-      const searchButton = screen.getByRole("button", { name: /Search/i });
+      expect(screen.getByText("Search for a specific recipe!")).toBeInTheDocument();
+      expect(screen.getByPlaceholderText("Search recipes here!")).toBeInTheDocument();
+    });
+
+    test("fetches recipes on valid search", async () => {
+      // Mock API response
+      fetch.mockResolvedValueOnce({
+        ok: true,
+        json: async () => ({
+          hits: [
+            { recipe: { label: "Pancakes", image: "pancakes.jpg" } },
+            { recipe: { label: "Waffles", image: "waffles.jpg" } },
+          ],
+        }),
+      });
   
-      // Simulate user interaction
-      fireEvent.change(input, { target: { value: "Recipe" } });
-      fireEvent.click(searchButton);
+      render(<BrowserRouter><RecipeSpecificSearchPage />
+      </BrowserRouter>);
+      
+      const input = screen.getByPlaceholderText("Search recipes here!");
+      const button = screen.getByRole("button", { name: 'search icon' });
   
-      // Wait for the recipes to be displayed
+      // Perform search
+      fireEvent.change(input, { target: { value: "pancakes" } });
+      fireEvent.click(button);
+  
+      // Wait for results
       await waitFor(() => {
-        expect(fetch).toHaveBeenCalledTimes(1); // Ensure fetch is called
-  
-        // Check that recipe results are displayed
-        expect(screen.getByText(/Recipe 1/i)).toBeInTheDocument();
-        expect(screen.getByText(/Recipe 2/i)).toBeInTheDocument();
+        expect(fetch).toHaveBeenCalledWith(
+          expect.stringContaining("pancakes")
+        );
+        expect(screen.getByText("Pancakes")).toBeInTheDocument();
+        expect(screen.getByText("Waffles")).toBeInTheDocument();
       });
     });
-  
 
+    test("displays error on invalid API response", async () => {
+      fetch.mockResolvedValueOnce({
+        ok: false,
+        status: 401,
+      });
+  
+      render(<BrowserRouter><RecipeSpecificSearchPage />
+      </BrowserRouter>);
+
+      const input = screen.getByPlaceholderText("Search recipes here!");
+      const button = screen.getByRole("button", { name: 'search icon' });
+  
+      // Perform search
+      fireEvent.change(input, { target: { value: "pancakes" } });
+      fireEvent.click(button);
+  
+      await waitFor(() => {
+        expect(fetch).toHaveBeenCalled();
+        expect(screen.queryByText("Pancakes")).not.toBeInTheDocument();
+      });
+    });
+
+    test("validates input and prevents invalid searches", () => {
+      render(<BrowserRouter><RecipeSpecificSearchPage />
+      </BrowserRouter>);
+      const input = screen.getByPlaceholderText("Search recipes here!");
+      const button = screen.getByRole("button", { name: 'search icon' });
+  
+      // Invalid input
+      fireEvent.change(input, { target: { value: "12345" } });
+      fireEvent.click(button);
+  
+      expect(fetch).not.toHaveBeenCalled();
+      expect(window.alert).toHaveBeenCalledWith(
+        "Recipe Search Bar can only contain letters!"
+      );
+    });
   });

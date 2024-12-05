@@ -24,7 +24,7 @@ describe("SearchByIngredients Component", () => {
             </BrowserRouter>
           );
       const input = screen.getByPlaceholderText(/add/i);
-      const inputButton = screen.getByRole("add-button");
+      const inputButton = screen.getByRole("button", { name: /add button/i});
   
       // Add an ingredient
       fireEvent.change(input, { target: { value: "apple" } });
@@ -41,7 +41,7 @@ describe("SearchByIngredients Component", () => {
           );
   
       const input = screen.getByPlaceholderText(/add/i);
-      const inputButton = screen.getByRole("add-button");
+      const inputButton = screen.getByRole("button", { name: /add button/i});
   
       // Add the same ingredient twice
       fireEvent.change(input, { target: { value: "Tomato" } });
@@ -61,7 +61,7 @@ describe("SearchByIngredients Component", () => {
           );
   
       const input = screen.getByPlaceholderText(/add an ingredient/i);
-      const inputButton = screen.getByRole("add-button");
+      const inputButton = screen.getByRole("button", { name: /add button/i});
       const searchButton = screen.getByRole("button", { name: /search icon/i });
       // Add ingredients
       fireEvent.change(input, { target: { value: "Tomato" } });
@@ -82,8 +82,7 @@ describe("SearchByIngredients Component", () => {
           );
   
       const input = screen.getByPlaceholderText(/add an ingredient/i);
-      const inputButton = screen.getByRole("add-button");
-      const searchButton = screen.getByRole("button", { name: /search icon/i });
+      const inputButton = screen.getByRole("button", { name: /add button/i});
   
       // Try to add an empty ingredient
       fireEvent.change(input, { target: { value: "" } });

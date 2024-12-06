@@ -117,7 +117,7 @@ const Overview = () => {
                 rel="noopener noreferrer"
                 className="recipe-link-SBI btn"
               >
-                <span class="recipe-link-name">
+                <span className="recipe-link-name">
                   <strong>View Full Recipe</strong>
                 </span>
               </a>

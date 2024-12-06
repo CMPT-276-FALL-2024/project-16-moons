@@ -36,7 +36,7 @@ function RecipeOverviewBody() {
                 rel="noopener noreferrer"
                 className="recipe-link btn"
               >
-                <span class="recipe-link-name">
+                <span className="recipe-link-name">
                   <strong>View Full Recipe</strong>
                 </span>
               </a>
@@ -47,7 +47,7 @@ function RecipeOverviewBody() {
                 </p>
               )}
             </div>
-            <div class="nutrition-facts">
+            <div className="nutrition-facts">
               <h1>Nutrition Facts</h1>
               <div>
                 <p>

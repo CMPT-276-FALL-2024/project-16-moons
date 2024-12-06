@@ -213,6 +213,8 @@
     color: black;
     text-align: center;
     font-size: 1.6rem;
+    background-color: #e0ba88;
+    border-radius: 10px;
 }
 
 .recipe-card-1:hover {

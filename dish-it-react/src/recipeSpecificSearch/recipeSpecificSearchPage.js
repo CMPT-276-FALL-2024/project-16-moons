@@ -7,7 +7,7 @@ import RecipeSpecificSearchNavbar from "./recipeSpecificSearchComponents/recipeS
 // Main page for the recipe specific search page
 export default function RecipeSpecificSearchPage() {
     return (
-        <div>
+        <div id="main">
             <RecipeSpecificSearchNavbar />
             <RecipeSpecificSearchBody />    
         </div>

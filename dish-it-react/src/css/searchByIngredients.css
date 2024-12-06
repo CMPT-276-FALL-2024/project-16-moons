@@ -46,11 +46,12 @@
 .search-by-ingredient-search-button {
     width: 5rem;
     height: 5rem;
-    margin-left: 1rem;
+    margin-top: 1rem;
     background-color: #ffbd59;
     border: none;
     border-radius: 50%;
     display: flex;
+    align-self: center;
     align-items: center;
     justify-content: center;
     cursor: pointer;

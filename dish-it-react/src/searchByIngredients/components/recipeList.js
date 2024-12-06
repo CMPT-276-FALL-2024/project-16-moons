@@ -3,8 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 const RecipeList = ({ recipes, isSearched }) => {
     const navigate = useNavigate();
-    console.log(recipes);
-    if ( recipes.length === 0) {
+    if (isSearched && recipes.length === 0) {
         return <p className="error-message-SBI">No recipes found. Try different ingredients.</p>;
     }
     return (

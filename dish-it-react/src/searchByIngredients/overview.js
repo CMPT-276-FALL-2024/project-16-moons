@@ -8,7 +8,7 @@ const Overview = () => {
   const { id } = useParams(); // Extract recipe ID from URL
   const [recipeDetails, setRecipeDetails] = useState(null);
   const [error, setError] = useState(null);
-
+  console.log(recipeDetails);
   useEffect(() => {
     const fetchRecipeDetails = async () => {
       try {
@@ -89,9 +89,9 @@ const Overview = () => {
                 <h2>Nutrition Facts</h2>
                 <li>
                   <b>
-                    <p>{calories}</p>
-                    <p>{protein}</p>
-                    <p>{fat}</p>
+                    {calories !== "N/A" ? (<p>{calories}</p>) : (<p>Calories not available</p>)}
+                    {protein !== "N/A" ? (<p>{protein}</p>) : (<p>Protein not available</p>)}
+                    {fat !== "N/A" ? (<p>{fat}</p>) : (<p>Fat not available</p>)}
                   </b>
                 </li>
               </div>
@@ -103,13 +103,13 @@ const Overview = () => {
                 </strong>
               </p>
               <p></p>
-              <p className="cooking-time-SBI">
+              {recipeDetails.preparationMinutes ? (<p className="cooking-time-SBI">
                 <strong>
                   <b>{recipeDetails.title}</b> will take{" "}
                   <b>{recipeDetails.preparationMinutes}</b> minutes to prepare
                   and <b>{recipeDetails.cookingMinutes}</b> minutes to cook.
                 </strong>
-              </p>
+              </p>):(<p className="cooking-time-SBI"> <strong>Time to prepare and cook this recipe is not available</strong></p>)}
 
               <a
                 href={recipeDetails.sourceUrl}
@@ -122,7 +122,7 @@ const Overview = () => {
                 </span>
               </a>
             </div>
-            <div className="section-instructions-SBI">
+            {recipeDetails.analyzedInstructions >0 ? (<div className="section-instructions-SBI">
               <h2>Instructions:</h2>
               {recipeDetails.analyzedInstructions.map((instruction, index) => (
                 <div key={index}>
@@ -135,7 +135,7 @@ const Overview = () => {
                   </ol>
                 </div>
               ))}
-            </div>
+            </div>): (<div className="section-instructions-SBI"><h2>No Instructions Immediately Available</h2></div>)}
           </div>
         </section>
       </main>

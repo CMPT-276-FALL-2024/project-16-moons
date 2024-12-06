@@ -6,8 +6,11 @@
 ## Description
 A brief description of your project:
 - What does it do?
-- Who is it for? 
-- What problem does it solve? 
+   - It is a website platform that helps users save time, make healthier eating choices, and explore wide varieties of cuisines effortlessly.
+- Who is it for?
+   - It is for anyone essentially. Howevever, it's more garned for people who are more interested into learning how to cook!
+- What problem does it solve?
+   - It removes the barriers to learning how to cook, which can often be intimidating and difficult when trying to learn on your own.
 
 ## Features
 List the key functionalities or highlights of your project:
@@ -27,9 +30,11 @@ This Project was developed using the following technologies!
 ## Installation
 1. Clone the repository:
    ```https://github.com/CMPT-276-FALL-2024/project-16-moons.git```
-2. Open repository folder on Visual Studio Code or other text editors.
+2. Open repository folder on Visual Studio Code or other text editors. (project-16-moons)
 3. cd dish-it-react
-4. npm start
+5. npm install
+  a. This only needs to be done once!
+7. npm start
 
 ## Contribution
 - Tyler Ho (Team Leader & Software Developer)

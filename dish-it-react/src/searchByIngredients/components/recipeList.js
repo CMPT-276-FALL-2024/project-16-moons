@@ -1,9 +1,9 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-const RecipeList = ({ recipes, isSearched }) => {
+const RecipeList = ({ recipes}) => {
     const navigate = useNavigate();
-    if (isSearched && recipes.length === 0) {
+    if (recipes.length === 0) {
         return <p className="error-message-SBI">No recipes found. Try different ingredients.</p>;
     }
     return (

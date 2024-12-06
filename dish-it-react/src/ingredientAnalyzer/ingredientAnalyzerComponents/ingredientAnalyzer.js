@@ -310,7 +310,7 @@ const IngredientAnalyzer = () => {
           </div>
         )}
       </section>
-      <section class="section-How-To-Use" id="how">
+      <section className="section-How-To-Use" id="how">
         <h1 className="how-to-use-Header">How To Use</h1>
         <p>Simply type into any food that you'd like for Dish-It to analyze!</p>
         <p>

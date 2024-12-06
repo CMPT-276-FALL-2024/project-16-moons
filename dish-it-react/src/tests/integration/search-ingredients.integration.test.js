@@ -58,7 +58,7 @@ describe("Search By Ingredients Integration Test", () => {
     // Step 1: Add an ingredient
     const ingredientInput = screen.getByPlaceholderText("Add an ingredient...");
     const addButton = screen.getByRole("button", { name: "add button" });
-    const searchButton = screen.getByRole("button", { name: "search icon" });
+    const searchButton = screen.getByRole("button", { name: 'search'});
 
     fireEvent.change(ingredientInput, { target: { value: "tomato" } });
     fireEvent.click(addButton);

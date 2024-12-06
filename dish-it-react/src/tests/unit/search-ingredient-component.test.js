@@ -61,7 +61,7 @@ describe("SearchByIngredients Unit testing", () => {
   
       const input = screen.getByPlaceholderText(/add an ingredient/i);
       const inputButton = screen.getByRole("button", { name: /add button/i});
-      const searchButton = screen.getByRole("button", { name: /search icon/i });
+      const searchButton = screen.getByRole("button", { name: /search/i });
       // Add ingredients
       fireEvent.change(input, { target: { value: "Tomato" } });
       fireEvent.click(inputButton);

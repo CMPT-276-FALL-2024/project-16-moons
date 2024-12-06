@@ -95,7 +95,7 @@ function Homepage() {
             </h2>
           </div>
           <div className="grid grid--2-cols grid--center-v">
-            <Link to="/recipe-search" class="feature-link">
+            <Link to="/recipe-search" className="feature-link">
               <p className="feature-name">Recipe Search</p>
               <p className="feature-description">
                 Simply enter the name of any dish you're craving like "Salad" or
@@ -112,14 +112,14 @@ function Homepage() {
             <div className="feature-img">
               <img src="images/food-Images/2.jpg" alt="gif of function"></img>
             </div>
-            <Link to="/random-recipe" class="feature-link">
+            <Link to="/random-recipe" className="feature-link">
               <p className="feature-name">Random Recipe</p>
               <p className="feature-description">
                 Not sure what to eat? Let Dish-It choose for you with just a
                 click!
               </p>
             </Link>
-            <Link to="/ingredient-search" class="feature-link">
+            <Link to="/ingredient-search" className="feature-link">
               <p className="feature-name">Search By Ingredients</p>
               <p className="feature-description">
                 Want to know what dishes you can make with ingredients from your
@@ -133,7 +133,7 @@ function Homepage() {
             <div className="feature-img">
               <img src="images/food-Images/4.jpg" alt="gif of function"></img>
             </div>
-            <Link to="/ingredient-analyzer" class="feature-link">
+            <Link to="/ingredient-analyzer" className="feature-link">
               <p className="feature-name">Ingredient Analyzer</p>
               <p className="feature-description">
                 List down your ingredients and have Dish-It analyze it for you

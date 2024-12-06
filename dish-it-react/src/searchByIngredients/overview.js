@@ -69,25 +69,21 @@ const Overview = () => {
             </div>
 
             <div className="main-details">
-              <div className="section-instructions-SBI">
-                <h2>Instructions:</h2>
-                {recipeDetails.analyzedInstructions.length === 0 || recipeDetails.analyzedInstructions.every(instruction => instruction.steps.length === 0) ? (
-                  <h3>Sorry, no instructions are available for this recipe.</h3>
-                ) : (
-                  recipeDetails.analyzedInstructions.map((instruction, index) => (
-                    <div key={index}>
-                      <ol>
-                        {instruction.steps.map((step) => (
-                          <li key={step.number}>
-                            <b>Step {step.number}:</b> {step.step}
-                          </li>
-                        ))}
-                      </ol>
-                    </div>
-                  ))
-                )}
-              </div>
-
+              <div className="section-ingredients-SBI">
+                  <h2>Ingredients</h2>
+                  <ul className="ingredients-list">
+                    {recipeDetails.extendedIngredients.map(
+                      (ingredient, index) => (
+                        <li key={ingredient.id}>
+                          <b>
+                            {ingredient.amount} {ingredient.unit}
+                          </b>{" "}
+                          of {ingredient.nameClean}
+                        </li>
+                      )
+                    )}
+                  </ul>
+                </div>
               <div className="section-ingredients-SBI">
                 <h2>Nutrition Facts</h2>
                 <li>
@@ -125,20 +121,24 @@ const Overview = () => {
                 </span>
               </a>
             </div>
-            {recipeDetails.analyzedInstructions >0 ? (<div className="section-instructions-SBI">
-              <h2>Instructions:</h2>
-              {recipeDetails.analyzedInstructions.map((instruction, index) => (
-                <div key={index}>
-                  <ol>
-                    {instruction.steps.map((step) => (
-                      <li key={step.number}>
-                        <b>Step {step.number}:</b> {step.step}
-                      </li>
-                    ))}
-                  </ol>
-                </div>
-              ))}
-            </div>): (<div className="section-instructions-SBI"><h2>No Instructions Immediately Available</h2></div>)}
+            <div className="section-instructions-SBI">
+                <h2>Instructions:</h2>
+                {recipeDetails.analyzedInstructions.length === 0 || recipeDetails.analyzedInstructions.every(instruction => instruction.steps.length === 0) ? (
+                  <h3>Sorry, no instructions are available for this recipe.</h3>
+                ) : (
+                  recipeDetails.analyzedInstructions.map((instruction, index) => (
+                    <div key={index}>
+                      <ol>
+                        {instruction.steps.map((step) => (
+                          <li key={step.number}>
+                            <b>Step {step.number}:</b> {step.step}
+                          </li>
+                        ))}
+                      </ol>
+                    </div>
+                  ))
+                )}
+              </div>
           </div>
         </section>
       </main>

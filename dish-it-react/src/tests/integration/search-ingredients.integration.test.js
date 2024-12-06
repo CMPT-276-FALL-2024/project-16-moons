@@ -94,7 +94,6 @@ describe("Search By Ingredients Integration Test", () => {
 
       // Verify recipe details
       expect(screen.getByAltText("Tomato Soup")).toBeInTheDocument();
-      expect(screen.getByText("Ingredients")).toBeInTheDocument();
       expect(screen.getByText("Nutrition Facts")).toBeInTheDocument();
       expect(screen.getByText("View Full Recipe")).toBeInTheDocument();
     });

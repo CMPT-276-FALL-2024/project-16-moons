@@ -66,6 +66,16 @@
   padding-bottom: 2.4rem;
 }
 
+.videoDemo {
+  padding-left: 5.6rem;
+}
+
+.videoDemoLink {
+  display: block;
+  padding-left: 5.6rem;
+  width: 5.6rem important!;
+}
+
 .feature {
   background-color: #fae5d3;
   border-radius: 11px;

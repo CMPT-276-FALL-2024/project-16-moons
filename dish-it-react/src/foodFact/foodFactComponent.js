@@ -53,7 +53,15 @@ const FoodFactComponent = () => {
   return (
     <div>
       <h2>Did you know?</h2>
-      <p>{funFact.replace(/did you know\?/i, "").trim()}</p>
+      <p>
+        {funFact
+          .replace(/did you know\?/i, "")
+          .replace(
+            /\(adsbygoogle\s*=\s*window\.adsbygoogle\s*\|\|\s*\[\]\),\s*push\(\{\}\);/i,
+            ""
+          )
+          .trim()}
+      </p>
     </div>
   );
 };

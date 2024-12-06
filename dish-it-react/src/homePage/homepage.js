@@ -93,6 +93,16 @@ function Homepage() {
             <h2 className="heading-secondary">
               Checkout what each of our features do!
             </h2>
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/1rQyutNTqqw"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+              className="videoDemo"
+            ></iframe>
           </div>
           <div className="grid grid--2-cols grid--center-v">
             <Link to="/recipe-search" className="feature-link">

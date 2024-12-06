@@ -95,6 +95,8 @@ height: 2rem;
     font-weight: bold;
     display: flex;
     flex-direction: column;
+    background-color: #e0ba88;
+    border-radius: 10px;
 }
 
 .search-result:hover {

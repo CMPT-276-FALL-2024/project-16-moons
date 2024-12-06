@@ -52,7 +52,7 @@ const IngredientInput = ({addIngredient}) => {
                 onKeyDown={pressedEnter}
                 placeholder="Add an ingredient..."
                 />
-                <button onClick={handleAdd}>&#43;</button>
+                <button aria-label='add button' onClick={handleAdd}>&#43;</button>
             </div>
         </div>
     );

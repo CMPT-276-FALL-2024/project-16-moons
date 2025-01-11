@@ -37,7 +37,7 @@ This Project was developed using the following technologies!
 7. npm start
 
 ## Contribution
-- Tyler Ho (Team Leader & Software Developer)
-- Gabriel Bello (Graphic Designer & Software Developer)
-- Quang Anh Pham (Technical Writer & Software Developer)
-- Kevin Tan (Quality Assurance & Software Developer)
+- Tyler (Team Leader & Software Developer)
+- Gabriel (Graphic Designer & Software Developer)
+- Quang (Technical Writer & Software Developer)
+- Kevin (Quality Assurance & Software Developer)

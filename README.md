@@ -1,8 +1,9 @@
 [![Watch the Demo](./dish-it-react/public/images/logoNavBar.png)](https://www.youtube.com/watch?v=1rQyutNTqqw&t=7s&ab_channel=HooopCode)
 
 
-[Watch the Demo](https://www.youtube.com/watch?v=1rQyutNTqqw&t=7s&ab_channel=HooopCode)
-[Visit Our Website](https://main.d9f9dkmnwvkxz.amplifyapp.com/recipe-overview/942309)
+[Watch the demo](https://www.youtube.com/watch?v=1rQyutNTqqw&t=7s&ab_channel=HooopCode)
+
+[Visit the website](https://main.d9f9dkmnwvkxz.amplifyapp.com/)
 
 ## Description
 A brief description of your project:
